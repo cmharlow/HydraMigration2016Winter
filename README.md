@@ -45,7 +45,7 @@
   - Abolition
   - Samuel J. May
   - Antislavery
-- TEXT/BODY/DIV1/HEAD - title(s) all over again? Same as both title elements.
+- TEXT/BODY/DIV1/HEAD - title(s) of structural element section. Includes elements for all files, structural metadata attached to the digital object.
 
 **Enhancement possibilities:**
 
@@ -54,5 +54,21 @@
 - split title to have shelf locator in separate field?
 - hide away entity to some technical metadata, use note for physical entity
 - fields or information to add based off of digital project?
+
+###Antislavery.xml
+
+**Overview of Metadata Usage in Record Items**
+
+```
+
+```
+
+**Notes:**
+
+- These are not elements in any namespace
+
+**Enhancement possibilities:**
+
+-
 
 
