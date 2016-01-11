@@ -55,17 +55,39 @@
 - hide away entity to some technical metadata, use note for physical entity
 - fields or information to add based off of digital project?
 
-###Antislavery.xml
+###Bees.xml
 
 **Overview of Metadata Usage in Record Items**
 
 ```
-
+             /record/ENCODINGDESC/EDITORIALDECL/P: |=========================|     49/49 | 100%
+             /record/FILEDESC/EDITIONSTMT/EDITION: |====                     |      9/49 |  18%
+                          /record/FILEDESC/EXTENT: |======================== |     48/49 |  97%
+                  /record/FILEDESC/NOTESSTMT/NOTE: |========                 |     16/49 |  32%
+/record/FILEDESC/PUBLICATIONSTMT/AVAILABILITY/DIV: |=                        |      2/49 |   4%
+            /record/FILEDESC/PUBLICATIONSTMT/IDNO: |======================== |     48/49 |  97%
+       /record/FILEDESC/PUBLICATIONSTMT/PUBLISHER: |======================== |     48/49 |  97%
+        /record/FILEDESC/PUBLICATIONSTMT/PUBPLACE: |======================== |     48/49 |  97%
+          /record/FILEDESC/SOURCEDESC/BIBL/AUTHOR: |======================== |     48/49 |  97%
+            /record/FILEDESC/SOURCEDESC/BIBL/DATE: |======================== |     48/49 |  97%
+       /record/FILEDESC/SOURCEDESC/BIBL/PUBLISHER: |======================   |     45/49 |  91%
+        /record/FILEDESC/SOURCEDESC/BIBL/PUBPLACE: |======================   |     45/49 |  91%
+           /record/FILEDESC/SOURCEDESC/BIBL/TITLE: |======================== |     48/49 |  97%
+                /record/FILEDESC/TITLESTMT/AUTHOR: |=========================|     49/49 | 100%
+                 /record/FILEDESC/TITLESTMT/TITLE: |=========================|     49/49 | 100%
+                    /record/PROFILEDESC/TEXTCLASS: |                         |      1/49 |   2%
+      /record/PROFILEDESC/TEXTCLASS/KEYWORDS/TERM: |======================== |     48/49 |  97%
+               /record/TEXT/BODY/DIV1/DIV2/AUTHOR: |                         |      1/49 |   2%
+                /record/TEXT/BODY/DIV1/DIV2/TITLE: |                         |      1/49 |   2%
+                      /record/TEXT/BODY/DIV1/HEAD: |=========================|     49/49 | 100%
 ```
 
 **Notes:**
 
 - These are not elements in any namespace
+- Sample XML is not well-formed - missing closing tag in one record. Repaired for sake of review.
+- ENCODINGDESC/EDITORIALDECL/P is a note on the OCR process.
+-
 
 **Enhancement possibilities:**
 
