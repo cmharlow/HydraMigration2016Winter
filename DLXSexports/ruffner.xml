@@ -1,0 +1,820 @@
+<collection>
+<record>
+ <FILEDESC>
+  <TITLESTMT>
+   <TITLE TYPE="245">Study of Greek Revival Architecture in the Seneca and Cayuga Lake Regions (Vol. 1)</TITLE>
+   <AUTHOR>Ruffner, Clifford Hayes, 1915-</AUTHOR>
+  </TITLESTMT>
+  <EXTENT>194 600dpi JP2 page images</EXTENT>
+  <PUBLICATIONSTMT>
+   <PUBLISHER>Cornell University Library</PUBLISHER>
+   <PUBPLACE>Ithaca, New York</PUBPLACE>
+   <IDNO TYPE="dlps">ruff001</IDNO>
+  </PUBLICATIONSTMT>
+  <NOTESSTMT>
+   <NOTE>Digitization by the Digital Consulting and Production Services at Cornell University Library </NOTE>
+  </NOTESSTMT>
+  <SOURCEDESC>
+   <BIBL>
+    <TITLE TYPE="main">Study of Greek Revival Architecture in the Seneca and Cayuga Lake Regions (Vol. 1)</TITLE>
+    <AUTHOR>Ruffner, Clifford Hayes, 1915-</AUTHOR>
+    <PUBLISHER>Cornell University</PUBLISHER>
+    <PUBPLACE>Ithaca, New York</PUBPLACE>
+    <DATE>1939</DATE>
+    <NOTE>194 p.</NOTE>
+   </BIBL>
+  </SOURCEDESC>
+ </FILEDESC>
+ <ENCODINGDESC>
+  <EDITORIALDECL N="2">
+   <P>This electronic text was created by Optical Character Recognition (OCR). No corrections have been made to the OCR-ed text and no editing has been done to the content of the original document. Structure data and important page features have been identified manually allow easier document navigation.</P>
+  </EDITORIALDECL>
+ </ENCODINGDESC>
+ <PROFILEDESC>
+  <TEXTCLASS>
+   <KEYWORDS>
+     <TERM>Greek revival (Architecture) --Finger Lakes region.</TERM>
+     <TERM>Greek revival (Architecture) --New York (State)</TERM>
+     <TERM>Architecture --New York (State)</TERM>
+     <TERM>Thesis (B. Arch.)--Cornell University</TERM>
+     <TERM>Critic: William McL. Dunbar</TERM>
+   </KEYWORDS>
+  </TEXTCLASS>
+ </PROFILEDESC>
+<TEXT>
+ <BODY>
+  <DIV1 NODE="ruff001:1" TYPE="section">
+  <HEAD>Cover</HEAD>
+<PB REF="00001.jp2" SEQ="1" RES="600dpi" FMT="JP2" FTR="COV" N="A"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:2" TYPE="section">
+  <HEAD>Bookplate</HEAD>
+<PB REF="00002.jp2" SEQ="2" RES="600dpi" FMT="JP2" FTR="BKP" N="B"/>
+<PB REF="00003.jp2" SEQ="3" RES="600dpi" FMT="JP2" FTR="UNS" N="C"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:3" TYPE="section">
+  <HEAD>Title Page</HEAD>
+<PB REF="00004.jp2" SEQ="4" RES="600dpi" FMT="JP2" FTR="TPG" N="D"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:4" TYPE="section">
+  <HEAD>Front Matter</HEAD>
+<PB REF="00005.jp2" SEQ="5" RES="600dpi" FMT="JP2" FTR="PRF" N="E"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:5" TYPE="section">
+  <HEAD>Index</HEAD>
+<PB REF="00006.jp2" SEQ="6" RES="600dpi" FMT="JP2" FTR="IND" N="F"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:6" TYPE="section">
+  <HEAD>Introduction</HEAD>
+<PB REF="00007.jp2" SEQ="7" RES="600dpi" FMT="JP2" FTR="INT" N="G"/>
+<PB REF="00008.jp2" SEQ="8" RES="600dpi" FMT="JP2" FTR="UNS" N="i"/>
+<PB REF="00009.jp2" SEQ="9" RES="600dpi" FMT="JP2" FTR="UNS" N="ii"/>
+<PB REF="00010.jp2" SEQ="10" RES="600dpi" FMT="JP2" FTR="UNS" N="iii"/>
+<PB REF="00011.jp2" SEQ="11" RES="600dpi" FMT="JP2" FTR="UNS" N="iv"/>
+<PB REF="00012.jp2" SEQ="12" RES="600dpi" FMT="JP2" FTR="UNS" N="v"/>
+<PB REF="00013.jp2" SEQ="13" RES="600dpi" FMT="JP2" FTR="UNS" N="vi"/>
+<PB REF="00014.jp2" SEQ="14" RES="600dpi" FMT="JP2" FTR="UNS" N="vii"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:7" TYPE="section">
+  <HEAD>Map of New York State</HEAD>
+<PB REF="00015.jp2" SEQ="15" RES="600dpi" FMT="JP2" FTR="MAP" N="1"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:8" TYPE="section">
+  <HEAD>Illustration: View of Elmira</HEAD>
+<PB REF="00016.jp2" SEQ="16" RES="600dpi" FMT="JP2" FTR="ILL" N="2"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:9" TYPE="section">
+  <HEAD>Body of Text</HEAD>
+<PB REF="00017.jp2" SEQ="17" RES="600dpi" FMT="JP2" FTR="TXT" N="3"/>
+<PB REF="00018.jp2" SEQ="18" RES="600dpi" FMT="JP2" FTR="PHO" N="4"/>
+<PB REF="00019.jp2" SEQ="19" RES="600dpi" FMT="JP2" FTR="UNS" N="5"/>
+<PB REF="00020.jp2" SEQ="20" RES="600dpi" FMT="JP2" FTR="PHO" N="6"/>
+<PB REF="00021.jp2" SEQ="21" RES="600dpi" FMT="JP2" FTR="PHO" N="7"/>
+<PB REF="00022.jp2" SEQ="22" RES="600dpi" FMT="JP2" FTR="PHO" N="8"/>
+<PB REF="00023.jp2" SEQ="23" RES="600dpi" FMT="JP2" FTR="UNS" N="9"/>
+<PB REF="00024.jp2" SEQ="24" RES="600dpi" FMT="JP2" FTR="PHO" N="10"/>
+<PB REF="00025.jp2" SEQ="25" RES="600dpi" FMT="JP2" FTR="PHO" N="11"/>
+<PB REF="00026.jp2" SEQ="26" RES="600dpi" FMT="JP2" FTR="UNS" N="12"/>
+<PB REF="00027.jp2" SEQ="27" RES="600dpi" FMT="JP2" FTR="PHO" N="13"/>
+<PB REF="00028.jp2" SEQ="28" RES="600dpi" FMT="JP2" FTR="UNS" N="14"/>
+<PB REF="00029.jp2" SEQ="29" RES="600dpi" FMT="JP2" FTR="PHO" N="15"/>
+<PB REF="00030.jp2" SEQ="30" RES="600dpi" FMT="JP2" FTR="PHO" N="16"/>
+<PB REF="00031.jp2" SEQ="31" RES="600dpi" FMT="JP2" FTR="PHO" N="17"/>
+<PB REF="00032.jp2" SEQ="32" RES="600dpi" FMT="JP2" FTR="PHO" N="18"/>
+<PB REF="00033.jp2" SEQ="33" RES="600dpi" FMT="JP2" FTR="PHO" N="19"/>
+<PB REF="00034.jp2" SEQ="34" RES="600dpi" FMT="JP2" FTR="PHO" N="20"/>
+<PB REF="00035.jp2" SEQ="35" RES="600dpi" FMT="JP2" FTR="PHO" N="21"/>
+<PB REF="00036.jp2" SEQ="36" RES="600dpi" FMT="JP2" FTR="PHO" N="22"/>
+<PB REF="00037.jp2" SEQ="37" RES="600dpi" FMT="JP2" FTR="PHO" N="23"/>
+<PB REF="00038.jp2" SEQ="38" RES="600dpi" FMT="JP2" FTR="PHO" N="24"/>
+<PB REF="00039.jp2" SEQ="39" RES="600dpi" FMT="JP2" FTR="PHO" N="25"/>
+<PB REF="00040.jp2" SEQ="40" RES="600dpi" FMT="JP2" FTR="UNS" N="26"/>
+<PB REF="00041.jp2" SEQ="41" RES="600dpi" FMT="JP2" FTR="UNS" N="27"/>
+<PB REF="00042.jp2" SEQ="42" RES="600dpi" FMT="JP2" FTR="UNS" N="28"/>
+<PB REF="00043.jp2" SEQ="43" RES="600dpi" FMT="JP2" FTR="UNS" N="29"/>
+<PB REF="00044.jp2" SEQ="44" RES="600dpi" FMT="JP2" FTR="PHO" N="30"/>
+<PB REF="00045.jp2" SEQ="45" RES="600dpi" FMT="JP2" FTR="PHO" N="31"/>
+<PB REF="00046.jp2" SEQ="46" RES="600dpi" FMT="JP2" FTR="UNS" N="32"/>
+<PB REF="00047.jp2" SEQ="47" RES="600dpi" FMT="JP2" FTR="PHO" N="33"/>
+<PB REF="00048.jp2" SEQ="48" RES="600dpi" FMT="JP2" FTR="PHO" N="34"/>
+<PB REF="00049.jp2" SEQ="49" RES="600dpi" FMT="JP2" FTR="PHO" N="35"/>
+<PB REF="00050.jp2" SEQ="50" RES="600dpi" FMT="JP2" FTR="PHO" N="36"/>
+<PB REF="00051.jp2" SEQ="51" RES="600dpi" FMT="JP2" FTR="PHO" N="37"/>
+<PB REF="00052.jp2" SEQ="52" RES="600dpi" FMT="JP2" FTR="PHO" N="38"/>
+<PB REF="00053.jp2" SEQ="53" RES="600dpi" FMT="JP2" FTR="PHO" N="39"/>
+<PB REF="00054.jp2" SEQ="54" RES="600dpi" FMT="JP2" FTR="PHO" N="40"/>
+<PB REF="00055.jp2" SEQ="55" RES="600dpi" FMT="JP2" FTR="PHO" N="41"/>
+<PB REF="00056.jp2" SEQ="56" RES="600dpi" FMT="JP2" FTR="PHO" N="42"/>
+<PB REF="00057.jp2" SEQ="57" RES="600dpi" FMT="JP2" FTR="PHO" N="43"/>
+<PB REF="00058.jp2" SEQ="58" RES="600dpi" FMT="JP2" FTR="PHO" N="44"/>
+<PB REF="00059.jp2" SEQ="59" RES="600dpi" FMT="JP2" FTR="PHO" N="45"/>
+<PB REF="00060.jp2" SEQ="60" RES="600dpi" FMT="JP2" FTR="PHO" N="46"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:10" TYPE="section">
+  <HEAD>Illustration: Northeastern View of Geneva</HEAD>
+<PB REF="00061.jp2" SEQ="61" RES="600dpi" FMT="JP2" FTR="ILL" N="47"/>
+<PB REF="00062.jp2" SEQ="62" RES="600dpi" FMT="JP2" FTR="UNS" N="48"/>
+<PB REF="00063.jp2" SEQ="63" RES="600dpi" FMT="JP2" FTR="PHO" N="49"/>
+<PB REF="00064.jp2" SEQ="64" RES="600dpi" FMT="JP2" FTR="PHO" N="50"/>
+<PB REF="00065.jp2" SEQ="65" RES="600dpi" FMT="JP2" FTR="PHO" N="51"/>
+<PB REF="00066.jp2" SEQ="66" RES="600dpi" FMT="JP2" FTR="PHO" N="52"/>
+<PB REF="00067.jp2" SEQ="67" RES="600dpi" FMT="JP2" FTR="PHO" N="53"/>
+<PB REF="00068.jp2" SEQ="68" RES="600dpi" FMT="JP2" FTR="PHO" N="54"/>
+<PB REF="00069.jp2" SEQ="69" RES="600dpi" FMT="JP2" FTR="PHO" N="55"/>
+<PB REF="00070.jp2" SEQ="70" RES="600dpi" FMT="JP2" FTR="PHO" N="56"/>
+<PB REF="00071.jp2" SEQ="71" RES="600dpi" FMT="JP2" FTR="PHO" N="57"/>
+<PB REF="00072.jp2" SEQ="72" RES="600dpi" FMT="JP2" FTR="PHO" N="58"/>
+<PB REF="00073.jp2" SEQ="73" RES="600dpi" FMT="JP2" FTR="PHO" N="59"/>
+<PB REF="00074.jp2" SEQ="74" RES="600dpi" FMT="JP2" FTR="UNS" N="60"/>
+<PB REF="00075.jp2" SEQ="75" RES="600dpi" FMT="JP2" FTR="UNS" N="61"/>
+<PB REF="00076.jp2" SEQ="76" RES="600dpi" FMT="JP2" FTR="PHO" N="62"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:11" TYPE="section">
+  <HEAD>Illustration: Eastern View of Ithaca</HEAD>
+<PB REF="00077.jp2" SEQ="77" RES="600dpi" FMT="JP2" FTR="UNS" N="63"/>
+<PB REF="00078.jp2" SEQ="78" RES="600dpi" FMT="JP2" FTR="UNS" N="64"/>
+<PB REF="00079.jp2" SEQ="79" RES="600dpi" FMT="JP2" FTR="PHO" N="65"/>
+<PB REF="00080.jp2" SEQ="80" RES="600dpi" FMT="JP2" FTR="PHO" N="66"/>
+<PB REF="00081.jp2" SEQ="81" RES="600dpi" FMT="JP2" FTR="UNS" N="67"/>
+<PB REF="00082.jp2" SEQ="82" RES="600dpi" FMT="JP2" FTR="UNS" N="68"/>
+<PB REF="00083.jp2" SEQ="83" RES="600dpi" FMT="JP2" FTR="UNS" N="69"/>
+<PB REF="00084.jp2" SEQ="84" RES="600dpi" FMT="JP2" FTR="PHO" N="70"/>
+<PB REF="00085.jp2" SEQ="85" RES="600dpi" FMT="JP2" FTR="PHO" N="71"/>
+<PB REF="00086.jp2" SEQ="86" RES="600dpi" FMT="JP2" FTR="PHO" N="72"/>
+<PB REF="00087.jp2" SEQ="87" RES="600dpi" FMT="JP2" FTR="PHO" N="73"/>
+<PB REF="00088.jp2" SEQ="88" RES="600dpi" FMT="JP2" FTR="PHO" N="74"/>
+<PB REF="00089.jp2" SEQ="89" RES="600dpi" FMT="JP2" FTR="PHO" N="75"/>
+<PB REF="00090.jp2" SEQ="90" RES="600dpi" FMT="JP2" FTR="PHO" N="76"/>
+<PB REF="00091.jp2" SEQ="91" RES="600dpi" FMT="JP2" FTR="PHO" N="77"/>
+<PB REF="00092.jp2" SEQ="92" RES="600dpi" FMT="JP2" FTR="PHO" N="78"/>
+<PB REF="00093.jp2" SEQ="93" RES="600dpi" FMT="JP2" FTR="UNS" N="79"/>
+<PB REF="00094.jp2" SEQ="94" RES="600dpi" FMT="JP2" FTR="UNS" N="80"/>
+<PB REF="00095.jp2" SEQ="95" RES="600dpi" FMT="JP2" FTR="PHO" N="81"/>
+<PB REF="00096.jp2" SEQ="96" RES="600dpi" FMT="JP2" FTR="PHO" N="82"/>
+<PB REF="00097.jp2" SEQ="97" RES="600dpi" FMT="JP2" FTR="UNS" N="83"/>
+<PB REF="00098.jp2" SEQ="98" RES="600dpi" FMT="JP2" FTR="PHO" N="84"/>
+<PB REF="00099.jp2" SEQ="99" RES="600dpi" FMT="JP2" FTR="PHO" N="85"/>
+<PB REF="00100.jp2" SEQ="100" RES="600dpi" FMT="JP2" FTR="PHO" N="86"/>
+<PB REF="00101.jp2" SEQ="101" RES="600dpi" FMT="JP2" FTR="PHO" N="87"/>
+<PB REF="00102.jp2" SEQ="102" RES="600dpi" FMT="JP2" FTR="PHO" N="88"/>
+<PB REF="00103.jp2" SEQ="103" RES="600dpi" FMT="JP2" FTR="PHO" N="89"/>
+<PB REF="00104.jp2" SEQ="104" RES="600dpi" FMT="JP2" FTR="PHO" N="90"/>
+<PB REF="00105.jp2" SEQ="105" RES="600dpi" FMT="JP2" FTR="PHO" N="91"/>
+<PB REF="00106.jp2" SEQ="106" RES="600dpi" FMT="JP2" FTR="PHO" N="92"/>
+<PB REF="00107.jp2" SEQ="107" RES="600dpi" FMT="JP2" FTR="PHO" N="93"/>
+<PB REF="00108.jp2" SEQ="108" RES="600dpi" FMT="JP2" FTR="PHO" N="94"/>
+<PB REF="00109.jp2" SEQ="109" RES="600dpi" FMT="JP2" FTR="PHO" N="95"/>
+<PB REF="00110.jp2" SEQ="110" RES="600dpi" FMT="JP2" FTR="PHO" N="96"/>
+<PB REF="00111.jp2" SEQ="111" RES="600dpi" FMT="JP2" FTR="PHO" N="97"/>
+<PB REF="00112.jp2" SEQ="112" RES="600dpi" FMT="JP2" FTR="PHO" N="98"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:12" TYPE="section">
+  <HEAD>Illustration: Cayuga Bridge</HEAD>
+<PB REF="00113.jp2" SEQ="113" RES="600dpi" FMT="JP2" FTR="ILL" N="99"/>
+<PB REF="00114.jp2" SEQ="114" RES="600dpi" FMT="JP2" FTR="PHO" N="100"/>
+<PB REF="00115.jp2" SEQ="115" RES="600dpi" FMT="JP2" FTR="PHO" N="101"/>
+<PB REF="00116.jp2" SEQ="116" RES="600dpi" FMT="JP2" FTR="PHO" N="102"/>
+<PB REF="00117.jp2" SEQ="117" RES="600dpi" FMT="JP2" FTR="UNS" N="103"/>
+<PB REF="00118.jp2" SEQ="118" RES="600dpi" FMT="JP2" FTR="PHO" N="104"/>
+<PB REF="00119.jp2" SEQ="119" RES="600dpi" FMT="JP2" FTR="PHO" N="105"/>
+<PB REF="00120.jp2" SEQ="120" RES="600dpi" FMT="JP2" FTR="PHO" N="106"/>
+<PB REF="00121.jp2" SEQ="121" RES="600dpi" FMT="JP2" FTR="PHO" N="107"/>
+<PB REF="00122.jp2" SEQ="122" RES="600dpi" FMT="JP2" FTR="PHO" N="108"/>
+<PB REF="00123.jp2" SEQ="123" RES="600dpi" FMT="JP2" FTR="PHO" N="109"/>
+<PB REF="00124.jp2" SEQ="124" RES="600dpi" FMT="JP2" FTR="PHO" N="110"/>
+<PB REF="00125.jp2" SEQ="125" RES="600dpi" FMT="JP2" FTR="PHO" N="111"/>
+<PB REF="00126.jp2" SEQ="126" RES="600dpi" FMT="JP2" FTR="PHO" N="112"/>
+<PB REF="00127.jp2" SEQ="127" RES="600dpi" FMT="JP2" FTR="PHO" N="113"/>
+<PB REF="00128.jp2" SEQ="128" RES="600dpi" FMT="JP2" FTR="PHO" N="114"/>
+<PB REF="00129.jp2" SEQ="129" RES="600dpi" FMT="JP2" FTR="PHO" N="115"/>
+<PB REF="00130.jp2" SEQ="130" RES="600dpi" FMT="JP2" FTR="PHO" N="116"/>
+<PB REF="00131.jp2" SEQ="131" RES="600dpi" FMT="JP2" FTR="PHO" N="117"/>
+<PB REF="00132.jp2" SEQ="132" RES="600dpi" FMT="JP2" FTR="PHO" N="118"/>
+<PB REF="00133.jp2" SEQ="133" RES="600dpi" FMT="JP2" FTR="PHO" N="119"/>
+<PB REF="00134.jp2" SEQ="134" RES="600dpi" FMT="JP2" FTR="PHO" N="120"/>
+<PB REF="00135.jp2" SEQ="135" RES="600dpi" FMT="JP2" FTR="UNS" N="121"/>
+<PB REF="00136.jp2" SEQ="136" RES="600dpi" FMT="JP2" FTR="PHO" N="122"/>
+<PB REF="00137.jp2" SEQ="137" RES="600dpi" FMT="JP2" FTR="PHO" N="123"/>
+<PB REF="00138.jp2" SEQ="138" RES="600dpi" FMT="JP2" FTR="PHO" N="124"/>
+<PB REF="00139.jp2" SEQ="139" RES="600dpi" FMT="JP2" FTR="UNS" N="125"/>
+<PB REF="00140.jp2" SEQ="140" RES="600dpi" FMT="JP2" FTR="UNS" N="126"/>
+<PB REF="00141.jp2" SEQ="141" RES="600dpi" FMT="JP2" FTR="UNS" N="127"/>
+<PB REF="00142.jp2" SEQ="142" RES="600dpi" FMT="JP2" FTR="UNS" N="128"/>
+<PB REF="00143.jp2" SEQ="143" RES="600dpi" FMT="JP2" FTR="UNS" N="129"/>
+<PB REF="00144.jp2" SEQ="144" RES="600dpi" FMT="JP2" FTR="UNS" N="130"/>
+<PB REF="00145.jp2" SEQ="145" RES="600dpi" FMT="JP2" FTR="PHO" N="131"/>
+<PB REF="00146.jp2" SEQ="146" RES="600dpi" FMT="JP2" FTR="PHO" N="132"/>
+<PB REF="00147.jp2" SEQ="147" RES="600dpi" FMT="JP2" FTR="PHO" N="133"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:13" TYPE="section">
+  <HEAD>Appendixi I</HEAD>
+<PB REF="00148.jp2" SEQ="148" RES="600dpi" FMT="JP2" FTR="APP" N="133A"/>
+<PB REF="00149.jp2" SEQ="149" RES="600dpi" FMT="JP2" FTR="UNS" N="1"/>
+<PB REF="00150.jp2" SEQ="150" RES="600dpi" FMT="JP2" FTR="UNS" N="2"/>
+<PB REF="00151.jp2" SEQ="151" RES="600dpi" FMT="JP2" FTR="UNS" N="3"/>
+<PB REF="00152.jp2" SEQ="152" RES="600dpi" FMT="JP2" FTR="UNS" N="4"/>
+<PB REF="00153.jp2" SEQ="153" RES="600dpi" FMT="JP2" FTR="UNS" N="5"/>
+<PB REF="00154.jp2" SEQ="154" RES="600dpi" FMT="JP2" FTR="UNS" N="6"/>
+<PB REF="00155.jp2" SEQ="155" RES="600dpi" FMT="JP2" FTR="UNS" N="7"/>
+<PB REF="00156.jp2" SEQ="156" RES="600dpi" FMT="JP2" FTR="UNS" N="8"/>
+<PB REF="00157.jp2" SEQ="157" RES="600dpi" FMT="JP2" FTR="UNS" N="9"/>
+<PB REF="00158.jp2" SEQ="158" RES="600dpi" FMT="JP2" FTR="UNS" N="10"/>
+<PB REF="00159.jp2" SEQ="159" RES="600dpi" FMT="JP2" FTR="UNS" N="11"/>
+<PB REF="00160.jp2" SEQ="160" RES="600dpi" FMT="JP2" FTR="UNS" N="12"/>
+<PB REF="00161.jp2" SEQ="161" RES="600dpi" FMT="JP2" FTR="UNS" N="13"/>
+<PB REF="00162.jp2" SEQ="162" RES="600dpi" FMT="JP2" FTR="UNS" N="14"/>
+<PB REF="00163.jp2" SEQ="163" RES="600dpi" FMT="JP2" FTR="UNS" N="15"/>
+<PB REF="00164.jp2" SEQ="164" RES="600dpi" FMT="JP2" FTR="UNS" N="16"/>
+<PB REF="00165.jp2" SEQ="165" RES="600dpi" FMT="JP2" FTR="UNS" N="17"/>
+<PB REF="00166.jp2" SEQ="166" RES="600dpi" FMT="JP2" FTR="UNS" N="18"/>
+<PB REF="00167.jp2" SEQ="167" RES="600dpi" FMT="JP2" FTR="UNS" N="19"/>
+<PB REF="00168.jp2" SEQ="168" RES="600dpi" FMT="JP2" FTR="UNS" N="20"/>
+<PB REF="00169.jp2" SEQ="169" RES="600dpi" FMT="JP2" FTR="UNS" N="21"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:14" TYPE="section">
+  <HEAD>Bibliography</HEAD>
+<PB REF="00170.jp2" SEQ="170" RES="600dpi" FMT="JP2" FTR="BIB" N="22"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:15" TYPE="section">
+  <HEAD>Measuring Sketches of the The Baily House, Ithaca, NY</HEAD>
+<PB REF="00171.jp2" SEQ="171" RES="600dpi" FMT="JP2" FTR="BAL" N="22A"/>
+<PB REF="00172.jp2" SEQ="172" RES="600dpi" FMT="JP2" FTR="UNS" N="22B"/>
+<PB REF="00173.jp2" SEQ="173" RES="600dpi" FMT="JP2" FTR="UNS" N="22C"/>
+<PB REF="00174.jp2" SEQ="174" RES="600dpi" FMT="JP2" FTR="UNS" N="22D"/>
+<PB REF="00175.jp2" SEQ="175" RES="600dpi" FMT="JP2" FTR="UNS" N="22E"/>
+<PB REF="00176.jp2" SEQ="176" RES="600dpi" FMT="JP2" FTR="UNS" N="22F"/>
+<PB REF="00177.jp2" SEQ="177" RES="600dpi" FMT="JP2" FTR="UNS" N="22G"/>
+<PB REF="00178.jp2" SEQ="178" RES="600dpi" FMT="JP2" FTR="UNS" N="22H"/>
+<PB REF="00179.jp2" SEQ="179" RES="600dpi" FMT="JP2" FTR="UNS" N="22I"/>
+<PB REF="00180.jp2" SEQ="180" RES="600dpi" FMT="JP2" FTR="UNS" N="22J"/>
+<PB REF="00181.jp2" SEQ="181" RES="600dpi" FMT="JP2" FTR="UNS" N="22K"/>
+<PB REF="00182.jp2" SEQ="182" RES="600dpi" FMT="JP2" FTR="UNS" N="22L"/>
+<PB REF="00183.jp2" SEQ="183" RES="600dpi" FMT="JP2" FTR="UNS" N="22M"/>
+<PB REF="00184.jp2" SEQ="184" RES="600dpi" FMT="JP2" FTR="UNS" N="22N"/>
+<PB REF="00185.jp2" SEQ="185" RES="600dpi" FMT="JP2" FTR="UNS" N="22O"/>
+<PB REF="00186.jp2" SEQ="186" RES="600dpi" FMT="JP2" FTR="UNS" N="22P"/>
+<PB REF="00187.jp2" SEQ="187" RES="600dpi" FMT="JP2" FTR="UNS" N="22Q"/>
+<PB REF="00188.jp2" SEQ="188" RES="600dpi" FMT="JP2" FTR="UNS" N="22R"/>
+<PB REF="00189.jp2" SEQ="189" RES="600dpi" FMT="JP2" FTR="UNS" N="22S"/>
+  </DIV1>
+  <DIV1 NODE="ruff001:16" TYPE="section">
+  <HEAD>Details of Corson House, Ithaca, NY</HEAD>
+<PB REF="00190.jp2" SEQ="190" RES="600dpi" FMT="JP2" FTR="COR" N="22T"/>
+<PB REF="00191.jp2" SEQ="191" RES="600dpi" FMT="JP2" FTR="UNS" N="22U"/>
+<PB REF="00192.jp2" SEQ="192" RES="600dpi" FMT="JP2" FTR="UNS" N="22V"/>
+<PB REF="00193.jp2" SEQ="193" RES="600dpi" FMT="JP2" FTR="UNS" N="22W"/>
+<PB REF="00194.jp2" SEQ="194" RES="600dpi" FMT="JP2" FTR="BCV" N="22X"/>
+</DIV1>
+</BODY>
+</TEXT>
+</record>
+<record>
+ <FILEDESC>
+  <TITLESTMT>
+   <TITLE TYPE="245">Study of Greek Revival Architecture in the Seneca and Cayuga Lake Regions (Vol. 2)</TITLE>
+   <AUTHOR>Ruffner, Clifford Hayes, 1915-</AUTHOR>
+  </TITLESTMT>
+  <EXTENT>173 600dpi JP2 page images</EXTENT>
+  <PUBLICATIONSTMT>
+   <PUBLISHER>Cornell University Library</PUBLISHER>
+   <PUBPLACE>Ithaca, New York</PUBPLACE>
+   <IDNO TYPE="dlps">ruff002</IDNO>
+  </PUBLICATIONSTMT>
+  <NOTESSTMT>
+   <NOTE>Digitization by the Digital Consulting and Production Services at Cornell University Library </NOTE>
+  </NOTESSTMT>
+  <SOURCEDESC>
+   <BIBL>
+    <TITLE TYPE="main">Study of Greek Revival Architecture in the Seneca and Cayuga Lake Regions (Vol. 2)</TITLE>
+    <AUTHOR>Ruffner, Clifford Hayes, 1915-</AUTHOR>
+    <PUBLISHER>Cornell University</PUBLISHER>
+    <PUBPLACE>Ithaca, New York</PUBPLACE>
+    <DATE>1939</DATE>
+    <NOTE>173 p.</NOTE>
+   </BIBL>
+  </SOURCEDESC>
+ </FILEDESC>
+ <ENCODINGDESC>
+  <EDITORIALDECL N="2">
+   <P>This electronic text was created by Optical Character Recognition (OCR). No corrections have been made to the OCR-ed text and no editing has been done to the content of the original document. Structure data and important page features have been identified manually allow easier document navigation.</P>
+  </EDITORIALDECL>
+ </ENCODINGDESC>
+ <PROFILEDESC>
+  <TEXTCLASS>
+   <KEYWORDS>
+     <TERM>Greek revival (Architecture) --Finger Lakes region.</TERM>
+     <TERM>Greek revival (Architecture) --New York (State)</TERM>
+     <TERM>Architecture --New York (State)</TERM>
+     <TERM>Thesis (B. Arch.)--Cornell University</TERM>
+     <TERM>Critic: William McL. Dunbar</TERM>
+   </KEYWORDS>
+  </TEXTCLASS>
+ </PROFILEDESC>
+<TEXT>
+ <BODY>
+  <DIV1 NODE="ruff002:1" TYPE="section">
+  <HEAD>Title Page</HEAD>
+<PB REF="Ruffner_00.jp2" SEQ="1" RES="600dpi" FMT="JP2" FTR="PHO" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:2" TYPE="section">
+  <HEAD>USGS Topographic Map (Elmira Sheet)</HEAD>
+<PB REF="Map_01.jp2" SEQ="2" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:3" TYPE="section">
+  <HEAD>USGS Topographic Map (Ithaca Quadrangle)</HEAD>
+<PB REF="Map_02.jp2" SEQ="3" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:4" TYPE="section">
+  <HEAD>USGS Topographic Map (Genoa Quadrangle)</HEAD>
+<PB REF="Map_03.jp2" SEQ="4" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:5" TYPE="section">
+  <HEAD>USGS Topographic Map (Auburn Quadrangle)</HEAD>
+<PB REF="Map_04.jp2" SEQ="5" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:6" TYPE="section">
+  <HEAD>USGS Topographic Map (Geneva Quadrangle)</HEAD>
+<PB REF="Map_05.jp2" SEQ="6" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:7" TYPE="section">
+  <HEAD>USGS Topographic Map (Ovid Quadrangle)</HEAD>
+<PB REF="Map_06.jp2" SEQ="7" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:8" TYPE="section">
+  <HEAD>USGS Topographic Map (Watkins Quadrangle)</HEAD>
+<PB REF="Map_07.jp2" SEQ="8" RES="600dpi" FMT="JP2" FTR="MAP" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:9" TYPE="section">
+  <HEAD>Article - Watkins Review, Schuyler County 1959, Page 11</HEAD>
+<PB REF="Watkins_Review1959p11.jp2" SEQ="9" RES="600dpi" FMT="JP2" FTR="PHO" N="UNS"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:10" TYPE="section">
+  <HEAD>Photos - Sheriff and District Attorney offices, Elmira, N.Y.</HEAD>
+<PB REF="Ruffner_01.jp2" SEQ="10" RES="600dpi" FMT="JP2" FTR="PHO" N="1"/>
+<PB REF="Ruffner_01A.jp2" SEQ="11" RES="600dpi" FMT="JP2" FTR="PHO" N="1A"/>
+<PB REF="Ruffner_01B.jp2" SEQ="12" RES="600dpi" FMT="JP2" FTR="PHO" N="1B"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:11" TYPE="section">
+  <HEAD>Photo - 657 E. Market St., Elmira, N.Y.</HEAD>
+<PB REF="Ruffner_02.jp2" SEQ="13" RES="600dpi" FMT="JP2" FTR="PHO" N="2"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:12" TYPE="section">
+  <HEAD>Photo - 412 N. Main St., Elmira, N.Y.</HEAD>
+<PB REF="Ruffner_03.jp2" SEQ="14" RES="600dpi" FMT="JP2" FTR="PHO" N="3"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:13" TYPE="section">
+  <HEAD>Photo - Hoyt House, Horseheads, N.Y.</HEAD>
+<PB REF="Ruffner_04.jp2" SEQ="15" RES="600dpi" FMT="JP2" FTR="PHO" N="4"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:14" TYPE="section">
+  <HEAD>Photos - Benjamin Westlake House, Horseheads, N.Y.</HEAD>
+<PB REF="Ruffner_05.jp2" SEQ="16" RES="600dpi" FMT="JP2" FTR="PHO" N="5"/>
+<PB REF="Ruffner_05A.jp2" SEQ="17" RES="600dpi" FMT="JP2" FTR="PHO" N="5A"/>
+<PB REF="Ruffner_05B.jp2" SEQ="18" RES="600dpi" FMT="JP2" FTR="PHO" N="5B"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:15" TYPE="section">
+  <HEAD>Photo - Phelps House, Route 14, Wilport, N.Y.</HEAD>
+<PB REF="Ruffner_06.jp2" SEQ="19" RES="600dpi" FMT="JP2" FTR="PHO" N="6"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:15" TYPE="section">
+  <HEAD>Photo - Doorway of the Methodist Church, Route 14, Millport, N.Y.</HEAD>
+<PB REF="Ruffner_08.jp2" SEQ="20" RES="600dpi" FMT="JP2" FTR="PHO" N="8"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:16" TYPE="section">
+  <HEAD>Photos - Coles House, Montour Falls, N.Y.</HEAD>
+<PB REF="Ruffner_09.jp2" SEQ="21" RES="600dpi" FMT="JP2" FTR="PHO" N="9"/>
+<PB REF="Ruffner_09A.jp2" SEQ="22" RES="600dpi" FMT="JP2" FTR="PHO" N="9A"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:17" TYPE="section">
+  <HEAD>Photos - Court House group, Montour Falls, N.Y.</HEAD>
+<PB REF="Ruffner_10.jp2" SEQ="23" RES="600dpi" FMT="JP2" FTR="PHO" N="10"/>
+<PB REF="Ruffner_10A.jp2" SEQ="24" RES="600dpi" FMT="JP2" FTR="PHO" N="10A"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:18" TYPE="section">
+  <HEAD>Photo - Dr. Crawford House, Montour Falls, N.Y.</HEAD>
+<PB REF="Ruffner_11.jp2" SEQ="25" RES="600dpi" FMT="JP2" FTR="PHO" N="11"/>
+  </DIV1>
+  <DIV1 NODE="ruff002:18" TYPE="section">
+  <HEAD>Photo - Dr. Beach House, Watkins Glen, N.Y.</HEAD>
+<PB REF="Ruffner_12.jp2" SEQ="26" RES="600dpi" FMT="JP2" FTR="PHO" N="12"/>
+ </DIV1>
+  <DIV1 NODE="ruff002:19" TYPE="section">
+  <HEAD>Photo - Mc'Masters Tavern, Watkins Glen, N.Y.</HEAD>
+<PB REF="Ruffner_13.jp2" SEQ="27" RES="600dpi" FMT="JP2" FTR="PHO" N="13"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:20" TYPE="section">
+ <HEAD>Photo - Wickham House, 209 Sixth St., Watkins Glen, N.Y.</HEAD>
+<PB REF="Ruffner_14.jp2" SEQ="28" RES="600dpi" FMT="JP2" FTR="PHO" N="14"/>
+<PB REF="Ruffner_14A.jp2" SEQ="29" RES="600dpi" FMT="JP2" FTR="PHO" N="14A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:21" TYPE="section">
+ <HEAD>Photo - Churches in Reading Center, N.Y.</HEAD>
+<PB REF="Ruffner_15.jp2" SEQ="30" RES="600dpi" FMT="JP2" FTR="PHO" N="15"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:22" TYPE="section">
+ <HEAD>Photo - Methodist Church in Reading Center, N.Y.</HEAD>
+<PB REF="Ruffner_15A.jp2" SEQ="31" RES="600dpi" FMT="JP2" FTR="PHO" N="15A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:23" TYPE="section">
+ <HEAD>Photo - Baptist Church in Reading Center, N.Y.</HEAD>
+<PB REF="Ruffner_15B.jp2" SEQ="32" RES="600dpi" FMT="JP2" FTR="PHO" N="15B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:24" TYPE="section">
+ <HEAD>Photo - Carpenter's house in Dundee, N.Y.</HEAD>
+<PB REF="Ruffner_16.jp2" SEQ="33" RES="600dpi" FMT="JP2" FTR="PHO" N="16"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:25" TYPE="section">
+ <HEAD>Photo - Small house on Washington St., Dundee, N.Y.</HEAD>
+<PB REF="Ruffner_17.jp2" SEQ="34" RES="600dpi" FMT="JP2" FTR="PHO" N="17"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:26" TYPE="section">
+ <HEAD>Photo - Small brick house on the corner of Washington and Stone Sts., Dundee, N.Y.</HEAD>
+<PB REF="Ruffner_18.jp2" SEQ="35" RES="600dpi" FMT="JP2" FTR="PHO" N="18"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:27" TYPE="section">
+ <HEAD>Photo - Church, Second Milo, N.Y.</HEAD>
+<PB REF="Ruffner_18A.jp2" SEQ="36" RES="600dpi" FMT="JP2" FTR="PHO" N="18A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:28" TYPE="section">
+ <HEAD>Photos - Detail of the column, Yates County Court House, Penn Yann, N.Y.</HEAD>
+<PB REF="Ruffner_19.jp2" SEQ="37" RES="600dpi" FMT="JP2" FTR="PHO" N="19"/>
+<PB REF="Ruffner_19A.jp2" SEQ="38" RES="600dpi" FMT="JP2" FTR="PHO" N="19A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:29" TYPE="section">
+ <HEAD>Photo - Detail of the tower, Yates County Court House, Penn Yann, N.Y.</HEAD>
+<PB REF="Ruffner_19B.jp2" SEQ="39" RES="600dpi" FMT="JP2" FTR="PHO" N="19B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:30" TYPE="section">
+ <HEAD>Photo - General view of the Yates County Court House, Penn Yann, N.Y.</HEAD>
+<PB REF="Ruffner_19C.jp2" SEQ="40" RES="600dpi" FMT="JP2" FTR="PHO" N="19C"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:31" TYPE="section">
+ <HEAD>Photos - Curtis House, 129 Clinton St., Penn Yann, N.Y.</HEAD>
+<PB REF="Ruffner_20.jp2" SEQ="41" RES="600dpi" FMT="JP2" FTR="PHO" N="20"/>
+<PB REF="Ruffner_20A.jp2" SEQ="42" RES="600dpi" FMT="JP2" FTR="PHO" N="20A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:32" TYPE="section">
+ <HEAD>Photo - Rice House, Route 14A</HEAD>
+<PB REF="Ruffner_21.jp2" SEQ="43" RES="600dpi" FMT="JP2" FTR="PHO" N="21"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:33" TYPE="section">
+ <HEAD>Photo - Angus Farm, Angus, view of overdoor decoration</HEAD>
+<PB REF="Ruffner_21A.jp2" SEQ="44" RES="600dpi" FMT="JP2" FTR="PHO" N="21A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:34" TYPE="section">
+ <HEAD>Photo - Sayer House, Lakemont door detail</HEAD>
+<PB REF="Ruffner_21B.jp2" SEQ="45" RES="600dpi" FMT="JP2" FTR="PHO" N="21B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:35" TYPE="section">
+ <HEAD>Photos - Clark-Boswell House, South Main St., Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_22.jp2" SEQ="46" RES="600dpi" FMT="JP2" FTR="PHO" N="22"/>
+<PB REF="Ruffner_22A.jp2" SEQ="47" RES="600dpi" FMT="JP2" FTR="PHO" N="22A"/>
+<PB REF="Ruffner_22B.jp2" SEQ="48" RES="600dpi" FMT="JP2" FTR="PHO" N="22B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:36" TYPE="section">
+ <HEAD>Photos - President's House, Main St., Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_23.jp2" SEQ="49" RES="600dpi" FMT="JP2" FTR="PHO" N="23"/>
+<PB REF="Ruffner_23A.jp2" SEQ="50" RES="600dpi" FMT="JP2" FTR="PHO" N="23A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:37" TYPE="section">
+ <HEAD>Photo - Original Hobart College group, Main St., Geneva, N.Y., Trinity Hall doorway</HEAD>
+<PB REF="Ruffner_24.jp2" SEQ="51" RES="600dpi" FMT="JP2" FTR="PHO" N="24"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:38" TYPE="section">
+ <HEAD>Photo - Detail of the Order of the Savage House, 5 Genesee Pk., Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_25.jp2" SEQ="52" RES="600dpi" FMT="JP2" FTR="PHO" N="25"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:39" TYPE="section">
+ <HEAD>Photo - Morill Van Gisen House, 275 Washington St., Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_26.jp2" SEQ="53" RES="600dpi" FMT="JP2" FTR="PHO" N="26"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:40" TYPE="section">
+ <HEAD>Photo - Window detail of the Dixon Sanitarium, Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_27.jp2" SEQ="54" RES="600dpi" FMT="JP2" FTR="PHO" N="27"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:41" TYPE="section">
+ <HEAD>Photos - Lafayette Inn, Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_28.jp2" SEQ="55" RES="600dpi" FMT="JP2" FTR="PHO" N="28"/>
+<PB REF="Ruffner_28A.jp2" SEQ="56" RES="600dpi" FMT="JP2" FTR="PHO" N="28A"/>
+<PB REF="Ruffner_28B.jp2" SEQ="57" RES="600dpi" FMT="JP2" FTR="PHO" N="28B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:42" TYPE="section">
+ <HEAD>Photo - Johnson House, Main and Hamilton Sts., Geneva, N.Y.</HEAD>
+<PB REF="Ruffner_johnsonhouse.jp2" SEQ="58" RES="600dpi" FMT="JP2" FTR="PHO" N="Johnson House"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:43" TYPE="section">
+ <HEAD>Photos - Corson House, Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_29.jp2" SEQ="59" RES="600dpi" FMT="JP2" FTR="PHO" N="29"/>
+<PB REF="Ruffner_29A.jp2" SEQ="60" RES="600dpi" FMT="JP2" FTR="PHO" N="29A"/>
+<PB REF="Ruffner_29B.jp2" SEQ="61" RES="600dpi" FMT="JP2" FTR="PHO" N="29B"/>
+<PB REF="Ruffner_29C.jp2" SEQ="62" RES="600dpi" FMT="JP2" FTR="PHO" N="29C"/>
+<PB REF="Ruffner_29D.jp2" SEQ="63" RES="600dpi" FMT="JP2" FTR="PHO" N="29D"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:44" TYPE="section">
+ <HEAD>Photos - Bank of Newburg, Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_30.jp2" SEQ="64" RES="600dpi" FMT="JP2" FTR="PHO" N="30"/>
+<PB REF="Ruffner_30A.jp2" SEQ="65" RES="600dpi" FMT="JP2" FTR="PHO" N="30A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:45" TYPE="section">
+ <HEAD>Photo - Judd House, front elevation, Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_31.jp2" SEQ="66" RES="600dpi" FMT="JP2" FTR="PHO" N="31"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:46" TYPE="section">
+ <HEAD>Photo - Side door detail of the Finch House, Geneva, St., Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_32.jp2" SEQ="67" RES="600dpi" FMT="JP2" FTR="PHO" N="32"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:47" TYPE="section">
+ <HEAD>Photo - Grant House, column detail, Geneva St., Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_33.jp2" SEQ="68" RES="600dpi" FMT="JP2" FTR="PHO" N="33"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:48" TYPE="section">
+ <HEAD>Photo - Turner House, column detail, Geneva St., Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_34.jp2" SEQ="69" RES="600dpi" FMT="JP2" FTR="PHO" N="34"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:49" TYPE="section">
+ <HEAD>Photos - Dean House, 405 Tioga St., Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_35.jp2" SEQ="70" RES="600dpi" FMT="JP2" FTR="PHO" N="35"/>
+<PB REF="Ruffner_35A.jp2" SEQ="71" RES="600dpi" FMT="JP2" FTR="PHO" N="35A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:50" TYPE="section">
+ <HEAD>Photos - Town Hall, Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_36.jp2" SEQ="72" RES="600dpi" FMT="JP2" FTR="PHO" N="36"/>
+<PB REF="Ruffner_36A.jp2" SEQ="73" RES="600dpi" FMT="JP2" FTR="PHO" N="36A"/>
+<PB REF="Ruffner_36B.jp2" SEQ="74" RES="600dpi" FMT="JP2" FTR="PHO" N="36B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:51" TYPE="section">
+ <HEAD>Photos - Bailey House, Willow St., Ithaca, N.Y. </HEAD>
+<PB REF="Ruffner_37.jp2" SEQ="75" RES="600dpi" FMT="JP2" FTR="PHO" N="37"/>
+<PB REF="Ruffner_37A.jp2" SEQ="76" RES="600dpi" FMT="JP2" FTR="PHO" N="37A"/>
+<PB REF="Ruffner_37B.jp2" SEQ="77" RES="600dpi" FMT="JP2" FTR="PHO" N="37B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:52" TYPE="section">
+ <HEAD>Photo - Colonial Building, State. St., Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_39.jp2" SEQ="78" RES="600dpi" FMT="JP2" FTR="PHO" N="39"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:53" TYPE="section">
+ <HEAD>Photos - Old Stone Heap Tavern, West Hill, Ithaca, N.Y.</HEAD>
+<PB REF="Ruffner_40.jp2" SEQ="79" RES="600dpi" FMT="JP2" FTR="PHO" N="40"/>
+<PB REF="Ruffner_40A.jp2" SEQ="80" RES="600dpi" FMT="JP2" FTR="PHO" N="40A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:54" TYPE="section">
+ <HEAD>Photo - Varna Methodist Church, Varna, N.Y.</HEAD>
+<PB REF="Ruffner_41.jp2" SEQ="81" RES="600dpi" FMT="JP2" FTR="PHO" N="41"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:55" TYPE="section">
+ <HEAD>Photo - Nolan Farm, Genoa</HEAD>
+<PB REF="Ruffner_41A.jp2" SEQ="82" RES="600dpi" FMT="JP2" FTR="PHO" N="41A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:56" TYPE="section">
+ <HEAD>Photo - House in Chapel Corners</HEAD>
+<PB REF="Ruffner_41B.jp2" SEQ="83" RES="600dpi" FMT="JP2" FTR="PHO" N="41B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:57" TYPE="section">
+ <HEAD>Photos - James B. Walker House, Lake Ridge, N.Y.</HEAD>
+<PB REF="Ruffner_42.jp2" SEQ="84" RES="600dpi" FMT="JP2" FTR="PHO" N="42"/>
+<PB REF="Ruffner_42A.jp2" SEQ="85" RES="600dpi" FMT="JP2" FTR="PHO" N="42A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:58" TYPE="section">
+ <HEAD>Photos - Bradley House no. 1, one mile south of King's Ferry</HEAD>
+<PB REF="Ruffner_43.jp2" SEQ="86" RES="600dpi" FMT="JP2" FTR="PHO" N="43"/>
+<PB REF="Ruffner_43A.jp2" SEQ="87" RES="600dpi" FMT="JP2" FTR="PHO" N="43A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:59" TYPE="section">
+ <HEAD>Photos - Bradley House no. 2, King's Ferry</HEAD>
+<PB REF="Ruffner_43B.jp2" SEQ="88" RES="600dpi" FMT="JP2" FTR="PHO" N="43B"/>
+<PB REF="Ruffner_44.jp2" SEQ="89" RES="600dpi" FMT="JP2" FTR="PHO" N="44"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:60" TYPE="section">
+ <HEAD>Photo - Farmhouse between King's Ferry and Union Springs</HEAD>
+<PB REF="Ruffner_45.jp2" SEQ="90" RES="600dpi" FMT="JP2" FTR="PHO" N="45"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:61" TYPE="section">
+ <HEAD>Photo - Marker about one mile south of Union Springs</HEAD>
+<PB REF="Ruffner_46.jp2" SEQ="91" RES="600dpi" FMT="JP2" FTR="PHO" N="46"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:62" TYPE="section">
+ <HEAD>Photo - Murray House in Union Springs, N.Y.</HEAD>
+<PB REF="Ruffner_47.jp2" SEQ="92" RES="600dpi" FMT="JP2" FTR="PHO" N="47"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:63" TYPE="section">
+ <HEAD>Photo - Doorway at 21 Main St. in Union Springs, N.Y.</HEAD>
+<PB REF="Ruffner_48.jp2" SEQ="93" RES="600dpi" FMT="JP2" FTR="PHO" N="48"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:64" TYPE="section">
+ <HEAD>Photo - John C. Yawger House, Main St. in Union Springs</HEAD>
+<PB REF="Ruffner_49.jp2" SEQ="94" RES="600dpi" FMT="JP2" FTR="PHO" N="49"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:65" TYPE="section">
+ <HEAD>Photos - Presbyterian Church in Union Springs, N.Y.</HEAD>
+<PB REF="Ruffner_50.jp2" SEQ="95" RES="600dpi" FMT="JP2" FTR="PHO" N="50"/>
+<PB REF="Ruffner_50A.jp2" SEQ="96" RES="600dpi" FMT="JP2" FTR="PHO" N="50A"/>
+<PB REF="Ruffner_50B.jp2" SEQ="97" RES="600dpi" FMT="JP2" FTR="PHO" N="50B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:66" TYPE="section">
+ <HEAD>Photo - Spring Mill in Union Springs, N.Y.</HEAD>
+<PB REF="Ruffner_51.jp2" SEQ="98" RES="600dpi" FMT="JP2" FTR="PHO" N="51"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:67" TYPE="section">
+ <HEAD>Photos - Old Stone Manse, Union Springs, N.Y.</HEAD>
+<PB REF="Ruffner_52.jp2" SEQ="99" RES="600dpi" FMT="JP2" FTR="PHO" N="52"/>
+<PB REF="Ruffner_52A.jp2" SEQ="100" RES="600dpi" FMT="JP2" FTR="PHO" N="52A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:68" TYPE="section">
+ <HEAD>Photos - Schenk House, northeast of Union Springs on Route 326</HEAD>
+<PB REF="Ruffner_53.jp2" SEQ="101" RES="600dpi" FMT="JP2" FTR="PHO" N="53"/>
+<PB REF="Ruffner_53A.jp2" SEQ="102" RES="600dpi" FMT="JP2" FTR="PHO" N="53A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:69" TYPE="section">
+ <HEAD>Photos - Yawger House, about one mile south of Cayuga</HEAD>
+<PB REF="Ruffner_54.jp2" SEQ="103" RES="600dpi" FMT="JP2" FTR="PHO" N="54"/>
+<PB REF="Ruffner_54A.jp2" SEQ="104" RES="600dpi" FMT="JP2" FTR="PHO" N="54A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:70" TYPE="section">
+ <HEAD>Photo - Baptist Church in Cayuga</HEAD>
+<PB REF="Ruffner_55.jp2" SEQ="105" RES="600dpi" FMT="JP2" FTR="PHO" N="55"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:71" TYPE="section">
+ <HEAD>Photos - Morse House, two miles northeast of Cayuga on Route 90</HEAD>
+<PB REF="Ruffner_56.jp2" SEQ="106" RES="600dpi" FMT="JP2" FTR="PHO" N="56"/>
+<PB REF="Ruffner_56A.jp2" SEQ="107" RES="600dpi" FMT="JP2" FTR="PHO" N="56A"/>
+<PB REF="Ruffner_56B.jp2" SEQ="108" RES="600dpi" FMT="JP2" FTR="PHO" N="56B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:72" TYPE="section">
+ <HEAD>Photo - House on the Great Western Turnpike</HEAD>
+<PB REF="Ruffner_56C.jp2" SEQ="109" RES="600dpi" FMT="JP2" FTR="PHO" N="56C"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:73" TYPE="section">
+ <HEAD>Photos - Cayuga County Court House in Auburn</HEAD>
+<PB REF="Ruffner_57.jp2" SEQ="110" RES="600dpi" FMT="JP2" FTR="PHO" N="57"/>
+<PB REF="Ruffner_57B.jp2" SEQ="111" RES="600dpi" FMT="JP2" FTR="PHO" N="57B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:74" TYPE="section">
+ <HEAD>Photos - Hagerman House, 68 South St. in Auburn</HEAD>
+<PB REF="Ruffner_58.jp2" SEQ="112" RES="600dpi" FMT="JP2" FTR="PHO" N="58"/>
+<PB REF="Ruffner_58b.jp2" SEQ="113" RES="600dpi" FMT="JP2" FTR="PHO" N="58b"/>
+<PB REF="Ruffner_58B2.jp2" SEQ="114" RES="600dpi" FMT="JP2" FTR="PHO" N="58B"/>
+<PB REF="Ruffner_58C.jp2" SEQ="115" RES="600dpi" FMT="JP2" FTR="PHO" N="58C"/>
+<PB REF="Ruffner_58D.jp2" SEQ="116" RES="600dpi" FMT="JP2" FTR="PHO" N="58D"/>
+<PB REF="Ruffner_58E.jp2" SEQ="117" RES="600dpi" FMT="JP2" FTR="PHO" N="58E"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:75" TYPE="section">
+ <HEAD>Photo - John Seymour House, West Genesee St. in Auburn</HEAD>
+<PB REF="Ruffner_59.jp2" SEQ="118" RES="600dpi" FMT="JP2" FTR="PHO" N="59"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:76" TYPE="section">
+ <HEAD>Photo - 84 South St. in Auburn</HEAD>
+<PB REF="Ruffner_60.jp2" SEQ="119" RES="600dpi" FMT="JP2" FTR="PHO" N="60"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:77" TYPE="section">
+ <HEAD>Photo - Denig Poten House, north of Lodi</HEAD>
+<PB REF="Ruffner_61.jp2" SEQ="120" RES="600dpi" FMT="JP2" FTR="PHO" N="61"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:78" TYPE="section">
+ <HEAD>Photo - Lakeview Grange in Ovid</HEAD>
+<PB REF="Ruffner_62.jp2" SEQ="121" RES="600dpi" FMT="JP2" FTR="PHO" N="62"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:79" TYPE="section">
+ <HEAD>Photos - Court House buildings in Ovid </HEAD>
+<PB REF="Ruffner_63.jp2" SEQ="122" RES="600dpi" FMT="JP2" FTR="PHO" N="63"/>
+<PB REF="Ruffner_63A.jp2" SEQ="123" RES="600dpi" FMT="JP2" FTR="PHO" N="63A"/>
+<PB REF="Ruffner_63B.jp2" SEQ="124" RES="600dpi" FMT="JP2" FTR="PHO" N="63B"/>
+<PB REF="Ruffner_63C.jp2" SEQ="125" RES="600dpi" FMT="JP2" FTR="PHO" N="63C"/>
+<PB REF="Ruffner_63D.jp2" SEQ="126" RES="600dpi" FMT="JP2" FTR="PHO" N="63D"/>
+<PB REF="Ruffner_63E.jp2" SEQ="127" RES="600dpi" FMT="JP2" FTR="PHO" N="63E"/>
+<PB REF="Ruffner_63F.jp2" SEQ="128" RES="600dpi" FMT="JP2" FTR="PHO" N="63F"/>
+<PB REF="Ruffner_63G.jp2" SEQ="129" RES="600dpi" FMT="JP2" FTR="PHO" N="63G"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:80" TYPE="section">
+ <HEAD>Photo - Abandoned house one mile north of Ovid</HEAD>
+<PB REF="Ruffner_64.jp2" SEQ="130" RES="600dpi" FMT="JP2" FTR="PHO" N="64"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:81" TYPE="section">
+ <HEAD>Photo - Ross Steele House, Romulus</HEAD>
+<PB REF="Ruffner_64A.jp2" SEQ="131" RES="600dpi" FMT="JP2" FTR="PHO" N="64A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:82" TYPE="section">
+ <HEAD>Photo - Usher House, 48 Bayard St. in Seneca Falls, doorway detail</HEAD>
+<PB REF="Ruffner_65.jp2" SEQ="132" RES="600dpi" FMT="JP2" FTR="PHO" N="65"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:83" TYPE="section">
+ <HEAD>Photos - Hoskins House, 40 Cayuga St. in Seneca Falls</HEAD>
+<PB REF="Ruffner_66.jp2" SEQ="133" RES="600dpi" FMT="JP2" FTR="PHO" N="66"/>
+<PB REF="Ruffner_66A.jp2" SEQ="134" RES="600dpi" FMT="JP2" FTR="PHO" N="66A"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:84" TYPE="section">
+ <HEAD>Photo - Erastus Partridge House on Cayuga St. in Seneca Falls, detail of the doorway</HEAD>
+<PB REF="Ruffner_67.jp2" SEQ="135" RES="600dpi" FMT="JP2" FTR="PHO" N="67"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:85" TYPE="section">
+ <HEAD>Photos - Joslyn Manor, 223 W. Main St. in Waterloo</HEAD>
+<PB REF="Ruffner_68.jp2" SEQ="136" RES="600dpi" FMT="JP2" FTR="PHO" N="68"/>
+<PB REF="Ruffner_68A.jp2" SEQ="137" RES="600dpi" FMT="JP2" FTR="PHO" N="68A"/>
+<PB REF="Ruffner_68B.jp2" SEQ="138" RES="600dpi" FMT="JP2" FTR="PHO" N="68B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:86" TYPE="section">
+ <HEAD>Photos - Seeley estate, 15 Locust St. in Waterloo</HEAD>
+<PB REF="Ruffner_69.jp2" SEQ="139" RES="600dpi" FMT="JP2" FTR="PHO" N="69"/>
+<PB REF="Ruffner_69B.jp2" SEQ="140" RES="600dpi" FMT="JP2" FTR="PHO" N="69B"/>
+<PB REF="Ruffner_69C.jp2" SEQ="141" RES="600dpi" FMT="JP2" FTR="PHO" N="69C"/>
+<PB REF="Ruffner_69D.jp2" SEQ="142" RES="600dpi" FMT="JP2" FTR="PHO" N="69D"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:87" TYPE="section">
+ <HEAD>Photos - James Russel Webster House, 108 E. Main St., Waterloo</HEAD>
+<PB REF="Ruffner_70.jp2" SEQ="143" RES="600dpi" FMT="JP2" FTR="PHO" N="70"/>
+<PB REF="Ruffner_70A.jp2" SEQ="144" RES="600dpi" FMT="JP2" FTR="PHO" N="70A"/>
+<PB REF="Ruffner_70B.jp2" SEQ="145" RES="600dpi" FMT="JP2" FTR="PHO" N="70B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:88" TYPE="section">
+ <HEAD>Photos - Hunt House, 401 E. Main St., Waterloo</HEAD>
+<PB REF="Ruffner_71.jp2" SEQ="146" RES="600dpi" FMT="JP2" FTR="PHO" N="71"/>
+<PB REF="Ruffner_71A.jp2" SEQ="147" RES="600dpi" FMT="JP2" FTR="PHO" N="71A"/>
+<PB REF="Ruffner_71B.jp2" SEQ="148" RES="600dpi" FMT="JP2" FTR="PHO" N="71B"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:89" TYPE="section">
+ <HEAD>Photo - Church tower in Odessa, N.Y.</HEAD>
+<PB REF="Ruffner_71C.jp2" SEQ="149" RES="600dpi" FMT="JP2" FTR="PHO" N="71C"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:90" TYPE="section">
+ <HEAD>Photos - Farmhouse, one mile north of Burdett</HEAD>
+<PB REF="Ruffner_71C2.jp2" SEQ="150" RES="600dpi" FMT="JP2" FTR="PHO" N="71C"/>
+<PB REF="Ruffner_71D.jp2" SEQ="151" RES="600dpi" FMT="JP2" FTR="PHO" N="71D"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:91" TYPE="section">
+ <HEAD>Photo - Wooden grille in farmhouse in Reynoldsville, N.Y.</HEAD>
+<PB REF="Ruffner_71D2.jp2" SEQ="152" RES="600dpi" FMT="JP2" FTR="PHO" N="71D2"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:92" TYPE="section">
+ <HEAD>Photo - Door detail of farmhouse, one half mile north of Ferry City on the road to Trumansburg</HEAD>
+<PB REF="Ruffner_71E.jp2" SEQ="153" RES="600dpi" FMT="JP2" FTR="PHO" N="71E"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:93" TYPE="section">
+ <HEAD>Photos - Col. Camp House in Trumansburg, N.Y.</HEAD>
+<PB REF="Ruffner_72.jp2" SEQ="154" RES="600dpi" FMT="JP2" FTR="PHO" N="72"/>
+<PB REF="Ruffner_72A.jp2" SEQ="155" RES="600dpi" FMT="JP2" FTR="PHO" N="72A"/>
+<PB REF="Ruffner_72B.jp2" SEQ="156" RES="600dpi" FMT="JP2" FTR="PHO" N="72B"/>
+<PB REF="Ruffner_72C.jp2" SEQ="157" RES="600dpi" FMT="JP2" FTR="PHO" N="72C"/>
+<PB REF="Ruffner_72D.jp2" SEQ="158" RES="600dpi" FMT="JP2" FTR="PHO" N="72D"/>
+<PB REF="Ruffner_72E.jp2" SEQ="159" RES="600dpi" FMT="JP2" FTR="PHO" N="72E"/>
+<PB REF="Ruffner_72F.jp2" SEQ="160" RES="600dpi" FMT="JP2" FTR="PHO" N="72F"/>
+<PB REF="Ruffner_72G.jp2" SEQ="161" RES="600dpi" FMT="JP2" FTR="PHO" N="72G"/>
+<PB REF="Ruffner_72H.jp2" SEQ="162" RES="600dpi" FMT="JP2" FTR="PHO" N="72H"/>
+<PB REF="Ruffner_72I.jp2" SEQ="163" RES="600dpi" FMT="JP2" FTR="PHO" N="72I"/>
+<PB REF="Ruffner_72J.jp2" SEQ="164" RES="600dpi" FMT="JP2" FTR="PHO" N="72J"/>
+<PB REF="Ruffner_72K.jp2" SEQ="165" RES="600dpi" FMT="JP2" FTR="PHO" N="72K"/>
+<PB REF="Ruffner_72L.jp2" SEQ="166" RES="600dpi" FMT="JP2" FTR="PHO" N="72L"/>
+<PB REF="Ruffner_72M.jp2" SEQ="167" RES="600dpi" FMT="JP2" FTR="PHO" N="72M"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:94" TYPE="section">
+ <HEAD>Photo - Farmhouse in Sheldrake</HEAD>
+<PB REF="Ruffner_73.jp2" SEQ="168" RES="600dpi" FMT="JP2" FTR="PHO" N="73"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:95" TYPE="section">
+ <HEAD>Photo - Northeastern view of Geneva</HEAD>
+<PB REF="Ruf_001.jp2" SEQ="169" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF001"/>
+ </DIV1>
+ <DIV1 NODE="ruff002:96" TYPE="section">
+ <HEAD>Uncaptioned photos</HEAD>
+<PB REF="Ruf_002.jp2" SEQ="170" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF002"/>
+<PB REF="Ruf_003.jp2" SEQ="171" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF003"/>
+<PB REF="Ruf_004.jp2" SEQ="172" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF004"/>
+<PB REF="Ruf_005.jp2" SEQ="173" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF005"/>
+<PB REF="Ruf_006.jp2" SEQ="174" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF006"/>
+<PB REF="Ruf_007.jp2" SEQ="175" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF007"/>
+<PB REF="Ruf_008.jp2" SEQ="176" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF008"/>
+<PB REF="Ruf_009.jp2" SEQ="177" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF009"/>
+<PB REF="Ruf_010.jp2" SEQ="178" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF010"/>
+<PB REF="Ruf_011.jp2" SEQ="179" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF011"/>
+<PB REF="Ruf_012.jp2" SEQ="180" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF012"/>
+<PB REF="Ruf_013.jp2" SEQ="181" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF013"/>
+<PB REF="Ruf_014.jp2" SEQ="182" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF014"/>
+<PB REF="Ruf_015.jp2" SEQ="183" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF015"/>
+<PB REF="Ruf_016.jp2" SEQ="184" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF016"/>
+<PB REF="Ruf_017.jp2" SEQ="185" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF017"/>
+<PB REF="Ruf_018.jp2" SEQ="186" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF018"/>
+<PB REF="Ruf_019.jp2" SEQ="187" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF019"/>
+<PB REF="Ruf_020.jp2" SEQ="188" RES="600dpi" FMT="JP2" FTR="PHO" N="RUF020"/>
+ </DIV1>
+</BODY>
+</TEXT>
+</record>
+</collection>
