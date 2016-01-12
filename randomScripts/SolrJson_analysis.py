@@ -31,101 +31,26 @@ class Record:
     def get_elements(self):
         out = []
         try:
-            record = objectpath.Tree(self.elem)
-            response = record.execute(self.args.element)
-            if response is not None:
-                if isinstance(response, list):
-                    for item in response:
-                        if isinstance(item, list):
-                            for item2 in item:
-                                if isinstance(item2, list):
-                                    for item3 in item2:
-                                        out.append((', '.join(item3)).encode("utf-8").strip())
-                                elif isinstance(item2, dict):
-                                    for key3, value3 in item2.iteritems():
-                                        out.append((', '.join(value3)).encode("utf-8").strip())
-                                else:
-                                    out.append(item2.encode("utf-8").strip())
-                        elif isinstance(item, dict):
-                            for key, value in item.iteritems():
-                                if isinstance(value, list):
-                                    for item2 in value:
-                                        if isinstance(item2, list):
-                                            for item3 in item2:
-                                                out.append((', '.join(item3)).encode("utf-8").strip())
-                                        elif isinstance(item2, dict):
-                                            for key3, value3 in item2.iteritems():
-                                                out.append((', '.join(valu3)).encode("utf-8").strip())
-                                        else:
-                                            out.append(item2.encode("utf-8").strip())
-                                elif isinstance(item, dict):
-                                    for key2, value2 in item:
-                                        if isinstance(value2, list):
-                                            for value3 in value2:
-                                                out.append((', '.join(value3)).encode("utf-8").strip())
-                                        if isinstance(value2, dict):
-                                            for key3, value3 in value2.iteritems():
-                                                out.append((', '.join(value3)).encode("utf-8").strip())
-                                        else:
-                                            out.append(value2.encode("uft-8").strip())
-                                else:
-                                    out.append(response.encode("utf-8").strip())
-                        else:
-                            out.append(response.encode("utf-8").strip())
-                elif isinstance(response, dict):
-                    for key,value in response.iteritems():
-                        if isinstance(value, list):
-                            for item2 in value:
-                                if isinstance(item2, list):
-                                    for item3 in item2:
-                                        out.append((', '.join(item3)).encode("utf-8").strip())
-                                elif isinstance(item2, dict):
-                                    for key3, value3 in item2.iteritems():
-                                        out.append((', '.join(value3)).encode("utf-8").strip())
-                                else:
-                                    out.append(item2.encode("utf-8").strip())
-                        elif isinstance(value, dict):
-                            for key,value in value.iteritems():
-                                if isinstance(value, list):
-                                    for item2 in value:
-                                        if isinstance(item2, list):
-                                            for item3 in item2:
-                                                out.append((', '.join(item3)).encode("utf-8").strip())
-                                        elif isinstance(item2, dict):
-                                            for key3, value3 in item2.iteritems():
-                                                out.append((', '.join(value3)).encode("utf-8").strip())
-                                        else:
-                                            out.append(item2.encode("utf-8").strip())
-                                elif isinstance(value, dict):
-                                    for key2, value2 in value.iteritems():
-                                        if isinstance(value2, list):
-                                            for value3 in value2:
-                                                out.append((', '.join(value3)).encode("utf-8").strip())
-                                        if isinstance(value2, dict):
-                                            for key3, value3 in value2.iteritems():
-                                                out.append((', '.join(value3)).encode("utf-8").strip())
-                                        else:
-                                            out.append(value2.encode("uft-8").strip())
-                                else:
-                                    out.append(response.encode("utf-8").strip())
-                        else:
-                            out.append(response.encode("utf-8").strip())
+            resp = self.elem[self.args.element]
+            if resp is not None:
+                if isinstance(resp, list):
+                    for item in resp:
+                        out.append(item.encode('utf8').strip())
                 else:
-                    out.append(response.encode("utf-8").strip())
-        except Exception,e:
+                    out.append(resp.encode('utf8').strip())
+        except Exception, e:
             pass
         if len(out) == 0:
             out = None
-        self.elements = out
-        return self.elements
+        return out
 
     def get_stats(self):
         stats = {}
-        for field,value in self.elem.iteritems():
+        for field, value in self.elem.iteritems():
             if isinstance(value, dict):
-                for field2,value2 in value.iteritems():
+                for field2, value2 in value.iteritems():
                     if isinstance(value2, dict):
-                        for field3,value3 in value2.iteritems():
+                        for field3, value3 in value2.iteritems():
                             if isinstance(value3, dict):
                                 for field4, value4 in value3.iteritems():
                                     stats.setdefault(field + "." + field2 + "." + field3 + "." + field4,0)
@@ -263,11 +188,11 @@ def main():
     s = 0
     with open(args.datafile) as data:
         SolrData = json.load(data)
-    records = SolrData['document']
+    records = SolrData['output']
     numberRecords = len(records)
 
-    for n in range(0, numberRecords):
-        record = Record(records[n], args)
+    for n in range(numberRecords):
+        record = Record(records[n]['document'], args)
         record_id = record.get_record_id()
 
         if args.stats is False and args.present is False:
