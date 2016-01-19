@@ -28,7 +28,6 @@
 
 **Proposed Mapping to "Simple" RDF**
 
-```
 Field | Concept | RDF Mapping | Notes
 --- | --- | --- | ---
 ENCODINGDESC/EDITORIALDECL/P | *Note* | pcdm:file[for OCR text if kept as separate file?] dcterms:description [literal value] | All of these notes are on the OCR process, so really should be stored with technical metadata describing the file object (and not indexed as part of descriptive metadata). Move Solr concept to technical note.
@@ -49,7 +48,6 @@ TEXT/BODY/DIV1/HEAD | structural metadata | pcdm:object(for generic file object)
 BODY | Structural Metadata | |
 DIV1 | Structural Metadata | |
 PB | Structural Metadata | |
-```
 
 
 **Notes:**
