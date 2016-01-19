@@ -4,7 +4,7 @@
 
 *Jira should be used as the primary record for order/due dates of migrations.*
 
-*hunt (migrated)*
+*hunt (migrated)* (to be migrated first to RDF)
 bolivian (migrated)
 bees (migrated)
 hearth
@@ -131,11 +131,5 @@ ruffner
 - FILEDESC/SOURCEDESC/BIBL/AUTHOR == FILEDESC/TITLESTMT/AUTHOR except for the Easter Egg entry (see the second bullet point in this list).
 - FILEDESC/SOURCEDESC/BIBL/PUBLISHER is really the publisher (not the repository). All have trailing commas. Remove or expand 's.n.'. Some are statements, not publishers alone.
 - FILEDESC/SOURCEDESC/BIBL/PUBPLACE is the place of origin. Needs to be normalized, trailing colons, orphaned brackets removed.
--
-
-
-
-**Enhancement possibilities:**
-
 -
 
