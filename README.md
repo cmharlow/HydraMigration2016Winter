@@ -4,9 +4,9 @@
 Focus is on DLXS metadata already migrated or to be migrated to Hydra. These metadata and associated objects will be stored in Fedora then accessed there by Solr, not on other collections (like SharedShelf) where Solr access the metadata and objects from a different object store.
 
 ##Overview of All DLXS Metadata in/from DLXS
-Fields being used in DLXS, currently mapped 1-1 to Fedora objects with OM/XML records. Some collections included here that have already been mapped and migrated; others (the bulk), not yet migrated. Note that some fields displaying as not used are technical metadata fields that don't have text, just a series of attributes on the XML elements. There seems to be a plan in place for handling these.
+Fields being used in DLXS, currently mapped 1-1 to Fedora objects with OM/XML records. Some collections included here that have already been mapped and migrated to Hydra using Fedora 3; others (the bulk), not yet migrated. Note that some fields displaying as not used are technical metadata fields that don't have text, just a series of attributes on the XML elements. There seems to be a plan in place for handling these.
 
-Fields being used across all collections (including those already migrated) in DLXS, as found in the XML data dumps provided:
+Fields being used across all collections that contain text values (including those already migrated) in DLXS, as found in the XML data dumps provided (this does not include all fields possible for technical metadata capture in self-closing XML elements):
 
 ```
              /record/ENCODINGDESC/EDITORIALDECL/P: |=========================|  16902/16902 | 100%
@@ -39,7 +39,7 @@ Fields being used across all collections (including those already migrated) in D
                               /record/TEXT/BODY/P: |                         |      3/16902 |   0%
 ```
 
-More detailed notes on these fields is in [DLXStobeMigratedNotes.md](Docs/DLXStobeMigratedNotes.md)
+More detailed notes on these fields is in [DLXStobeMigratedNotes.md](Docs/tobeMigratedNotes.md)
 
 ##Overview of DLXS Metadata already migrated to Hydra
 Fields being used/exposed in Solr Json in Blacklight at present for DLXS objects already migrated to Hydra (this doesn't touch on underlying OM/XML records currently in Fedora, which are a 1-1 match from DLXS metadata, just what is exposed via Solr/Blacklight). Also, some fields are Solr-specific:
@@ -89,10 +89,15 @@ creation_site_location_tesim: |======================== |    833/834 |  99%
    titlestmt_titletype_tesim: |=========================|    834/834 | 100%
 ```
 
-More detailed notes on these fields is in [ActiveHydraMetadataNotes.md](Docs/ActiveHydraMetadataNotes.md)
+More detailed notes on these fields is in [ActiveHydraMetadataNotes.md](Docs/HydraMetadataNotes.md)
 
 ##Mappings - What now
 Two kinds of mappings need to occur:
 
 1. Mappings of not migrated DLXS collections' metadata to the loose metadata concepts grouping used now and accessible at this [Google document](https://docs.google.com/spreadsheets/d/1SV2hP1tKQpPQrI1cEBWgx6NyO56YhjUCkOD_vxrzlEQ/edit?ts=568bd1b1#gid=1876213761).
 2. Mappings of the loose metadata concepts grouping to a RDF model to be used with Fedora 4.4. This may or may not include full RDF graphs attached to the Fedora objects, or some properties attached to the Fedora objects and the rest of the metadata kept either in an external triplestore or as OM/XML (this differentiation required as Fedora is an object store, not a triple store, decisions on digital objects application profiles, etc.).
+
+##Update
+As of meeting on 1/15/2016, will proceed with migrating objects already in Hydra with Fedora 3 to Hydra using Fedora 4, with implementation of PCDM for object model and DCTerms RDF for assigning descriptive and technical metadata properties.
+
+Collections then requiring migration to Hydra from DLXS will be mapped to this Fedora 4, RDF-based mapping.
