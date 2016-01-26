@@ -20,11 +20,101 @@
                 /record/TEXT/BODY/DIV1/HEAD: |=========================|    124/124 | 100%
 ```
 
-**Proposed PCDM Model for eventual extension**
+##Overview of Solr Usage for Hunt in Fedora 3
 
-PCDM:Collection > HydraWorks:Collection 
+```
+                   _version_: |=========================|    124/124 | 100% 
+     active_fedora_model_ssi: |=========================|    124/124 | 100% 
+        author_creator_tesim: |=========================|    124/124 | 100% 
+                    author_t: |=========================|    124/124 | 100% 
+                author_tesim: |=========================|    124/124 | 100% 
+        bibl_titletype_tesim: |=========================|    124/124 | 100% 
+                  book_id_ts: |=========================|    124/124 | 100% 
+              book_ocr_tesim: |=======================  |    119/124 |  95% 
+            collection_tesim: |=========================|    124/124 | 100% 
+creation_site_location_tesim: |=========================|    124/124 | 100% 
+         creator_facet_tesim: |=========================|    124/124 | 100% 
+                   creator_t: |=========================|    124/124 | 100% 
+                  date_tesim: |=                        |      5/124 |   4% 
+       editorialdecl_n_tesim: |=========================|    124/124 | 100% 
+                extent_tesim: |=========================|    124/124 | 100% 
+                format_tesim: |=========================|    124/124 | 100% 
+              has_model_ssim: |=========================|    124/124 | 100% 
+              has_pages_ssim: |=========================|    124/124 | 100% 
+                          id: |=========================|    124/124 | 100% 
+             latest_date_isi: |=========================|    124/124 | 100% 
+          object_profile_ssm: |=========================|    124/124 | 100% 
+            object_state_ssi: |=========================|    124/124 | 100% 
+               pubdate_tesim: |=========================|    124/124 | 100% 
+             publisher_tesim: |=========================|    124/124 | 100% 
+              pubplace_tesim: |=========================|    124/124 | 100% 
+          pubstmt_idno_tesim: |=========================|    124/124 | 100% 
+     pubstmt_idno_type_tesim: |=========================|    124/124 | 100% 
+     pubstmt_publisher_tesim: |=========================|    124/124 | 100% 
+      pubstmt_pubplace_tesim: |=========================|    124/124 | 100% 
+      repository_place_tesim: |=========================|    124/124 | 100% 
+            repository_tesim: |=========================|    124/124 | 100% 
+                       score: |=========================|    124/124 | 100% 
+               subject_tesim: |=========================|    124/124 | 100% 
+          system_create_dtsi: |=========================|    124/124 | 100% 
+        system_modified_dtsi: |=========================|    124/124 | 100% 
+                   timestamp: |=========================|    124/124 | 100% 
+                   title_ssi: |=========================|    124/124 | 100% 
+                 title_tesim: |=========================|    124/124 | 100% 
+      titlestmt_author_tesim: |=========================|    124/124 | 100% 
+       titlestmt_title_tesim: |=========================|    124/124 | 100% 
+   titlestmt_titletype_tesim: |=========================|    124/124 | 100% 
+```
 
-**Proposed Mapping to "Simple" RDF**
+**Proposed PCDM Model for time being**
+
+PCDM:Collection > HydraWorks:Collection == Digital Collection/Set
+    - Descriptive metadata available on this class:
+      - dcterms:title 
+      - dcterms:description
+      - dcterms:publisher
+
+Digital Collection -PCDM:hasMember-> Digital Object 
+Digital Collection <-PCDM:isMemberOf- Digital Object 
+
+PCDM:Object > HydraWorks:Work (change?) == Digital Object
+    - Descriptive metadata available on this class:
+      + dc:rights (digital object rights, not physical object rights)
+      + rdfs:label?
+
+Digital Object -PCDM:hasMember-> Work/Resource
+Digital Object -EDM:aggregatedCHO-> Work/Resource
+Digital Object <-PCDM:isMemberOf- Work/Resource
+
+PCDM:Object > dpla:SourceResource (just use edm:ProvidedCHO?) == Work/Resource Represented by the Digital Object
+    - Descriptive metadata available on this class:
+      + see further table. Bulk of descriptive metadata is here.
+      + this is built to have a class of objects to eventually link to or migrate to a LD4L-based ontology without effecting digital object management functionalities/modeling.
+
+Digital Object -PCDM:hasMember-> Secondary Digital Abstraction(s) if needed
+Digital Object <-PCDM:isMemberOf- Secondary Digital Abstraction(s) if needed
+
+PCDM:Object == Secondary Digital Abstraction(s) if needed (i.e. pages of a book, sides of a postcard)
+    - Descriptive metadata available on this class:
+      + to be added as encountered. 
+      + dcterms:title (if used at part-level)
+      + this class is not intended to be paired with secondary level Work/Resource; digitization and description efforts should work to capture discrete Works/Resources such that the metadata on the Work/Resource class instance covers the parts as needed.
+
+Digital Object|Secondary Digital Abstraction(s) -PCDM:hasMember-> File Set
+Digital Object|Secondary Digital Abstraction(s) <-PCDM:isMemberOf- File Set
+
+PCDM:Object < HydraWorks:FileSet == File Set
+    - Descriptive metadata available on this class:
+      + anything file set specific, as encountered (crossing into technical metadata)
+
+File Set -PCDM:hasFile-> File(s)
+File Set <-PCDM:isFileOf- File(s)
+
+PCDM:File < HydraWorks:File == File
+    - Descriptive metadata available on this class:
+      + anything this file specific, as encountered (crossing into technical metadata)
+
+**Proposed Mapping to "Simple" RDF from DLXS XML**
 
 Field | Concept | RDF Mapping | Notes
 --- | --- | --- | ---
@@ -47,9 +137,6 @@ BODY | Structural Metadata | |
 DIV1 | Structural Metadata | |
 PB | Structural Metadata | |
 
-
-
-
-**Notes:**
+**Normalization Notes:**
 
 -
