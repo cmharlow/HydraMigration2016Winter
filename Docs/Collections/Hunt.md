@@ -76,6 +76,7 @@ creation_site_location_tesim: |=========================|    124/124 | 100%
       - dcterms:publisher
 
 *Digital Collection -PCDM:hasMember-> Digital Object*
+
 *Digital Collection <-PCDM:isMemberOf- Digital Object*
 
 **PCDM:Object > HydraWorks:Work (change?) == Digital Object**
@@ -85,7 +86,9 @@ creation_site_location_tesim: |=========================|    124/124 | 100%
       + rdfs:label?
 
 *Digital Object -PCDM:hasMember-> Work/Resource*
+
 *Digital Object -EDM:aggregatedCHO-> Work/Resource*
+
 *Digital Object <-PCDM:isMemberOf- Work/Resource*
 
 **PCDM:Object > dpla:SourceResource (just use edm:ProvidedCHO?) == Work/Resource Represented by the Digital Object**
@@ -95,6 +98,7 @@ creation_site_location_tesim: |=========================|    124/124 | 100%
       + this is built to have a class of objects to eventually link to or migrate to a LD4L-based ontology without effecting digital object management functionalities/modeling.
 
 *Digital Object -PCDM:hasMember-> Secondary Digital Abstraction(s) if needed*
+
 *Digital Object <-PCDM:isMemberOf- Secondary Digital Abstraction(s) if needed*
 
 **PCDM:Object == Secondary Digital Abstraction(s) if needed (i.e. pages of a book, sides of a postcard)**
