@@ -91,6 +91,7 @@ Descriptive metadata available on this class:
 - **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
 - **dcterms:rights** = digital asset rights statements if they exist (none do at present for Huntington) => digital_rights
 - **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) => digital_rightsHolder
+- **dcterms:description** = ENCODINGDESC/EDITORIALDECL/P => digital_tech_note
 
 PCDM + Other RDF Relationships on this class:
 
@@ -108,16 +109,18 @@ Descriptive metadata available on this class:
 - **dcterms:abstract** = Nothing in existing DLXS XML to map => abstract
 - **dcterms:alternative** = Nothing in existing DLXS XML to map => alt_title
 - **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR => creator
-- **dcterms:created** =
-- property :extent, predicate: ::RDF::Vocab::DC.format, multiple: true
-- property :id, predicate: ::RDF::Vocab::DC.identifier, multiple: true
-- property :note, predicate: ::RDF::Vocab::DC.description, multiple: true
-- property :publ_place, predicate: ::RDF::Vocab::VIVO.placeOfPublication, multiple: true
-- property :publisher, predicate: ::RDF::Vocab::DC.publisher, multiple: true
-- property :repository, predicate: ::RDF::Vocab::EDM.currentLocation, multiple: false
-- property :rights, predicate: ::RDF::Vocab::DC.rights, multiple: false
-- property :subject, predicate: ::RDF::Vocab::DC11.subject, multiple: true
-- property :title, predicate: ::RDF::Vocab::DC.title, multiple: false
+- **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date
+- **dcterms:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE => intell_extent
+- **dcterms:format** = "books" => form
+- **dcterms:identifier** = FILEDESC/PUBLICATIONSTMT/IDNO => identifier
+- **dcterms:description** = Nothing in existing DLXS XML to map => description
+- **VIVO.placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE => pubplace
+- **dcterms:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
+- **EDM.currentLocation** = FILEDESC/PUBLICATIONSTMT/PUBLISHER => repository
+- **dcterms:rights** = Nothing in existing DLXS XML to map => intell_rights
+- **dc:subject** = PROFILEDESC/TEXTCLASS/KEYWORDS/TERM => subject
+- **dcterms:title** = FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main'] => title
+- **dcterms:type** = "Text" => item_type
 
 PCDM + Other RDF Relationships on this class:
 
@@ -143,7 +146,9 @@ PCDM + Other RDF Relationships on this class:
 
 Descriptive metadata available on this class:
 
-- anything file set specific, as encountered (crossing into technical metadata)
+- **dcterms:extent** = FILEDESC/EXTENT => files_extent
+- **dcterms:title** = TEXT/BODY/DIV1/HEAD => fileset_title
+- anything else file set specific, as encountered (crossing into technical metadata)
 
 PCDM + Other RDF Relationships on this class:
 
@@ -155,7 +160,7 @@ PCDM + Other RDF Relationships on this class:
 
 Descriptive metadata available on this class:
 
-- anything this file specific, as encountered (crossing into technical metadata)
+- anything each file specific, as encountered (crossing into technical metadata)
 
 ##Mapping to "Simple RDF" from DLXS XML
 
@@ -175,7 +180,7 @@ Field | Concept | RDF Mapping | Notes
 **FILEDESC/TITLESTMT/AUTHOR** | skip | skip | Creator values, appears to be same as FILEDESC/SOURCEDESC/BIBL/AUTHOR which is mapped
 **FILEDESC/TITLESTMT/TITLE** | skip | skip | Title values, appears to be same as FILEDESC/SOURCEDESC/BIBL/TITLE which is mapped
 **PROFILEDESC/TEXTCLASS/KEYWORDS/TERM** | Subject | pcdm:object[dpla:SourceResource] dc:subject [literal] | dcterms:subject is meant to be used with non-literal values, according to DCMI. Can consider using when we map these to external URIs (most should be fairly straight forward entity matching). Replace ' - ' with '--' is first step towards LC-influenced normalization.
-**TEXT/BODY/DIV1/HEAD** | structural metadata | pcdm:object(hydraWork:GeneralFile) rds:label [literal] | this appears to be the label/kind of files represented in the requisite wrapper element.
+**TEXT/BODY/DIV1/HEAD** | structural metadata | pcdm:object(hydraWork:GeneralFile) dcterms:title [literal] | this appears to be the label/kind of files represented in the requisite wrapper element.
 **BODY** | Structural Metadata | |
 **DIV1** | Structural Metadata | |
 **PB** | Structural Metadata | |
