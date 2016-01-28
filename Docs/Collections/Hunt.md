@@ -105,8 +105,19 @@ This is the intellectual work represented by the Digital Work. The bulk of the d
 
 Descriptive metadata available on this class:
 
-- see further table. Bulk of descriptive metadata is here.
-- this is built to have a class of objects to eventually link to or migrate to a LD4L-based ontology without effecting digital object management functionalities/modeling.
+- **dcterms:abstract** = Nothing in existing DLXS XML to map => abstract
+- **dcterms:alternative** = Nothing in existing DLXS XML to map => alt_title
+- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR => creator
+- **dcterms:created** =
+- property :extent, predicate: ::RDF::Vocab::DC.format, multiple: true
+- property :id, predicate: ::RDF::Vocab::DC.identifier, multiple: true
+- property :note, predicate: ::RDF::Vocab::DC.description, multiple: true
+- property :publ_place, predicate: ::RDF::Vocab::VIVO.placeOfPublication, multiple: true
+- property :publisher, predicate: ::RDF::Vocab::DC.publisher, multiple: true
+- property :repository, predicate: ::RDF::Vocab::EDM.currentLocation, multiple: false
+- property :rights, predicate: ::RDF::Vocab::DC.rights, multiple: false
+- property :subject, predicate: ::RDF::Vocab::DC11.subject, multiple: true
+- property :title, predicate: ::RDF::Vocab::DC.title, multiple: false
 
 PCDM + Other RDF Relationships on this class:
 
