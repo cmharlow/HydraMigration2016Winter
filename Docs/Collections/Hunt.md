@@ -67,10 +67,22 @@ creation_site_location_tesim: |=========================|    124/124 | 100%
 ```
 
 ##Proposed PCDM Model for 'Simple RDF' interim
+
+Structure of the following section:
+
+###PCDM Object > Subclass of this : Class Label at CUL (set up for making CUL object ontology?)
+Notes on this class.
+
+####Descriptive metadata so far mapped for this class:
+- **the metadata term** = the value or mapping for our test collection, Huntington => the Solr 'concept' (to keep in line with other collections that go directly to Solr)
+
+####RDF Relationships on this class:
+The RDF relationships expected for this class, symmetry of those properties not assumed (hence A -> B and B -> A are both given)
+
 ###PCDM:Collection > HydraWorks:Collection : Digital Collection
 This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). There can be a secondary PCDM:Collection: Set if/as the need arises.
 
-Descriptive metadata available on this class:
+####Descriptive metadata available on this class:
 
 - **dcterms:title** = "Huntington Free Library Native American Collection" =>collection_title (think this is currently just collection_tesim in Solr)
 - **dcterms:abstract** = "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection.
@@ -81,7 +93,7 @@ Full text of a selection of 91 books from the Huntington Free Library Native Ame
 - **dcterms:publisher** = "Cornell University. Library" => collection_publ
 - **dcterms:relation** = http://ebooks.library.cornell.edu/h/hunt/ => collection_relatedURL
 
-PCDM + Other RDF Relationships on this class:
+####PCDM + Other RDF Relationships on this class:
 
 *Digital Collection -PCDM:hasMember-> Digital Object*
 
@@ -90,16 +102,14 @@ PCDM + Other RDF Relationships on this class:
 ###PCDM:Object > HydraWorks:Work : Digital Work
 This is the digital work as a whole - so any information about the digitization, the filesets are related directly to this object, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the Intellectual Work class. This allows us to make descriptive metadata assertions (such as format = manuscripts, or rights = digital asset viewing and reuse rights) that aren't in conflict with digital object descriptions (format = jpeg or rights = physical resource access or reuse rights). The Digital Works can have PCDM:Objects children for Parts that need separate description (if the pages of a book are all separate filesets and require separate technical/descriptive/administrative metadata, for example).
 
-Descriptive metadata available on this class:
+####Descriptive metadata available on this class:
 
 - **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
-- **dcterms:rights** = digital asset rights statements if they exist (none do at present for Huntington) => digital_rights
 - **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) => digital_rightsHolder
 - **dcterms:description** = ENCODINGDESC/EDITORIALDECL/P => digital_tech_note
 - **dcterms:identifier** = FILEDESC/PUBLICATIONSTMT/IDNO => digital_identifier (this is the DLXS identifier, not the intellectual concept identifier)
-- **dcterms:relation** = OCR Text => ocr (wanted more granular term to capture this field - as we don't keep the OCR as a separate file - but just am not finding anything without domain/range restrictions).
 
-PCDM + Other RDF Relationships on this class:
+####PCDM + Other RDF Relationships on this class:
 
 *Digital Object -PCDM:hasMember-> Work/Resource*
 
@@ -115,7 +125,7 @@ Need to rdfs:type this object always as an instance of dpla:SourceResource in th
 **SubClasses**
 Can have more refined ActiveFedora models here for things like 'Intellecual Work - Book', 'Intellectual Work - Journal', perhaps for validation of different fields required for each work type (though the metadata fields should be used consistently, just obligation would change).
 
-Descriptive metadata available on this class (at least for Huntington):
+####Descriptive metadata available on this class (at least for Huntington):
 
 - **dcterms:abstract** = Nothing in existing DLXS XML to map => abstract
 - **dcterms:alternative** = Nothing in existing DLXS XML to map => alt_title
@@ -129,7 +139,7 @@ Descriptive metadata available on this class (at least for Huntington):
 - **dcterms:format** = "books" => form
 - **dcterms:identifier** = Nothing in existing DLXS XML to map => identifier
 - **dcterms:language** = Nothing in existing DLXS XML to map => language
-- **VIVO.placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE => pubplace
+- **VIVO:placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE => pubplace
 - **dcterms:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
 - **EDM.currentLocation** = FILEDESC/PUBLICATIONSTMT/PUBLISHER => repository
 - **dcterms:rights** = Nothing in existing DLXS XML to map => intell_rights
@@ -137,8 +147,9 @@ Descriptive metadata available on this class (at least for Huntington):
 - **dc:subject** = PROFILEDESC/TEXTCLASS/KEYWORDS/TERM => subject (all types together at present)
 - **dcterms:title** = FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main'] => title
 - **dcterms:type** = "Text" => item_type
+- **dcterms:relation** = OCR Text => ocr (wanted more granular term to capture this field - as we don't keep the OCR as a separate file - but just am not finding anything without domain/range restrictions).
 
-PCDM + Other RDF Relationships on this class:
+####PCDM + Other RDF Relationships on this class:
 
 *Digital Work -PCDM:hasMember-> Secondary Digital Work(s) if needed*
 
@@ -146,13 +157,13 @@ PCDM + Other RDF Relationships on this class:
 
 ###PCDM:Object > HydraWorks:Work == Secondary Digital Work, as needed
 
-Descriptive metadata available on this class:
+####Descriptive metadata available on this class:
 
 - to be added as encountered. 
-- dcterms:title (if used at part-level)
-- this class is not intended to be paired with secondary level Work/Resource; digitization and description efforts should work to capture discrete Works/Resources such that the metadata on the Work/Resource class instance covers the parts as needed.
+- **dcterms:title** (if used at part-level)
+- this class is not intended to be paired with secondary level Intellectual Work; digitization and description efforts should work to capture discrete Intellectual Works such that the metadata on the top level Intellectual Work class instance covers the parts as needed.
 
-PCDM + Other RDF Relationships on this class:
+####PCDM + Other RDF Relationships on this class:
 
 *Digital Work|Secondary Digital Work(s) -PCDM:hasMember-> File Set*
 
@@ -160,21 +171,21 @@ PCDM + Other RDF Relationships on this class:
 
 ###PCDM:Object < HydraWorks:FileSet : File Set
 
-Descriptive metadata available on this class:
+####Descriptive metadata available on this class:
 
 - **dcterms:extent** = FILEDESC/EXTENT => files_extent
 - **dcterms:title** = TEXT/BODY/DIV1/HEAD => fileset_title
 - anything else file set specific, as encountered (crossing into technical metadata)
 
-PCDM + Other RDF Relationships on this class:
+####PCDM + Other RDF Relationships on this class:
 
 *File Set -PCDM:hasFile-> File(s)*
 
 *File Set <-PCDM:isFileOf- File(s)*
 
-##PCDM:File < HydraWorks:File : File
+###PCDM:File < HydraWorks:File : File
 
-Descriptive metadata available on this class:
+####Descriptive metadata available on this class:
 
 - anything each file specific, as encountered (crossing into technical metadata). following is taken from PCDM technical metadata recommendations (which we should take with a grain of salt, if at all)
 - **ebucore:filename** = filename
@@ -183,7 +194,7 @@ Descriptive metadata available on this class:
 - **ebucore:dateCreated** = date file was created
 
 
-##Mapping to "Simple RDF" from DLXS XML
+##Mapping from DLXS XML to "Simple RDF" (with normalization notes)
 
 Field | Concept | RDF Mapping | Notes
 --- | --- | --- | ---
@@ -206,6 +217,3 @@ Field | Concept | RDF Mapping | Notes
 **DIV1** | Structural Metadata | |
 **PB** | Structural Metadata | |
 
-**Normalization Notes:**
-
--
