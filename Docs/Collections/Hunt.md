@@ -88,9 +88,8 @@ Descriptive metadata available on this class:
 Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection." => collection_abstract
 - **dcterms:created** = "2010" (want to add EDTF encoding since we know it in this case?) => collection_date
 - **dcterms:identifier** = "6790930" => collection_bibid (can we type objects for MARC ids versus other identifiers that may appear?)
-- **dcterms:description** = "Mode of access: World Wide Web." (this is to keep congruity with the MARC record. Not sure I want to keep though.) => collection_note
-- **dcterms:publisher** = (entity resolution candidate, nothing for now) => collection_publ
 - **dc:publisher** = "Cornell University. Library" [literal] => collection_publ
+- **dcterms:publisher** = (entity resolution/URI work candidate, nothing for now) => collection_publ
 - **dcterms:relation** = http://ebooks.library.cornell.edu/h/hunt/ => collection_relatedURL
 
 PCDM + Other RDF Relationships on this class:
@@ -105,7 +104,7 @@ This is the digital work as a whole - so any information about the digitization,
 Descriptive metadata available on this class:
 
 - **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. literal. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
-- **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) [dcterms:Agent > external authority URI?] => digital_rightsHolder
+- **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) [dcterms:Agent > external authority URI? Create local URI for storing other information about this person? Otherwise generic rights statement] => digital_rightsHolder
 - **dcterms:description** = ENCODINGDESC/EDITORIALDECL/P => digital_tech_note
 - **dcterms:identifier** = FILEDESC/PUBLICATIONSTMT/IDNO => digital_identifier (this is the DLXS identifier, not the intellectual concept identifier)
 
@@ -120,26 +119,27 @@ PCDM + Other RDF Relationships on this class:
 ###PCDM:Object > HydraWorks:Work & > dpla:SourceResource : Intellectual Work
 This is the intellectual work represented by the Digital Work. The bulk of the descriptive metadata is here. Eventually, we may look into the option of having this object generated through a RDF Shape on an external triplestore containing more robust intellectual work metadata (and metadata ontologies). While one could, theoretically, have an Intellectual Work for each Digital Work Object Level (or the Digital Collection itself), we are limiting Intellectual Works for the time being to those represented roughly by bibliographic objects - with an eye to system efficiency and object interoperability in delineating this (especially when we get into journals). Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way.
 
-Need to rdfs:type this object always as an instance of dpla:SourceResource in the ActiveFedora model (I believe that the pcdm:object typing is automatic when using the HydraWorks gem - need to verify).
+Need to rdf:type (fixed typo here) this object always as an instance of dpla:SourceResource in the ActiveFedora model (I believe that the pcdm:object typing is automatic when using the HydraWorks gem - need to verify).
 
 Descriptive metadata available on this class (at least for Huntington, more to be added as other collections are mapped + migrated to Fedora 4):
 
 - **dcterms:abstract** = Nothing in existing DLXS XML to map [literal] => abstract
 - **dcterms:alternative** = Nothing in existing DLXS XML to map [literal] => alt_title
-*- **dcterms:isPartOf** = PCDM:Collection URI => need to discuss further, but part of ease of Solr creation for collection label.*
 - **dc:contributor** = Nothing in existing DLXS XML to map [literal:prefLabel] => contributor
-- **dcterms:contributor** = Nothing in existing DLXS XML to map [non-literal:external URI] => contributor
+- **dcterms:contributor** = Nothing in existing DLXS XML to map [non-literal:external URI] => contributor_uri (would rather have this that literal/above, but is part of entity resolution project that comes after fedora 4 migration)
 - **dc:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] => creator
-- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [non-literal;entity resolution URIs] => creator
-- (additional role terms will be added from RDAU or LoC Relators as encountered in mappings)
-- **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date (currently taking literals, would like to type as date/fix encoding. may want separate date text and date key fields in that instance.)
-- **dcterms:description** = Nothing in existing DLXS XML to map => description
-- **dcterms:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE => intell_extent
-- **dcterms:format** = "books" => form
+- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [non-literal;entity resolution URIs] => creator_uri (same note re: URI/literal for dcterms:contributor)
+- (additional role terms will be added from RDAU or LoC Relators as encountered in upcoming collections mappings)
+- **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date [literal] no encoding type asserted (currently taking literals, would like to type as date/fix encoding. may want separate date text and date key fields in that instance.)
+- **dcterms:description** = Nothing in existing DLXS XML to map [literal] => description
+- **dc:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE [literal, don't bother subclassing/moving to resource for now] => intell_extent
+- **dc:format** = "books" => form
+- **dcterms:format** = "books" from chosen vocab URI [non-literal:external URI] => form (avoid until integrating fedora w/authorities + URIs is discussed)
 - **dcterms:identifier** = Nothing in existing DLXS XML to map => identifier
 - **dcterms:language** = Nothing in existing DLXS XML to map => language
 - **VIVO:placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE => pubplace
-- **dcterms:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
+- **dc:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
+- **dc:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
 - **EDM.currentLocation** = FILEDESC/PUBLICATIONSTMT/PUBLISHER => repository
 - **dcterms:rights** = Nothing in existing DLXS XML to map => intell_rights
 - **dcterms:rightsHolder** = intellectual resource rights holder if they exist (none do at present for Huntington) => intell_rightsHolder
@@ -147,6 +147,7 @@ Descriptive metadata available on this class (at least for Huntington, more to b
 - **dcterms:title** = FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main'] => title
 - **dcterms:type** = "Text" => item_type
 - **dcterms:relation** = OCR Text => ocr (wanted more granular term to capture this field - as we don't keep the OCR as a separate file - but just am not finding anything without domain/range restrictions).
+- **dcterms:isPartOf** = PCDM:Collection URI < dcterms:Collection => need to discuss further, as part of ease of Solr creation for collection label. How to handle dcmi:Collection variances from PCDM:Collection?
 
 PCDM + Other RDF Relationships on this class:
 
