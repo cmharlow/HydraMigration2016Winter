@@ -1,4 +1,4 @@
-##Detailed Review of DLXS Metadata already in Hydra
+#Detailed Review of DLXS Metadata already in Hydra
 
 Fields being used/exposed in Solr Json in Blacklight at present for DLXS objects already migrated to Hydra (this doesn't touch on underlying OM/XML records currently in Fedora, which are a 1-1 match from DLXS metadata, just what is exposed via Solr/Blacklight). Also, some fields are Solr-specific:
 
@@ -47,11 +47,11 @@ creation_site_location_tesim: |======================== |    833/834 |  99%
    titlestmt_titletype_tesim: |=========================|    834/834 | 100%
 ```
 
-###Active Fedora Model
+##Active Fedora Model
 
 All 834 are following the Book ActiveFedora Model.
 
-###author_creator_tesim = author_t = author_tesim
+##author_creator_tesim = author_t = author_tesim
 
 Unique values in that field (note, the apostrophes are not mine - they appear in the repo/discovery layer):
 
@@ -447,23 +447,23 @@ Wright, Alfred, translator
 Wright, Asher
 Zeisberger, David
 
-###bibl_titletype_tesim
+##bibl_titletype_tesim
 
 All say 'main' - ?
 
-###book_id_ts
+##book_id_ts
 
 Same as id, but without colon. 834 unique values.
 
-###book_ocr_tesim
+##book_ocr_tesim
 
 Mad amounts of OCR text. Pretty poor state generally.
 
-###collection_tesim
+##collection_tesim
 
 2 collection names so far - Alfred Montalvo Bolivian Digital Pamphlets, Huntington Free Library Native American. Are these archival collections or digital projects? Both? Are there URLs or other for the Archival collections?
 
-###creation_site_location_tesim
+##creation_site_location_tesim
 
 Values look transcribed. Look into desire (or not) to grab URIs, coordinates for these.
 
