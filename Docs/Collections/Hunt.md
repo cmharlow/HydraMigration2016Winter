@@ -1,7 +1,6 @@
 #Hunt.xml
 
 ##Overview of Existing Metadata Usage in DLXS XML for Hunt
-
 ```
        /record/ENCODINGDESC/EDITORIALDECL/P: |=========================|    124/124 | 100%
                     /record/FILEDESC/EXTENT: |=========================|    124/124 | 100%
@@ -21,7 +20,6 @@
 ```
 
 ##Overview of Existing Solr Usage for Hunt in Fedora 3
-
 ```
                    _version_: |=========================|    124/124 | 100% 
      active_fedora_model_ssi: |=========================|    124/124 | 100% 
@@ -67,7 +65,6 @@ creation_site_location_tesim: |=========================|    124/124 | 100%
 ```
 
 ##Proposed PCDM Model for 'Simple RDF' interim
-
 Structure of the following section:
 
 ###PCDM Object > Subclass of this : Class Label at CUL (set up for making CUL object ontology?)
@@ -75,24 +72,25 @@ Notes on this class.
 
 Descriptive metadata so far mapped for this class:
 
-- **the metadata term** = the value or mapping for our test collection, Huntington => the Solr 'concept' (to keep in line with other collections that go directly to Solr)
+- **the metadata term** = the value or mapping for our test collection, Huntington, along with notes for near future metadata work on these => the Solr 'concept' (to keep in line with other collections that go directly to Solr)
 
 RDF Relationships on this class:
 
 The RDF relationships expected for this class, symmetry of those properties not assumed (hence A -> B and B -> A are both given)
 
 ###PCDM:Collection > HydraWorks:Collection : Digital Collection
-This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). There can be a secondary PCDM:Collection: Set if/as the need arises.
+This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). There can be a secondary PCDM:Collection:Set if/as the need arises.
 
 Descriptive metadata available on this class:
 
-- **dcterms:title** = "Huntington Free Library Native American Collection" =>collection_title (think this is currently just collection_tesim in Solr)
+- **dcterms:title** = "Huntington Free Library Native American Collection" =>collection_title
 - **dcterms:abstract** = "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection.
 Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection." => collection_abstract
-- **dcterms:created** = "2010" => collection_date
+- **dcterms:created** = "2010" (want to add EDTF encoding since we know it in this case?) => collection_date
 - **dcterms:identifier** = "6790930" => collection_bibid (can we type objects for MARC ids versus other identifiers that may appear?)
-- **dcterms:description** = "Mode of access: World Wide Web." => collection_note
-- **dcterms:publisher** = "Cornell University. Library" => collection_publ
+- **dcterms:description** = "Mode of access: World Wide Web." (this is to keep congruity with the MARC record. Not sure I want to keep though.) => collection_note
+- **dcterms:publisher** = (entity resolution candidate, nothing for now) => collection_publ
+- **dc:publisher** = "Cornell University. Library" [literal] => collection_publ
 - **dcterms:relation** = http://ebooks.library.cornell.edu/h/hunt/ => collection_relatedURL
 
 PCDM + Other RDF Relationships on this class:
@@ -106,8 +104,8 @@ This is the digital work as a whole - so any information about the digitization,
 
 Descriptive metadata available on this class:
 
-- **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
-- **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) => digital_rightsHolder
+- **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. literal. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
+- **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) [dcterms:Agent > external authority URI?] => digital_rightsHolder
 - **dcterms:description** = ENCODINGDESC/EDITORIALDECL/P => digital_tech_note
 - **dcterms:identifier** = FILEDESC/PUBLICATIONSTMT/IDNO => digital_identifier (this is the DLXS identifier, not the intellectual concept identifier)
 
@@ -124,13 +122,15 @@ This is the intellectual work represented by the Digital Work. The bulk of the d
 
 Need to rdfs:type this object always as an instance of dpla:SourceResource in the ActiveFedora model (I believe that the pcdm:object typing is automatic when using the HydraWorks gem - need to verify).
 
-Descriptive metadata available on this class (at least for Huntington):
+Descriptive metadata available on this class (at least for Huntington, more to be added as other collections are mapped + migrated to Fedora 4):
 
-- **dcterms:abstract** = Nothing in existing DLXS XML to map => abstract
-- **dcterms:alternative** = Nothing in existing DLXS XML to map => alt_title
-- **dcterms:collection** = "Huntington Free Library Native American Collection" (DPLA types range of this as dcmitype:collection - may have reprecussions further down the ontology development for these digital collections)
-- **dcterms:contributor** = Nothing in existing DLXS XML to map => contributor
-- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR => creator
+- **dcterms:abstract** = Nothing in existing DLXS XML to map [literal] => abstract
+- **dcterms:alternative** = Nothing in existing DLXS XML to map [literal] => alt_title
+*- **dcterms:isPartOf** = PCDM:Collection URI => need to discuss further, but part of ease of Solr creation for collection label.*
+- **dc:contributor** = Nothing in existing DLXS XML to map [literal:prefLabel] => contributor
+- **dcterms:contributor** = Nothing in existing DLXS XML to map [non-literal:external URI] => contributor
+- **dc:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] => creator
+- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [non-literal;entity resolution URIs] => creator
 - (additional role terms will be added from RDAU or LoC Relators as encountered in mappings)
 - **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date (currently taking literals, would like to type as date/fix encoding. may want separate date text and date key fields in that instance.)
 - **dcterms:description** = Nothing in existing DLXS XML to map => description
