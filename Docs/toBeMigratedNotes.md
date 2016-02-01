@@ -5,8 +5,8 @@
 *Jira should be used as the primary record for order/due dates of migrations.*
 
 - [*hunt (migrated)* (to be migrated first to RDF)](Collections/Hunt.md)
-- bolivian (migrated)
-- [bees (migrated)](Collections/Bees.md)
+- [bolivian (migrated to Fedora 3)](Collections/Bolivian.md)
+- [bees (migrated for Fedora 3)](Collections/Bees.md)
 - hearth
 - chla
 - cmip
