@@ -1,5 +1,7 @@
 #Hunt.xml
 
+Notes here primarily for metadata normalization + entity matching work planned, confirmed mappings (for 'interim Simple RDF' plan) moved to the finalized mappings document: https://docs.google.com/spreadsheets/d/1SV2hP1tKQpPQrI1cEBWgx6NyO56YhjUCkOD_vxrzlEQ/edit?usp=sharing.
+
 ##Overview of Existing Metadata Usage in DLXS XML for Hunt
 ```
        /record/ENCODINGDESC/EDITORIALDECL/P: |=========================|    124/124 | 100%
@@ -130,11 +132,11 @@ Descriptive metadata available on this class (at least for Huntington, more to b
 - **dc:contributor** = Nothing in existing DLXS XML to map [literal:prefLabel] => contributor
 - **dcterms:contributor** = Nothing in existing DLXS XML to map [non-literal:external URI] => contributor_uri (would rather have this than literal/above, but is part of entity resolution project that comes after fedora 4 migration)
 - **dc:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] => creator
-- **dcterms:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [non-literal;entity resolution URIs] => creator_uri (same note re: URI/literal for dcterms:contributor)
+- **dcterms:creator** = to be matched [non-literal;entity resolution URIs] => creator_uri (same note re: URI/literal for dcterms:contributor)
 - (additional role terms will be added from RDAU or LoC Relators as encountered in upcoming collections mappings)
 - **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date [literal] no encoding type asserted (would like to type as date/fix encoding. may want separate date text and date key fields in that instance.)
 - **dcterms:description** = Nothing in existing DLXS XML to map [literal] => description
-- **dc:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE [literal, don't bother subclassing/moving to resource for dcterms:extent now] => intell_extent
+- **dcterms:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE [should be URI but uncertain about possibility object_profile_ssm subclassing/moving to resource for now] => intell_extent
 - **dc:format** = "books" => form
 - **dcterms:format** = "books" from chosen vocab URI [non-literal:external URI] => form (avoid until integrating fedora w/authorities + URIs is discussed)
 - **dcterms:identifier** = Nothing in existing DLXS XML to map [literal] => identifier (will want to type eventually for type of identifier = marcbib, dlxs, other?)
@@ -178,7 +180,7 @@ PCDM + Other RDF Relationships on this class:
 
 Descriptive metadata available on this class:
 
-- **dc:extent** = FILEDESC/EXTENT [literal] => files_extent
+- **dcterms:extent** = FILEDESC/EXTENT [should be resource, will be literal- see intellectual work extent for this issue] => files_extent
 - **dcterms:title** = TEXT/BODY/DIV1/HEAD [literal] => fileset_title
 - anything else file set specific, as encountered (crossing into technical metadata)
 
@@ -204,13 +206,13 @@ Descriptive metadata available on this class:
 Field | Concept | RDF Mapping | Notes
 --- | --- | --- | ---
 **ENCODINGDESC/EDITORIALDECL/P** | *Note* | pcdm:object[hydraWork:GenericWork] dcterms:description [literal] | OCR is not kept as separate file, but text referred to by descriptive metadata. Move Solr concept to technical note.
-**FILEDESC/EXTENT** | Extent | pcdm:object[hydraWork:GeneralFile] dc:extent [literal] | This is extent for collection of digital objects/files attached to one resource/work. Doesn't describe each file at the file-level. Ex: "112 600dpi TIFF page images"
+**FILEDESC/EXTENT** | Extent | pcdm:object[hydraWork:GeneralFile] ? [literal] | This is extent for collection of digital objects/files attached to one resource/work. Doesn't describe each file at the file-level. Ex: "112 600dpi TIFF page images"
 **FILEDESC/PUBLICATIONSTMT/IDNO** | Identifier | pcdm:object[dpla:SourceResource] dcterms:identifier [literal] | there only seems to be these dlxs identifiers used, wondering if we'll need to type this later on.
 **FILEDESC/PUBLICATIONSTMT/PUBLISHER** | Repository | pcdm:object[dpla:sourceResource] **edm:currentLocation** [literal until we can pull in external URIs] | can't find other property that adequately covers repository without going beyond scope of current options. Prime entity resolution candidate.
 **FILEDESC/PUBLICATIONSTMT/PUBPLACE** | Repository location? | Don't map | This is the location of the repository, captured above. Do we need? Otherwise can repeat edm:currentLocation or concatenate fields in some way.
 **FILEDESC/SOURCEDESC/BIBL/AUTHOR** | Creator | pcdm:object[dpla:SourceResource] dcterms:creator [literal until we can pull in external URIs] | Some are many creators concatenated, others contain role terms. Look into possibility of using more specific marcrel properties for these role terms (and removing role term from literal value). e.g. "Wells, Roger A.E., compiler" => pcdm:object marcrel:compiler "Wells, Roger A.E."@en. Prime entity resolution candidate.
 **FILEDESC/SOURCEDESC/BIBL/DATE** | Date | pcdm:object[dpla:SourceResource] dcterms:created [literal] | 1 value has a reprint note attached, some use of dashes (inconsistent) for ranges, 1 questionable/unknown value. Look into remediation for then assigning encoding datatype to these literals? EDTF or a more generic ISO standard?
-**FILEDESC/SOURCEDESC/BIBL/NOTE** | Extent (not originally mapped) | pcdm:object[dplaSourceResource] dc:extent [literal] | this is the physical resource extent and should be attached to the object describing that resource (unlike extent above, which is more about digital file extent). Not sure why it is in a Note field.
+**FILEDESC/SOURCEDESC/BIBL/NOTE** | Extent (not originally mapped) | pcdm:object[dplaSourceResource] ?? [literal] | this is the physical resource extent and should be attached to the object describing that resource (unlike extent above, which is more about digital file extent). Not sure why it is in a Note field.
 **FILEDESC/SOURCEDESC/BIBL/PUBLISHER** | Publisher | pcdm:object[dpla:SourceResource] dc:publisher [literal] | this is the physical resource's actual publisher, not the digitizer nor the repository. Looks transcribed, so normalization is limited (pick this up with RDA folks in LTS at some point).  Otherwise, entity resolution candidate (except this was turned down).
 **FILEDESC/SOURCEDESC/BIBL/PUBPLACE** | Creation location | pcdm:object[dpla:SourceResource] vivo:placeOfPublication [literal] | LD4L option has domain/range restrictions that make it not good option for this. Not sure I like the data property route - what if we want to normalize/resolve placenames (i.e. make into objects)? Need to keep looking.
 **FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main']** | Title | pcdm:object[dpla:SourceResource] dcterms:title [literal] | same values appears as FILEDESC/TITLESTMT/TITLE (below)
