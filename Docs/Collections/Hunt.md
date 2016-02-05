@@ -1,5 +1,4 @@
 #Hunt.xml
-
 Notes here primarily for metadata normalization + entity matching work planned, confirmed mappings (for 'interim Simple RDF' plan) moved to the finalized mappings document: https://docs.google.com/spreadsheets/d/1SV2hP1tKQpPQrI1cEBWgx6NyO56YhjUCkOD_vxrzlEQ/edit?usp=sharing.
 
 ##Overview of Existing Metadata Usage in DLXS XML for Hunt
@@ -83,7 +82,7 @@ RDF Relationships on this class:
 The RDF relationships expected for this class, symmetry of those properties not assumed (hence A -> B and B -> A are both given)
 
 ###PCDM:Collection > HydraWorks:Collection : Digital Collection
-This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). There can be a secondary PCDM:Collection:Set if/as the need arises.
+This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). This is required.
 
 Descriptive metadata available on this class:
 
@@ -98,32 +97,38 @@ Full text of a selection of 91 books from the Huntington Free Library Native Ame
 
 PCDM + Other RDF Relationships on this class:
 
-*Digital Collection -PCDM:hasMember-> Digital Object*
+If no secondary PCDM:Collection for Set:
+*Digital Collection -PCDM:hasMember-> Intellectual Work*
 
-*Digital Collection <-PCDM:isMemberOf- Digital Object*
+*Digital Collection <-PCDM:isMemberOf- Intellectual Work*
 
-###PCDM:Object > HydraWorks:Work : Digital Work
-This is the digital work as a whole - so any information about the digitization, the filesets are related directly to this object, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the Intellectual Work class. This allows us to make descriptive metadata assertions (such as format = manuscripts, or rights = digital asset viewing and reuse rights) that aren't in conflict with digital object descriptions (format = jpeg or rights = physical resource access or reuse rights). The Digital Works can have PCDM:Objects children for Parts that need separate description (if the pages of a book are all separate filesets and require separate technical/descriptive/administrative metadata, for example).
+If there is a secondary PCDM:Collection for Set:
+*Digital Collection -PCDM:hasMember-> Set*
+
+*Digital Collection <-PCDM:isMemberOf- Set*
+
+###PCDM:Collection > HydraWorks:Collection : Set
+This is a generic set used as needed for further differentiation of works and collections. Not required. Not used in Huntington.
 
 Descriptive metadata available on this class:
 
-- **dcterms:title** = title for the digital object, usually taken directly from the intellectual work title. literal. => only display the intellectual work title via Solr for the time being. This is more for better management of Fedora objects in Fedora.
-- **dcterms:rightsHolder** = digital asset rights holder if they exist (none do at present for Huntington) [dcterms:Agent > external authority URI? Create local URI for storing other information about this person? Otherwise generic rights statement] => digital_rightsHolder
-- **dcterms:description** = ENCODINGDESC/EDITORIALDECL/P => digital_tech_note
-- **dcterms:identifier** = FILEDESC/PUBLICATIONSTMT/IDNO => digital_identifier (this is the DLXS identifier, not the intellectual concept identifier)
+- **dcterms:title** = n/a [literal] => set_title
+- **dcterms:abstract** = n/a [literal] => set_abstract
+- **dcterms:created** = n/a [literal, EDTF] => set_date
+- **dcterms:identifier** = n/a [literal, typed as able] => set_id
+- **dc:publisher** = n/a [literal] => set_publ
+- **dcterms:publisher** = n/a [URI < dcterms:Agent] => set_publ
+- **dcterms:relation** = n/a [URL] => set_relatedURL
 
 PCDM + Other RDF Relationships on this class:
+*Set -PCDM:hasMember-> Intellectual Work*
 
-*Digital Object -PCDM:hasMember-> Work/Resource*
-
-*Digital Object -EDM:aggregatedCHO-> Work/Resource*
-
-*Digital Object <-PCDM:isMemberOf- Work/Resource*
+*Set <-PCDM:isMemberOf- Intellectual Work*
 
 ###PCDM:Object > HydraWorks:Work & > dpla:SourceResource : Intellectual Work
 This is the intellectual work represented by the Digital Work. The bulk of the descriptive metadata is here. Eventually, we may look into the option of having this object generated through a RDF Shape on an external triplestore containing more robust intellectual work metadata (and metadata ontologies). While one could, theoretically, have an Intellectual Work for each Digital Work Object Level (or the Digital Collection itself), we are limiting Intellectual Works for the time being to those represented roughly by bibliographic objects - with an eye to system efficiency and object interoperability in delineating this (especially when we get into journals). Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way.
 
-Need to rdf:type (fixed typo here) this object always as an instance of dpla:SourceResource in the ActiveFedora model (I believe that the pcdm:object typing is automatic when using the HydraWorks gem - need to verify).
+Not typing as subclass of DPLA:SourceResource in this permutation of implementation. Want to consider in the future leveraging the 'aggregation' object aspect to possibly pull metadata objects into this work.
 
 Descriptive metadata available on this class (at least for Huntington, more to be added as other collections are mapped + migrated to Fedora 4):
 
@@ -158,28 +163,42 @@ Descriptive metadata available on this class (at least for Huntington, more to b
 
 PCDM + Other RDF Relationships on this class:
 
-*Digital Work -PCDM:hasMember-> Secondary Digital Work(s) if needed*
+If there is a Part:
+*Intellectual Work -PCDM:hasMember-> Part*
 
-*Digital Work <-PCDM:isMemberOf- Secondary Digital Work(s) if needed*
+*Intellectual Work <-PCDM:isMemberOf- Part*
 
-###PCDM:Object > HydraWorks:Work == Secondary Digital Work, as needed
+If there is no Part:
+*Intellectual Work -PCDM:hasMember-> File Set*
+
+*Intellectual Work <-PCDM:isMemberOf- File Set*
+
+###PCDM:Object > HydraWorks:Work == Part (Secondary Intellectual Work), as needed
+Digitization and description efforts should work to capture discrete Intellectual Works such that the metadata on the top level Intellectual Work class instance covers the parts as needed. We're not trying to create intellectual works all the way down, but the current Curation Concerns/HydraWork expectations of PCDM make this (and conflation of digital and intellectual works) hard to avoid.
 
 Descriptive metadata available on this class:
 
 - to be added as encountered. 
 - **dcterms:title** [literal]  (if used at part-level)
-- this class is not intended to be paired with secondary level Intellectual Work; digitization and description efforts should work to capture discrete Intellectual Works such that the metadata on the top level Intellectual Work class instance covers the parts as needed.
+- **dc:subject** [literal]  (if used at part-level)
+- **dc:relation** [literal] OCR (if used at part-level)
 
 PCDM + Other RDF Relationships on this class:
 
-*Digital Work|Secondary Digital Work(s) -PCDM:hasMember-> File Set*
+*Digital Work|Part -PCDM:hasMember-> File Set*
 
-*Digital Work|Secondary Digital Work(s) <-PCDM:isMemberOf- File Set*
+*Digital Work|Part <-PCDM:isMemberOf- File Set*
 
-###PCDM:Object < HydraWorks:FileSet : File Set
+###PCDM:Object < HydraWorks:FileSet : File Set / Digital Work
+This is the digital work as represented by file sets - so any information about the digitization and the filesets are related directly to these objects, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the Intellectual Work class. This allows us to make descriptive metadata assertions (such as format = manuscripts, or rights = digital asset viewing and reuse rights) that aren't in conflict with digital object descriptions (format = jpeg or rights = physical resource access or reuse rights).
 
 Descriptive metadata available on this class:
 
+- **dcterms:rights**
+- **dcterms:rightsHolder**
+- **dc:rights**
+- **dcterms:description**
+- **dcterms:identifier**
 - **dcterms:extent** = FILEDESC/EXTENT [should be resource, will be literal- see intellectual work extent for this issue] => files_extent
 - **dcterms:title** = TEXT/BODY/DIV1/HEAD [literal] => fileset_title
 - anything else file set specific, as encountered (crossing into technical metadata)
@@ -194,7 +213,9 @@ PCDM + Other RDF Relationships on this class:
 
 Descriptive metadata available on this class:
 
-- anything each file specific, as encountered (crossing into technical metadata). following is taken from PCDM technical metadata recommendations (which we should take with a grain of salt, if at all)
+- anything each file specific as stored in the original DLXS 'descriptive' metadata, as encountered (crossing into technical metadata). 
+ 
+The following is taken from PCDM technical metadata recommendations (which we should take with a grain of salt, if at all)
 - **ebucore:filename** = filename
 - **ebucore:fileSize** = file size in bytes
 - **rdfs:label** = file label
