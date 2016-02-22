@@ -4,6 +4,9 @@ Notes here primarily for metadata normalization + entity matching work planned, 
 ##Collection by Collection Mappings
 Go to the relevant page as listed [here](toBeMigrated.md). If a page doesn't exist, it hasn't been mapped yet. Listed in order of migration work due date.
 
+##DLXS <=> SharedShelf Solr Concepts Interop Mapping
+For making sure updated DLXS to Fedora4 mappings make sense with existing SharedShelf Solr mappings, relevant notes are kept [here](MappingsToConcepts.md). It should represent the latest Solr mappings and config files for both datasets.
+
 ##Proposed PCDM Model for 'Simple RDF' interim
 A lot of this is written with short and mid term future metadata work (normalization, entity resolution/URI retrieval, more robust dig collection descriptive metadata ontology written) in mind.
 
@@ -50,7 +53,7 @@ If there is a related object PCDM:Object for Collection:
 
 *Digital Collection <-PCDM:relatedObjectOf- Digital Collection Related Object*
 
-###PCDM:Collection > HydraWorks:Collection : Digital Collection Related Object
+###PCDM:Object : Digital Collection Related Object
 This is an object that relates to the Digital Collection but isn't part of that collection. Not required.
 
 Descriptive metadata available on this class:
