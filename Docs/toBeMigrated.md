@@ -4,11 +4,11 @@
 
 *Jira should be used as the primary record for order/due dates of migrations.*
 
-- [*hunt (migrated)* (to be migrated first to RDF)](Collections/Hunt.md)
+- [hunt (migrated) (to be migrated first to RDF)](Collections/Hunt.md)
 - [bolivian (migrated to Fedora 3, 2nd for RDF migration)](Collections/Bolivian.md)
-- [bees (migrated for Fedora 3)](Collections/Bees.md)
+- [bees (migrated to Fedora 3) - should be included within CHLA so map that instead.](Collections/Bees.md)
+- [chla](Collections/CHLA.md)
 - hearth
-- chla
 - cmip
 - izquierda
 - cooper

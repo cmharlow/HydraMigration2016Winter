@@ -27,6 +27,7 @@
 
 ##Notes:
 
+- This digital collection is part of the CHLA digital collection.
 - There are not elements in any namespace
 - XML export starts with an 'easter egg' entry... what is this? no record identifier, title and author give 'Easter Egg'... was it some sort of test entry?
 - Sample XML is not well-formed - missing closing tag in one record. Repaired for sake of review.
