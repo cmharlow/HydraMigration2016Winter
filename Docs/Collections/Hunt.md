@@ -93,7 +93,7 @@ Full text of a selection of 91 books from the Huntington Free Library Native Ame
 - **dcterms:identifier** = "6790930" => collection_bibid (can we type objects for MARC ids versus other identifiers that may appear?)
 - **dc:publisher** = "Cornell University. Library" [literal] => collection_publ
 - **dcterms:publisher** = (entity resolution/URI work candidate, nothing for now) => collection_publ
-- **dcterms:relation** = http://ebooks.library.cornell.edu/h/hunt/ => collection_relatedURL
+- **dcterms:relation** = https://rare.library.cornell.edu/collections/amerhist/amerindianhist => collection_relatedURL
 
 PCDM + Other RDF Relationships on this class:
 

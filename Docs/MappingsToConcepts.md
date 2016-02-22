@@ -1,4 +1,4 @@
-#Mapping DLXS objects to Hydra/Solr Concepts
+#Mapping DLXS objects to Hydra with Fedora 4 and Solr Concepts
 
 ##All Concepts used so far:
 
