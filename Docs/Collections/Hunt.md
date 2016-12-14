@@ -1,7 +1,10 @@
-#Hunt.xml
-Notes here primarily for metadata normalization + entity matching work planned, confirmed mappings (for 'interim Simple RDF' plan) moved to the finalized mappings document: https://docs.google.com/spreadsheets/d/1SV2hP1tKQpPQrI1cEBWgx6NyO56YhjUCkOD_vxrzlEQ/edit?usp=sharing.
+# Hunt.xml
 
-##Overview of Existing Metadata Usage in DLXS XML for Hunt
+Notes here primarily for metadata normalization + entity matching work planned, confirmed mappings (for 'interim Simple RDF' plan) moved to the finalized mappings [Box spreadsheet](https://cornell.box.com/s/egu0slwx19xz9euxcgj428c9esvpuyzq).
+
+Hunt or Huntington is 124 digitized books. Most books have bibliographic records in the Catalog for the analog versions.
+
+## Overview of Existing Metadata Usage in DLXS XML for Hunt
 ```
        /record/ENCODINGDESC/EDITORIALDECL/P: |=========================|    124/124 | 100%
                     /record/FILEDESC/EXTENT: |=========================|    124/124 | 100%
@@ -20,94 +23,76 @@ Notes here primarily for metadata normalization + entity matching work planned, 
                 /record/TEXT/BODY/DIV1/HEAD: |=========================|    124/124 | 100%
 ```
 
-##Overview of Existing Solr Usage for Hunt in Fedora 3
+## Overview of Existing Solr Usage for Hunt in Fedora 3
 ```
-                   _version_: |=========================|    124/124 | 100% 
-     active_fedora_model_ssi: |=========================|    124/124 | 100% 
-        author_creator_tesim: |=========================|    124/124 | 100% 
-                    author_t: |=========================|    124/124 | 100% 
-                author_tesim: |=========================|    124/124 | 100% 
-        bibl_titletype_tesim: |=========================|    124/124 | 100% 
-                  book_id_ts: |=========================|    124/124 | 100% 
-              book_ocr_tesim: |=======================  |    119/124 |  95% 
-            collection_tesim: |=========================|    124/124 | 100% 
-creation_site_location_tesim: |=========================|    124/124 | 100% 
-         creator_facet_tesim: |=========================|    124/124 | 100% 
-                   creator_t: |=========================|    124/124 | 100% 
-                  date_tesim: |=                        |      5/124 |   4% 
-       editorialdecl_n_tesim: |=========================|    124/124 | 100% 
-                extent_tesim: |=========================|    124/124 | 100% 
-                format_tesim: |=========================|    124/124 | 100% 
-              has_model_ssim: |=========================|    124/124 | 100% 
-              has_pages_ssim: |=========================|    124/124 | 100% 
-                          id: |=========================|    124/124 | 100% 
-             latest_date_isi: |=========================|    124/124 | 100% 
-          object_profile_ssm: |=========================|    124/124 | 100% 
-            object_state_ssi: |=========================|    124/124 | 100% 
-               pubdate_tesim: |=========================|    124/124 | 100% 
-             publisher_tesim: |=========================|    124/124 | 100% 
-              pubplace_tesim: |=========================|    124/124 | 100% 
-          pubstmt_idno_tesim: |=========================|    124/124 | 100% 
-     pubstmt_idno_type_tesim: |=========================|    124/124 | 100% 
-     pubstmt_publisher_tesim: |=========================|    124/124 | 100% 
-      pubstmt_pubplace_tesim: |=========================|    124/124 | 100% 
-      repository_place_tesim: |=========================|    124/124 | 100% 
-            repository_tesim: |=========================|    124/124 | 100% 
-                       score: |=========================|    124/124 | 100% 
-               subject_tesim: |=========================|    124/124 | 100% 
-          system_create_dtsi: |=========================|    124/124 | 100% 
-        system_modified_dtsi: |=========================|    124/124 | 100% 
-                   timestamp: |=========================|    124/124 | 100% 
-                   title_ssi: |=========================|    124/124 | 100% 
-                 title_tesim: |=========================|    124/124 | 100% 
-      titlestmt_author_tesim: |=========================|    124/124 | 100% 
-       titlestmt_title_tesim: |=========================|    124/124 | 100% 
-   titlestmt_titletype_tesim: |=========================|    124/124 | 100% 
+                   _version_: |=========================|    124/124 | 100%
+     active_fedora_model_ssi: |=========================|    124/124 | 100%
+        author_creator_tesim: |=========================|    124/124 | 100%
+                    author_t: |=========================|    124/124 | 100%
+                author_tesim: |=========================|    124/124 | 100%
+        bibl_titletype_tesim: |=========================|    124/124 | 100%
+                  book_id_ts: |=========================|    124/124 | 100%
+              book_ocr_tesim: |=======================  |    119/124 |  95%
+            collection_tesim: |=========================|    124/124 | 100%
+creation_site_location_tesim: |=========================|    124/124 | 100%
+         creator_facet_tesim: |=========================|    124/124 | 100%
+                   creator_t: |=========================|    124/124 | 100%
+                  date_tesim: |=                        |      5/124 |   4%
+       editorialdecl_n_tesim: |=========================|    124/124 | 100%
+                extent_tesim: |=========================|    124/124 | 100%
+                format_tesim: |=========================|    124/124 | 100%
+              has_model_ssim: |=========================|    124/124 | 100%
+              has_pages_ssim: |=========================|    124/124 | 100%
+                          id: |=========================|    124/124 | 100%
+             latest_date_isi: |=========================|    124/124 | 100%
+          object_profile_ssm: |=========================|    124/124 | 100%
+            object_state_ssi: |=========================|    124/124 | 100%
+               pubdate_tesim: |=========================|    124/124 | 100%
+             publisher_tesim: |=========================|    124/124 | 100%
+              pubplace_tesim: |=========================|    124/124 | 100%
+          pubstmt_idno_tesim: |=========================|    124/124 | 100%
+     pubstmt_idno_type_tesim: |=========================|    124/124 | 100%
+     pubstmt_publisher_tesim: |=========================|    124/124 | 100%
+      pubstmt_pubplace_tesim: |=========================|    124/124 | 100%
+      repository_place_tesim: |=========================|    124/124 | 100%
+            repository_tesim: |=========================|    124/124 | 100%
+                       score: |=========================|    124/124 | 100%
+               subject_tesim: |=========================|    124/124 | 100%
+          system_create_dtsi: |=========================|    124/124 | 100%
+        system_modified_dtsi: |=========================|    124/124 | 100%
+                   timestamp: |=========================|    124/124 | 100%
+                   title_ssi: |=========================|    124/124 | 100%
+                 title_tesim: |=========================|    124/124 | 100%
+      titlestmt_author_tesim: |=========================|    124/124 | 100%
+       titlestmt_title_tesim: |=========================|    124/124 | 100%
+   titlestmt_titletype_tesim: |=========================|    124/124 | 100%
 ```
 
-##Proposed PCDM Model for 'Simple RDF' interim
-A lot of this is written with short and mid term future metadata work (normalization, entity resolution/URI retrieval, more robust dig collection descriptive metadata ontology written) in mind.
+## Proposed PCDM Model for 'Simple RDF' interim
+A lot of this is written with short and mid term future metadata work (normalization, entity resolution/URI retrieval, more robust dig collection descriptive metadata ontology written) in mind. See [the CUL Digital Collections Metadata Application Profile](../CULPCDM.md) for a high-level review of the PCDM model and profiles used.
 
-Structure of the following section:
+### Current Huntington Structural Model in Digital Collections Fedora 4.7 Model
 
-###PCDM Object > Subclass of this : Class Label at CUL (set up for making CUL object ontology?)
-Notes on this class.
+![Huntington structural diagram](diagrams/huntington_f4.jpg "Huntington structural diagram")
 
-Descriptive metadata so far mapped for this class:
+### PCDM:Collection > HydraWorks:Collection : Digital Collection
+This is the collection resource representing Huntington Digital Collection.
 
-- **the metadata term** = the value or mapping for our test collection, Huntington, along with notes for near future metadata work on these => the Solr 'concept' (to keep in line with other collections that go directly to Solr)
+#### Descriptive Profile
 
-RDF Relationships on this class:
+- **dcterms:title** = "Huntington Free Library Native American Collection"^^xs:string
+- **dcterms:abstract** = "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection."^^xs:string
+- **dcterms:date** = "2010"^^<http://id.loc.gov/datatypes/edtf>
+- **dcterms:identifier** = "6790930" (typing to be added in phase 2)
+- **dc:publisher** = "Cornell University. Library"^^xs:string
+- **dcterms:publisher** = <http://id.loc.gov/authorities/names/n85179829> (leveraging this to be added in phase 2)
+- **dcterms:relation** = <https://rare.library.cornell.edu/collections/amerhist/amerindianhist>
 
-The RDF relationships expected for this class, symmetry of those properties not assumed (hence A -> B and B -> A are both given)
+#### Structural Profile
 
-###PCDM:Collection > HydraWorks:Collection : Digital Collection
-This is the digital collection that current maps to the dlxs identifier sets (i.e. 'hunt', 'bol', etc.). This is required.
+- *Digital Collection <-PCDM:isMemberOf- Repository Work* (only this due to the Fedora 4 inverse membership work around for performance)
 
-Descriptive metadata available on this class:
-
-- **dcterms:title** = "Huntington Free Library Native American Collection" =>collection_title
-- **dcterms:abstract** = "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection.
-Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection." => collection_abstract
-- **dcterms:created** = "2010" (want to add EDTF encoding since we know it in this case?) => collection_date
-- **dcterms:identifier** = "6790930" => collection_bibid (can we type objects for MARC ids versus other identifiers that may appear?)
-- **dc:publisher** = "Cornell University. Library" [literal] => collection_publ
-- **dcterms:publisher** = (entity resolution/URI work candidate, nothing for now) => collection_publ
-- **dcterms:relation** = https://rare.library.cornell.edu/collections/amerhist/amerindianhist => collection_relatedURL
-
-PCDM + Other RDF Relationships on this class:
-
-If no secondary PCDM:Collection for Set:
-*Digital Collection -PCDM:hasMember-> Intellectual Work*
-
-*Digital Collection <-PCDM:isMemberOf- Intellectual Work*
-
-If there is a secondary PCDM:Collection for Set:
-*Digital Collection -PCDM:hasMember-> Set*
-
-*Digital Collection <-PCDM:isMemberOf- Set*
-
-###PCDM:Collection > HydraWorks:Collection : Set
+### PCDM:Collection > HydraWorks:Collection : Set
 This is a generic set used as needed for further differentiation of works and collections. Not required. Not used in Huntington.
 
 Descriptive metadata available on this class:
@@ -125,7 +110,7 @@ PCDM + Other RDF Relationships on this class:
 
 *Set <-PCDM:isMemberOf- Intellectual Work*
 
-###PCDM:Object > HydraWorks:Work & > dpla:SourceResource : Intellectual Work
+### PCDM:Object > HydraWorks:Work & > dpla:SourceResource : Intellectual Work
 This is the intellectual work represented by the Digital Work. The bulk of the descriptive metadata is here. Eventually, we may look into the option of having this object generated through a RDF Shape on an external triplestore containing more robust intellectual work metadata (and metadata ontologies). While one could, theoretically, have an Intellectual Work for each Digital Work Object Level (or the Digital Collection itself), we are limiting Intellectual Works for the time being to those represented roughly by bibliographic objects - with an eye to system efficiency and object interoperability in delineating this (especially when we get into journals). Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way.
 
 Not typing as subclass of DPLA:SourceResource in this permutation of implementation. Want to consider in the future leveraging the 'aggregation' object aspect to possibly pull metadata objects into this work.
@@ -146,7 +131,7 @@ Descriptive metadata available on this class (at least for Huntington, more to b
 - **dcterms:format** = "books" from chosen vocab URI [non-literal:external URI] => form (avoid until integrating fedora w/authorities + URIs is discussed)
 - **dcterms:identifier** = Nothing in existing DLXS XML to map [literal] => identifier (will want to type eventually for type of identifier = marcbib, dlxs, other?)
 - **dcterms:language** = Nothing in existing DLXS XML to map => language (we will want to add this in the mid-term future, but requires manual review? Also question of external URIs)
-- **VIVO:placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal; note: this is a datatype property] => pubplace 
+- **VIVO:placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal; note: this is a datatype property] => pubplace
 - **dc:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
 - **dcterms:publisher** = not used currently [non-literal;entity resolution candidate] => publisher
 - **EDM.currentLocation** = FILEDESC/PUBLICATIONSTMT/PUBLISHER [non-literal, edm:Place instance] => repository (will be external URI - cheat with literal until entity resolution project?)
@@ -173,12 +158,12 @@ If there is no Part:
 
 *Intellectual Work <-PCDM:isMemberOf- File Set*
 
-###PCDM:Object > HydraWorks:Work == Part (Secondary Intellectual Work), as needed
+### PCDM:Object > HydraWorks:Work == Part (Secondary Intellectual Work), as needed
 Digitization and description efforts should work to capture discrete Intellectual Works such that the metadata on the top level Intellectual Work class instance covers the parts as needed. We're not trying to create intellectual works all the way down, but the current Curation Concerns/HydraWork expectations of PCDM make this (and conflation of digital and intellectual works) hard to avoid.
 
 Descriptive metadata available on this class:
 
-- to be added as encountered. 
+- to be added as encountered.
 - **dcterms:title** [literal]  (if used at part-level)
 - **dc:subject** [literal]  (if used at part-level)
 - **dc:relation** [literal] OCR (if used at part-level)
@@ -189,7 +174,7 @@ PCDM + Other RDF Relationships on this class:
 
 *Digital Work|Part <-PCDM:isMemberOf- File Set*
 
-###PCDM:Object < HydraWorks:FileSet : File Set / Digital Work
+### PCDM:Object < HydraWorks:FileSet : File Set / Digital Work
 This is the digital work as represented by file sets - so any information about the digitization and the filesets are related directly to these objects, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the Intellectual Work class. This allows us to make descriptive metadata assertions (such as format = manuscripts, or rights = digital asset viewing and reuse rights) that aren't in conflict with digital object descriptions (format = jpeg or rights = physical resource access or reuse rights).
 
 Descriptive metadata available on this class:
@@ -209,12 +194,12 @@ PCDM + Other RDF Relationships on this class:
 
 *File Set <-PCDM:isFileOf- File(s)*
 
-###PCDM:File < HydraWorks:File : File
+### PCDM:File < HydraWorks:File : File
 
 Descriptive metadata available on this class:
 
-- anything each file specific as stored in the original DLXS 'descriptive' metadata, as encountered (crossing into technical metadata). 
- 
+- anything each file specific as stored in the original DLXS 'descriptive' metadata, as encountered (crossing into technical metadata).
+
 The following is taken from PCDM technical metadata recommendations (which we should take with a grain of salt, if at all)
 - **ebucore:filename** = filename
 - **ebucore:fileSize** = file size in bytes
