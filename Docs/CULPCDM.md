@@ -93,9 +93,9 @@ This is a generic set or sub-collection (nested collection) used as needed for f
 Repeats profile and relationships from Digital Collection (above).
 
 ###PCDM:Object > HydraWorks:Work : Repository Work
-This is the intellectual work represented by the Digital Work. The bulk of the descriptive metadata is here. Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way. Can be repeated/nested as needed (should be clarified in Collection mapping notes).
+This is the repository, intellectual work represented by the delivery digital asset(s). The bulk of the descriptive metadata for search, identification and discovery is here. We are limiting Repository Works for the time being to those represented roughly by bibliographic objects - with an eye to system efficiency and object interoperability in delineating this. Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way. Can be repeated/nested as needed (should be clarified in Collection mapping notes).
 
-Specific forms (dcterms:format) may follow more specific profiles, i.e., journals as opposed to books as opposed to photographs, etc.
+Specific forms (dcterms:format, normally also represented by the used ActiveFedora model) may follow more specific profiles, i.e., journals as opposed to books as opposed to photographs, etc.
 
 #### Descriptive Metadata Profile:
 
