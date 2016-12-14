@@ -80,104 +80,135 @@ This is the collection resource representing Huntington Digital Collection.
 
 #### Descriptive Profile
 
-- **dcterms:title** = "Huntington Free Library Native American Collection"^^xs:string
-- **dcterms:abstract** = "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection."^^xs:string
-- **dcterms:date** = "2010"^^<http://id.loc.gov/datatypes/edtf>
-- **dcterms:identifier** = "6790930" (typing to be added in phase 2)
-- **dc:publisher** = "Cornell University. Library"^^xs:string
-- **dcterms:publisher** = <http://id.loc.gov/authorities/names/n85179829> (leveraging this to be added in phase 2)
-- **dcterms:relation** = <https://rare.library.cornell.edu/collections/amerhist/amerindianhist>
+predicate | value | notes
+--- | --- | ---
+**dcterms:title** | "Huntington Free Library Native American Collection"^^xs:string | Need language typing
+**dcterms:abstract** | "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection."^^xs:string | Need language typing
+**dcterms:date** | "2010"^^<http://id.loc.gov/datatypes/edtf> | Need date (data type) typing. Make sure is not dcterms:created
+**dcterms:identifier** | "6790930" | identifier typing to be added in phase 2 of migration.
+**dc:publisher** | "Cornell University. Library"^^xs:string | To be removed upon being able to leverage context class URIs (below)
+**dcterms:publisher** | <http://id.loc.gov/authorities/names/n85179829> | leveraging this to be added in phase 2 of migration.
+**dcterms:relation** | <https://rare.library.cornell.edu/collections/amerhist/amerindianhist> | n/a
 
 #### Structural Profile
 
 - *Digital Collection <-PCDM:isMemberOf- Repository Work* (only this due to the Fedora 4 inverse membership work around for performance)
+- *Digital Collection <-ore:proxyFor- Repository Work Member of Collections Proxies (part of that inverse membership/inverse containment work as well)*
+- *Digital Collection <-ldp:contains- Digital Collection Fedora Container under /rest/dev*
 
-### PCDM:Collection > HydraWorks:Collection : Set
-This is a generic set used as needed for further differentiation of works and collections. Not required. Not used in Huntington.
+#### SPARQL Update for Huntington Collection Descriptive Metadata Repair
 
-Descriptive metadata available on this class:
+```
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xs: <http://www.w3.org/2001/XMLSchema>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-- **dcterms:title** = n/a [literal] => set_title
-- **dcterms:abstract** = n/a [literal] => set_abstract
-- **dcterms:created** = n/a [literal, EDTF] => set_date
-- **dcterms:identifier** = n/a [literal, typed as able] => set_id
-- **dc:publisher** = n/a [literal] => set_publ
-- **dcterms:publisher** = n/a [URI < dcterms:Agent] => set_publ
-- **dcterms:relation** = n/a [URL] => set_relatedURL
+DELETE
+  { <> dcterms:title "Huntington Collection must edit" . } WHERE {};
+INSERT
+  { <> dcterms:title "Huntington Free Library Native American Collection"^^xs:string ;
+       dcterms:abstract "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the  various genres in the collection."^^xs:string ;
+       dcterms:date "2010"^^<http://id.loc.gov/datatypes/edtf> ;
+       dcterms:identifier "6790930"^^xs:string ;
+       dc:publisher "Cornell University. Library"^^xs:string ;
+       dcterms:publisher <http://id.loc.gov/authorities/names/n85179829> ;
+       dcterms:relation <http://id.loc.gov/authorities/names/n85179829> ;
+   } WHERE {};
+```
 
-PCDM + Other RDF Relationships on this class:
-*Set -PCDM:hasMember-> Intellectual Work*
+### PCDM:Object > HydraWorks:Work | AF:Book : Repository Work
+Huntington only contains Books, so the Book repository intellectual object is described here.
 
-*Set <-PCDM:isMemberOf- Intellectual Work*
+#### Descriptive Profile
 
-### PCDM:Object > HydraWorks:Work & > dpla:SourceResource : Intellectual Work
-This is the intellectual work represented by the Digital Work. The bulk of the descriptive metadata is here. Eventually, we may look into the option of having this object generated through a RDF Shape on an external triplestore containing more robust intellectual work metadata (and metadata ontologies). While one could, theoretically, have an Intellectual Work for each Digital Work Object Level (or the Digital Collection itself), we are limiting Intellectual Works for the time being to those represented roughly by bibliographic objects - with an eye to system efficiency and object interoperability in delineating this (especially when we get into journals). Resource abstractions/domain models like FRBR or RDA:Work etc. are not to be used here. 'Work' is used in a broader way.
+field name | predicate | mapping or collection-wide static value [range] | notes
+--- | --- | --- | ---
+abstract | **dcterms:abstract** | Nothing in existing DLXS XML to map [xs:string] | n/a
+alternate title | **dcterms:alternative** | Nothing in existing DLXS XML to map [xs:string] | n/a
+contributor | **dc:contributor** | Nothing in existing DLXS XML to map [literal:prefLabel] | n/a
+contributor URI | **dcterms:contributor** | Nothing in existing DLXS XML to map [Agent URI] | n/a
+creator | **dc:creator** | FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] | will need further clean-up post preliminary F4 migration.
+creator URI | **dcterms:creator** | to be matched [Agent URIs] | part of phase 2 RDF migration work
+date created | **dcterms:created** | FILEDESC/SOURCEDESC/BIBL/DATE | date [literal]  | need to assert EDTF type. review separating date text and date key fields.
+note | **dcterms:description** | Nothing in existing DLXS XML to map [literal] | n/a
+analog extent | **dcterms:extent** | FILEDESC/SOURCEDESC/BIBL/NOTE | should be URI but uncertain about possibility object_profile_ssm subclassing/moving to resource for now.
+form | **dc:format** | "books" [literal] | n/a
+form URI | **dcterms:format** | "books" Getty Vocab [Concept URI] | part of phase 2 RDF migration work
+identifier | **dcterms:identifier** | Nothing in existing DLXS XML to map [literal] | will want to type eventually for type of identifier = marcbib, dlxs, other?
+language URI | **dcterms:language** | Nothing in existing DLXS XML to map | we will want to add. Part of handling URIs for context classes.
+OCR | **dc:relation** | OCR Text [literal] | wanted better term to assert this field as we don't keep the OCR as a separate file, but not finding anything without restrictions.
+place of origin | **VIVO:placeOfPublication** | FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal] | this is a datatype property
+publisher | **dc:publisher** | FILEDESC/SOURCEDESC/BIBL/PUBLISHER [literal] | will need further clean-up post preliminary F4 migration.
+publisher URI | **dcterms:publisher** | not used currently [Agent URI] | part of phase 2 RDF migration work
+repository | **EDM.currentLocation** | FILEDESC/PUBLICATIONSTMT/PUBLISHER [Place URI] | will be external URI - cheat with literal until entity resolution project.
+rights | **dc:rights** | Nothing in existing DLXS XML to map [literal] | text statement when URI/community rights standard hasn't been used with dcterms:rights
+rights URI | **dcterms:rights** | Nothing in existing DLXS XML to map [Rights Statement URI] | URI for any community-assigned rights.
+rightsholder URI | **dcterms:rightsHolder** | Nothing in existing DLXS XML to map [Agent URI] | phase 2 effort.
+subject | **dc:subject** | PROFILEDESC/TEXTCLASS/KEYWORDS/TERM [literal] | all subject types together at present.
+subject URI | **dcterms:subject** | not currently used [Resource URI] | all subject types together at present.
+title | **dcterms:title** | FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main']  [literal] | will want language typing. Phase 2.
+type | **dc:type** | "Text" [literal] | n/a
+type URI | **dcterms:type** | DCMI Types URI for "Text" [URI] | entity resolution candidate, phase 2, yadda yadda.
 
-Not typing as subclass of DPLA:SourceResource in this permutation of implementation. Want to consider in the future leveraging the 'aggregation' object aspect to possibly pull metadata objects into this work.
+#### Structural Profile
 
-Descriptive metadata available on this class (at least for Huntington, more to be added as other collections are mapped + migrated to Fedora 4):
+- *Book -PCDM:hasMember-> Page*
+- *Book <-PCDM:isMemberOf- Page*
 
-- **dcterms:abstract** = Nothing in existing DLXS XML to map [literal] => abstract
-- **dcterms:alternative** = Nothing in existing DLXS XML to map [literal] => alt_title
-- **dc:contributor** = Nothing in existing DLXS XML to map [literal:prefLabel] => contributor
-- **dcterms:contributor** = Nothing in existing DLXS XML to map [non-literal:external URI] => contributor_uri (would rather have this than literal/above, but is part of entity resolution project that comes after fedora 4 migration)
-- **dc:creator** = FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] => creator
-- **dcterms:creator** = to be matched [non-literal;entity resolution URIs] => creator_uri (same note re: URI/literal for dcterms:contributor)
-- (additional role terms will be added from RDAU or LoC Relators as encountered in upcoming collections mappings)
-- **dcterms:created** = FILEDESC/SOURCEDESC/BIBL/DATE => date [literal] no encoding type asserted (would like to type as date/fix encoding. may want separate date text and date key fields in that instance.)
-- **dcterms:description** = Nothing in existing DLXS XML to map [literal] => description
-- **dcterms:extent** = FILEDESC/SOURCEDESC/BIBL/NOTE [should be URI but uncertain about possibility object_profile_ssm subclassing/moving to resource for now] => intell_extent
-- **dc:format** = "books" => form
-- **dcterms:format** = "books" from chosen vocab URI [non-literal:external URI] => form (avoid until integrating fedora w/authorities + URIs is discussed)
-- **dcterms:identifier** = Nothing in existing DLXS XML to map [literal] => identifier (will want to type eventually for type of identifier = marcbib, dlxs, other?)
-- **dcterms:language** = Nothing in existing DLXS XML to map => language (we will want to add this in the mid-term future, but requires manual review? Also question of external URIs)
-- **VIVO:placeOfPublication** = FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal; note: this is a datatype property] => pubplace
-- **dc:publisher** = FILEDESC/SOURCEDESC/BIBL/PUBLISHER => publisher
-- **dcterms:publisher** = not used currently [non-literal;entity resolution candidate] => publisher
-- **EDM.currentLocation** = FILEDESC/PUBLICATIONSTMT/PUBLISHER [non-literal, edm:Place instance] => repository (will be external URI - cheat with literal until entity resolution project?)
-- **dc:rights** = Nothing in existing DLXS XML to map [literal; text statement when URI/community rights standard hasn't been used with dcterms:rights] => intell_rights
-- **dcterms:rights** = Nothing in existing DLXS XML to map [non-literal; URI for any community-assigned rights] => intell_rights
-- **dcterms:rightsHolder** = intellectual resource rights holder if they exist (none do at present for Huntington) [non-literal; will require probably local URI for entity] => intell_rightsHolder
-- **dc:subject** = PROFILEDESC/TEXTCLASS/KEYWORDS/TERM [literal] => subject (all types together at present)
-- **dcterms:subject** = not currently used [non-literal; will be the URIs for the resolved literals in dc:subject] => subject (all types together at present)
-- **dcterms:title** = FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main']  [literal] => title
-- **dc:type** = "Text" [literal: URI, entity resolution candidate to create dcterms:type] => item_type
-- **dcterms:type** = external URI for "Text" [non-literal: URI, entity resolution candidate] => item_type
-- **dc:relation** = OCR Text (the actual text, not a file/fedora obj URI) => ocr (wanted more granular term to capture this field - as we don't keep the OCR as a separate file - but just am not finding anything without domain/range restrictions).
-- **dcterms:isPartOf** = PCDM:Collection URI < dcterms:Collection => need to discuss further, as part of ease of Solr creation for collection label. How to handle dcmi:Collection variances from PCDM:Collection?
+#### SPARQL Updates for Huntington Books Descriptive Metadata Repair
 
-PCDM + Other RDF Relationships on this class:
+**Remove erroneous alternate titles from all Huntington Book records.**
 
-If there is a Part:
-*Intellectual Work -PCDM:hasMember-> Part*
+```
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xs: <http://www.w3.org/2001/XMLSchema>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-*Intellectual Work <-PCDM:isMemberOf- Part*
+DELETE
+  { <> dcterms:alternate ?title }
+WHERE
+  { <> dcterms:title ?title }
+```
 
-If there is no Part:
-*Intellectual Work -PCDM:hasMember-> File Set*
+**Remove erroneous alternate titles from all Huntington Book records.**
 
-*Intellectual Work <-PCDM:isMemberOf- File Set*
+```
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xs: <http://www.w3.org/2001/XMLSchema>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-### PCDM:Object > HydraWorks:Work == Part (Secondary Intellectual Work), as needed
-Digitization and description efforts should work to capture discrete Intellectual Works such that the metadata on the top level Intellectual Work class instance covers the parts as needed. We're not trying to create intellectual works all the way down, but the current Curation Concerns/HydraWork expectations of PCDM make this (and conflation of digital and intellectual works) hard to avoid.
+DELETE
+  { <> dcterms:alternate ?title }
+WHERE
+  { <> dcterms:title ?title }
+```
 
-Descriptive metadata available on this class:
+### PCDM:Object > HydraWorks:Work | AF:Page : Repository Work
+Only books / pages captured in Huntington, so these are Pages. To be reviewed after Phase 2 of RDF migration: why these are HydraWorks:Work instances.
+
+#### Descriptive Profile
 
 - to be added as encountered.
 - **dcterms:title** [literal]  (if used at part-level)
 - **dc:subject** [literal]  (if used at part-level)
 - **dc:relation** [literal] OCR (if used at part-level)
 
-PCDM + Other RDF Relationships on this class:
+#### Structural Profile
 
 *Digital Work|Part -PCDM:hasMember-> File Set*
 
 *Digital Work|Part <-PCDM:isMemberOf- File Set*
 
-### PCDM:Object < HydraWorks:FileSet : File Set / Digital Work
-This is the digital work as represented by file sets - so any information about the digitization and the filesets are related directly to these objects, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the Intellectual Work class. This allows us to make descriptive metadata assertions (such as format = manuscripts, or rights = digital asset viewing and reuse rights) that aren't in conflict with digital object descriptions (format = jpeg or rights = physical resource access or reuse rights).
+#### SPARQL Updates for Huntington Books Descriptive Metadata Repair
 
-Descriptive metadata available on this class:
+```
+
+```
+
+### PCDM:Object < HydraWorks:FileSet : FileSet
+This is the digital work as represented by file sets - so any information about the digitization and the filesets are related directly to these objects, but descriptive metadata about the intellectual work (the bulk of the descriptive metadata) is used with the above Work instances.
+
+#### Technical & Provenance Metadata Profile
 
 - **dcterms:rights**
 - **dcterms:rightsHolder**
@@ -188,7 +219,7 @@ Descriptive metadata available on this class:
 - **dcterms:title** = TEXT/BODY/DIV1/HEAD [literal] => fileset_title
 - anything else file set specific, as encountered (crossing into technical metadata)
 
-PCDM + Other RDF Relationships on this class:
+#### Structural Profile
 
 *File Set -PCDM:hasFile-> File(s)*
 
@@ -196,15 +227,7 @@ PCDM + Other RDF Relationships on this class:
 
 ### PCDM:File < HydraWorks:File : File
 
-Descriptive metadata available on this class:
-
-- anything each file specific as stored in the original DLXS 'descriptive' metadata, as encountered (crossing into technical metadata).
-
-The following is taken from PCDM technical metadata recommendations (which we should take with a grain of salt, if at all)
-- **ebucore:filename** = filename
-- **ebucore:fileSize** = file size in bytes
-- **rdfs:label** = file label
-- **ebucore:dateCreated** = date file was created
+Files are kept in Amazon Web Service. Should check embedded metadata profile at a later date.
 
 
 ##Mapping from DLXS XML to "Simple RDF" (with normalization notes)

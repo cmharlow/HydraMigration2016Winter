@@ -1,12 +1,15 @@
 #CUL Fedora 4 Digital Collections (main) Migration Docs
 
+
 ---
+
 This is Christina's copy of this documentation, for sake of capturing details and having a place to store F4 scripts. Official project documentation of record is stored in Box and Cornell's Confluence wiki, and will be updated with details from this when they are ready.
+
 ---
 
 ##TOC for this Repository's Documentation
 
-- [Repository Overview](.)
+- [Repository Overview](README.md)
 - [Collections to be Migrated with links to Collection-Specific Mapping Notes and Analysis](Docs/toBeMigrated.md)
 - [CUL Digital Collections Metadata Application Profile & Metadata Work Plan](Docs/CULPCDM.md)
 - [CUL Digital Collections MAP to Solr Concepts Mapping](Docs/MappingsToConcepts.md)
