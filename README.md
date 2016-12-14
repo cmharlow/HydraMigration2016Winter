@@ -1,8 +1,9 @@
 #CUL Fedora 4 Digital Collections (main) Migration Docs
 
-```
+---
 This is Christina's copy of this documentation, for sake of capturing details and having a place to store F4 scripts. Official project documentation of record is stored in Box and Cornell's Confluence wiki, and will be updated with details from this when they are ready.
-```
+---
+
 ##TOC for this Repository's Documentation
 
 - [Repository Overview](.)
