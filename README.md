@@ -1,10 +1,21 @@
-#CUL DLXS + SharedShelf Migration Docs
+#CUL Fedora 4 Digital Collections (main) Migration Docs
+
+```
+This is Christina's copy of this documentation, for sake of capturing details and having a place to store F4 scripts. Official project documentation of record is stored in Box and Cornell's Confluence wiki, and will be updated with details from this when they are ready.
+```
+##TOC for this Repository's Documentation
+
+- [Repository Overview](.)
+- [Collections to be Migrated with links to Collection-Specific Mapping Notes and Analysis](Docs/toBeMigrated.md)
+- [CUL Digital Collections Metadata Application Profile & Metadata Work Plan](Docs/CULPCDM.md)
+- [CUL Digital Collections MAP to Solr Concepts Mapping](Docs/MappingsToConcepts.md)
+- [Existing Fedora 3 Metadata Analysis](Docs/Fedora3/Fedora3MetadataNotes.md)
 
 ##Scope
 Focus is on DLXS metadata already migrated or to be migrated to Hydra. These metadata and associated objects will be stored in Fedora then accessed there by Solr, not on other collections (like SharedShelf) where Solr access the metadata and objects from a different object store.
 
 ##Overview of All DLXS Metadata in/from DLXS
-Fields being used in DLXS, currently mapped 1-1 to Fedora objects with OM/XML records. Some collections included here that have already been mapped and migrated to Hydra using Fedora 3; others (the bulk), not yet migrated. 
+Fields being used in DLXS, currently mapped 1-1 to Fedora objects with OM/XML records. Some collections included here that have already been mapped and migrated to Hydra using Fedora 3; others (the bulk), not yet migrated.
 
 Note that some fields displaying as not used in following reports/overviews are technical metadata fields that don't have text, just a series of attributes on the XML elements. There seems to be a procedure in place for handling these.
 
@@ -44,7 +55,7 @@ Fields being used across all collections that contain text values (including tho
 More detailed notes on these fields is in [DLXStobeMigratedNotes.md](Docs/toBeMigratedNotes.md)
 
 ##Overview of DLXS Metadata already migrated to Hydra
-Fields being used/exposed in Solr/as Json in Blacklight at present for DLXS objects already migrated to Hydra with Fedora 3 (this doesn't touch on underlying OM/XML records currently in Fedora, which are a 1-1 match from DLXS metadata, just what is exposed via Solr/Blacklight). Also, some fields are Solr-specific:
+Fields being used/exposed in Solr/as JSON in Blacklight at present for DLXS objects already migrated to Hydra with Fedora 3 (this doesn't touch on underlying OM/XML records currently in Fedora, which are a 1-1 match from DLXS metadata, just what is exposed via Solr/Blacklight). Also, some fields are Solr-specific:
 
 ```
                    _version_: |=========================|    834/834 | 100%
@@ -93,13 +104,9 @@ creation_site_location_tesim: |======================== |    833/834 |  99%
 
 More detailed notes on these fields is in [ActiveHydraMetadataNotes.md](Docs/HydraMetadataNotes.md)
 
-##Mappings - What now
+##Mappings
 Two kinds of mappings need to occur:
 
-1. Mappings of not migrated DLXS collections' metadata to the loose metadata concepts grouping used now and accessible at this [Google document](https://docs.google.com/spreadsheets/d/1SV2hP1tKQpPQrI1cEBWgx6NyO56YhjUCkOD_vxrzlEQ/edit?ts=568bd1b1#gid=1876213761).
-2. Mappings of the loose metadata concepts grouping to a RDF model to be used with Fedora 4.4. This may or may not include full RDF graphs attached to the Fedora objects, or some properties attached to the Fedora objects and the rest of the metadata kept either in an external triplestore or as OM/XML (this differentiation required as Fedora is an object store, not a triple store, decisions on digital objects application profiles, etc.).
+1. Mappings of not migrated DLXS collections' metadata to the "simple" metadata concepts grouping used now and accessible at this [Box spreadsheet](https://cornell.box.com/s/egu0slwx19xz9euxcgj428c9esvpuyzq).
+2. Mappings of the "simple" metadata concepts to a more complex, PCDM-based RDF model to be used with Fedora 4.7. This may or may not include full RDF graphs attached to the Fedora objects, or some properties attached to the Fedora objects and the rest of the metadata kept either in an external triplestore (this differentiation required as Fedora is an object store, not a triplestore, decisions on digital objects application profiles, etc.).
 
-##Update
-As of meeting on 1/15/2016, will proceed with migrating objects already in Hydra with Fedora 3 to Hydra using Fedora 4, with implementation of PCDM for object model and primarily dcterms RDF properties for assigning descriptive and technical metadata properties.
-
-Collections then requiring migration to Hydra from DLXS will be mapped to this Fedora 4, RDF-based mapping.

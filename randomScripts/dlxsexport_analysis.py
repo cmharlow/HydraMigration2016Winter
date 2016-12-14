@@ -22,7 +22,7 @@ class Record:
 
     def get_record_id(self):
         try:
-            record_id = self.elem.find("FILEDESC/PUBLICATIONSTMT/IDNO").text
+            record_id = self.elem.find(".//FILEDESC/PUBLICATIONSTMT/IDNO").text
             return record_id
         except:
             raise RepoInvestigatorException("Record does not have a valid Record Identifier")
@@ -152,34 +152,34 @@ def main():
 
     s = 0
     for event, elem in etree.iterparse(args.datafile):
-        if elem.tag == "record":
+        if elem.tag == "record" or elem.tag == "DLPSTEXTCLASS":
             r = Record(elem, args)
             record_id = r.get_record_id()
 
-            if args.stats is False and args.present is False and args.element is not None:
-                if r.get_elements() is not None:
+            if not args.stats and not args.present and args.element:
+                if r.get_elements():
                     for i in r.get_elements():
                         if args.id:
                             print("\t".join([record_id, i]))
                         else:
                             print(i)
 
-            if args.stats is False and args.present is False and args.xpath is not None:
-                if r.get_xpath() is not None:
+            if not args.stats and not args.present and args.xpath:
+                if r.get_xpath():
                     for i in r.get_xpath():
                         if args.id:
                             print("\t".join([record_id, i]))
                         else:
                             print(i)
 
-            if args.stats is False and args.element is not None and args.present is True:
+            if args.stats is False and args.element and args.present:
                 print("%s %s" % (record_id, r.has_element()))
 
-            if args.stats is False and args.xpath is not None and args.present is True:
+            if args.stats is False and args.xpath and args.present:
                 print("%s %s" % (record_id, r.has_xpath()))
 
-            if args.stats is True and args.element is None:
-                if (s % 1000) == 0 and s != 0:
+            if args.stats and args.element is None:
+                if (s % 50) == 0 and s != 0:
                     print("%d records processed" % s)
                 s += 1
                 collect_stats(stats_aggregate, r.get_stats())
