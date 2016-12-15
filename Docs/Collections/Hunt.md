@@ -125,30 +125,31 @@ field name | predicate | mapping or collection-wide static value [range] | notes
 --- | --- | --- | ---
 abstract | **dcterms:abstract** | Nothing in existing DLXS XML to map [xs:string] | n/a
 alternate title | **dcterms:alternative** | Nothing in existing DLXS XML to map [xs:string] | n/a
-contributor | **dc:contributor** | Nothing in existing DLXS XML to map [literal:prefLabel] | n/a
+contributor | **dc:contributor** | Nothing in existing DLXS XML to map [literal] | n/a
 contributor URI | **dcterms:contributor** | Nothing in existing DLXS XML to map [Agent URI] | n/a
 creator | **dc:creator** | FILEDESC/SOURCEDESC/BIBL/AUTHOR [literal] | will need further clean-up post preliminary F4 migration.
 creator URI | **dcterms:creator** | to be matched [Agent URIs] | part of phase 2 RDF migration work
 date created | **dcterms:created** | FILEDESC/SOURCEDESC/BIBL/DATE | date [literal]  | need to assert EDTF type. review separating date text and date key fields.
-note | **dcterms:description** | Nothing in existing DLXS XML to map [literal] | n/a
-analog extent | **dcterms:extent** | FILEDESC/SOURCEDESC/BIBL/NOTE | should be URI but uncertain about possibility object_profile_ssm subclassing/moving to resource for now.
-form | **dc:format** | "books" [literal] | n/a
-form URI | **dcterms:format** | "books" Getty Vocab [Concept URI] | part of phase 2 RDF migration work
-identifier | **dcterms:identifier** | Nothing in existing DLXS XML to map [literal] | will want to type eventually for type of identifier = marcbib, dlxs, other?
+note | **dcterms:description** | Nothing in existing DLXS XML to map [literal] | Remove empty assertions.
+analog extent | **dcterms:extent** | FILEDESC/SOURCEDESC/BIBL/NOTE | should be URI but uncertain about possibility object_profile_ssm subclassing. literal for now. need to clean up post preliminary F4 migration.
+form | **dc:format** | "Book" [literal] | n/a
+form URI | **dcterms:format** | "books" Getty Vocab [Concept URI] | Add these now. Replace empty assertions.
+identifier | **dcterms:identifier** | Nothing in existing DLXS XML to map [literal] | will want to type eventually for type of identifier (phase 2). Want to add dcterms:source for bib ids? Post preliminary RDF migration.
+language | **dc:language** | Nothing in existing DLXS XML to map | We will want to add, remove empty assertions.
 language URI | **dcterms:language** | Nothing in existing DLXS XML to map | we will want to add. Part of handling URIs for context classes.
 OCR | **dc:relation** | OCR Text [literal] | wanted better term to assert this field as we don't keep the OCR as a separate file, but not finding anything without restrictions.
-place of origin | **VIVO:placeOfPublication** | FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal] | this is a datatype property
-publisher | **dc:publisher** | FILEDESC/SOURCEDESC/BIBL/PUBLISHER [literal] | will need further clean-up post preliminary F4 migration.
+place of origin | **vivo:placeOfPublication** | FILEDESC/SOURCEDESC/BIBL/PUBPLACE [literal] | this is a datatype property. Remove empty assertions. Will need normalization post-preliminary migration.
+publisher | **dc:publisher** | FILEDESC/SOURCEDESC/BIBL/PUBLISHER [literal] | will need further clean-up post preliminary F4 migration. Are mostly publisher statements.
 publisher URI | **dcterms:publisher** | not used currently [Agent URI] | part of phase 2 RDF migration work
-repository | **EDM.currentLocation** | FILEDESC/PUBLICATIONSTMT/PUBLISHER [Place URI] | will be external URI - cheat with literal until entity resolution project.
+repository | **edm:currentLocation** | FILEDESC/PUBLICATIONSTMT/PUBLISHER [Repository URI] | will be external URI - cheat with literal until entity resolution project. Remove empty assertions.
 rights | **dc:rights** | Nothing in existing DLXS XML to map [literal] | text statement when URI/community rights standard hasn't been used with dcterms:rights
 rights URI | **dcterms:rights** | Nothing in existing DLXS XML to map [Rights Statement URI] | URI for any community-assigned rights.
 rightsholder URI | **dcterms:rightsHolder** | Nothing in existing DLXS XML to map [Agent URI] | phase 2 effort.
-subject | **dc:subject** | PROFILEDESC/TEXTCLASS/KEYWORDS/TERM [literal] | all subject types together at present.
+subject | **dc:subject** | PROFILEDESC/TEXTCLASS/KEYWORDS/TERM [literal] | all subject types together at present. Will need post preliminary RDF migration clean-up.
 subject URI | **dcterms:subject** | not currently used [Resource URI] | all subject types together at present.
 title | **dcterms:title** | FILEDESC/SOURCEDESC/BIBL/TITLE[@TYPE='main']  [literal] | will want language typing. Phase 2.
-type | **dc:type** | "Text" [literal] | n/a
-type URI | **dcterms:type** | DCMI Types URI for "Text" [URI] | entity resolution candidate, phase 2, yadda yadda.
+type | **dc:type** | "Text" [literal] | Add. Is currently missing.
+type URI | **dcterms:type** | DCMI Types URI for "Text" [URI] | Add URI. Is currently missing.
 
 #### Structural Profile
 
@@ -170,36 +171,30 @@ WHERE
   { <> dcterms:title ?title }
 ```
 
-**Remove erroneous alternate titles from all Huntington Book records.**
-
-```
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX xs: <http://www.w3.org/2001/XMLSchema>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-
-DELETE
-  { <> dcterms:alternate ?title }
-WHERE
-  { <> dcterms:title ?title }
-```
-
-### PCDM:Object > HydraWorks:Work | AF:Page : Repository Work
-Only books / pages captured in Huntington, so these are Pages. To be reviewed after Phase 2 of RDF migration: why these are HydraWorks:Work instances.
+### PCDM:Object > HydraWorks:Work | AF:Page : Part
+Only books / pages captured in Huntington, so these are Pages of those books. To be reviewed after Phase 2 of RDF migration: why these are HydraWorks:Work instances.
 
 #### Descriptive Profile
 
-- to be added as encountered.
-- **dcterms:title** [literal]  (if used at part-level)
-- **dc:subject** [literal]  (if used at part-level)
-- **dc:relation** [literal] OCR (if used at part-level)
+field name | predicate | mapping or collection-wide static value [range] | notes
+--- | --- | --- | ---
+form | **dc:format** | "Page" [literal] | n/a
+form URI | **dcterms:format** | "pages" Getty Vocab [Concept URI] | Add these now. Replace empty assertions.
+heading | **ons:heading** |  [literal] | n/a
+identifier | **dcterms:identifier** |  [literal] | Will need identifier typing (phase 2 work).
+node | **ons:node** |  [literal] | n/a
+node type | **ons:node_type** |  [literal] | n/a
+OCR | **dc:relation** | [literal] OCR | Should only apply to the part.
+page number | **ons:page_number** |  [xs:integer] | n/a
+subject | **dc:subject** | Nothing in existing DLXS XML to map  [literal] | Should only apply to the part. Remove empty assertions.
+title | **dcterms:title** |  [literal] | We will want to clean these up, make them human-readable.
 
 #### Structural Profile
 
-*Digital Work|Part -PCDM:hasMember-> File Set*
+- *Page -PCDM:hasMember-> FileSet*
+- *Page <-PCDM:isMemberOf- FileSet*
 
-*Digital Work|Part <-PCDM:isMemberOf- File Set*
-
-#### SPARQL Updates for Huntington Books Descriptive Metadata Repair
+#### SPARQL Updates for Huntington Pages Descriptive Metadata Repair
 
 ```
 
@@ -217,24 +212,21 @@ This is the digital work as represented by file sets - so any information about 
 - **dcterms:identifier**
 - **dcterms:extent** = FILEDESC/EXTENT [should be resource, will be literal- see intellectual work extent for this issue] => files_extent
 - **dcterms:title** = TEXT/BODY/DIV1/HEAD [literal] => fileset_title
-- anything else file set specific, as encountered (crossing into technical metadata)
 
 #### Structural Profile
 
-*File Set -PCDM:hasFile-> File(s)*
-
-*File Set <-PCDM:isFileOf- File(s)*
+- *File Set -PCDM:hasFile-> File(s)*
+- *File Set <-PCDM:isFileOf- File(s)*
 
 ### PCDM:File < HydraWorks:File : File
 
 Files are kept in Amazon Web Service. Should check embedded metadata profile at a later date.
 
-
 ##Mapping from DLXS XML to "Simple RDF" (with normalization notes)
 
 Field | Concept | RDF Mapping | Notes
 --- | --- | --- | ---
-**ENCODINGDESC/EDITORIALDECL/P** | *Note* | pcdm:object[hydraWork:GenericWork] dcterms:description [literal] | OCR is not kept as separate file, but text referred to by descriptive metadata. Move Solr concept to technical note.
+**ENCODINGDESC/EDITORIALDECL/P** | *Note* | Book dcterms:description [xs:string] | OCR is not kept as separate file, but text referred to by descriptive metadata. Move Solr concept to technical note.
 **FILEDESC/EXTENT** | Extent | pcdm:object[hydraWork:GeneralFile] ? [literal] | This is extent for collection of digital objects/files attached to one resource/work. Doesn't describe each file at the file-level. Ex: "112 600dpi TIFF page images"
 **FILEDESC/PUBLICATIONSTMT/IDNO** | Identifier | pcdm:object[dpla:SourceResource] dcterms:identifier [literal] | there only seems to be these dlxs identifiers used, wondering if we'll need to type this later on.
 **FILEDESC/PUBLICATIONSTMT/PUBLISHER** | Repository | pcdm:object[dpla:sourceResource] **edm:currentLocation** [literal until we can pull in external URIs] | can't find other property that adequately covers repository without going beyond scope of current options. Prime entity resolution candidate.
