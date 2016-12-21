@@ -22,4 +22,5 @@ node_modules
 .sass-cache
 
 #too big datafiles for github
-DLXSexports/allDLXS.xml
+DLXSexports
+scripts/fcrepo.ttl

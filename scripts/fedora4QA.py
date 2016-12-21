@@ -20,10 +20,6 @@ store = sparqlstore.SPARQLUpdateStore()
 store.open((endpoint, endpoint))
 fuseki = rdflib.Graph(store)
 
-# 3. loads into fuseki for both visual assessment and running queries to get AF models then all ids for each model in play
-# 4. then I iterate over the ids for each model to perform batch updates where possible by sending patch requests to Fedora API
-
-
 def grabCollContainers(cont, fcrepo):
     """Query fedora for all resources of the selected collection."""
     print("Generating graph.")
