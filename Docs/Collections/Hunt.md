@@ -149,8 +149,8 @@ WHERE {
 GROUP by ?obj
 ```
 
-field                      | predicate | count (appearance on 124 Book resources, some fields appear more than once) | Note
----                        | --- | ---
+field | predicate | count (appearance on 124 Book resources, some fields appear more than once) | Note
+--- | --- | --- |  ---
 **metadata/administrative** ||
 activefedora model         | info:fedora/fedora-system:def/model#hasModel                | 124   | left as is
 created                    | http://fedora.info/definitions/v4/repository#created        | 124   | left as is
