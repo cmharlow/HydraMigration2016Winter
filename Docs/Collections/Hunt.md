@@ -184,8 +184,6 @@ subject                    | http://purl.org/dc/elements/1.1/subject            
 title                      | http://purl.org/dc/terms/title                              | 124
 translator                 | http://rdaregistry.info/Elements/u/P60613                   | 124
 
-
-
 #### Descriptive Profile
 
 field name | predicate | mapping or collection-wide static value [range] | notes
