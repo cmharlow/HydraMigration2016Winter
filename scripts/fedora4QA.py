@@ -20,6 +20,7 @@ store = sparqlstore.SPARQLUpdateStore()
 store.open((endpoint, endpoint))
 fuseki = rdflib.Graph(store)
 
+
 def grabCollContainers(cont, fcrepo):
     """Query fedora for all resources of the selected collection."""
     print("Generating graph.")

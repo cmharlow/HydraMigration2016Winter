@@ -140,49 +140,58 @@ WHERE {
 GROUP BY ?predicate
 ```
 
-field                      | predicate | count (appearance on 124 Book resources, some fields can appear more than once)
+```
+SELECT DISTINCT ?obj (COUNT(DISTINCT ?subject) as ?count)
+WHERE {
+  ?subject fedorasys:hasModel "Book" ;
+           [prefix] ?obj .
+}
+GROUP by ?obj
+```
+
+field                      | predicate | count (appearance on 124 Book resources, some fields appear more than once) | Note
 ---                        | --- | ---
 **metadata/administrative** ||
-activefedora model         | info:fedora/fedora-system:def/model#hasModel                | 124
-created                    | http://fedora.info/definitions/v4/repository#created        | 124
-created by                 | http://fedora.info/definitions/v4/repository#createdBy      | 124
-date submitted             | http://purl.org/dc/terms/dateSubmitted                      | 124
-depositor                  | http://id.loc.gov/vocabulary/relators/dpt                   | 124
-modified (fedora)          | http://fedora.info/definitions/v4/repository#lastModified   | 124
-modified (dc)              | http://purl.org/dc/terms/modified                           | 124
-modified by                | http://fedora.info/definitions/v4/repository#lastModifiedBy | 124
-writable                   | http://fedora.info/definitions/v4/repository#writable       | 124
+activefedora model         | info:fedora/fedora-system:def/model#hasModel                | 124   | left as is
+created                    | http://fedora.info/definitions/v4/repository#created        | 124   | left as is
+created by                 | http://fedora.info/definitions/v4/repository#createdBy      | 124   | left as is
+date submitted             | http://purl.org/dc/terms/dateSubmitted                      | 124   | Removed (all values were empty)
+depositor                  | http://id.loc.gov/vocabulary/relators/dpt                   | 124   | left as is
+modified (fedora)          | http://fedora.info/definitions/v4/repository#lastModified   | 124   | left as is
+modified (dc)              | http://purl.org/dc/terms/modified                           | 124   | removed empty values. Left 1 non-empty value as is. Why do we have this and fedora:lastModified?
+modified by                | http://fedora.info/definitions/v4/repository#lastModifiedBy | 124   | left as is.
+writable                   | http://fedora.info/definitions/v4/repository#writable       | 124   | left as is
 **access** ||
-access control             | http://www.w3.org/ns/auth/acl#accessControl                 | 124
+access control             | http://www.w3.org/ns/auth/acl#accessControl                 | 124   | left as is
 **structural** ||
-contains                   | http://www.w3.org/ns/ldp#contains                           | 249
-first                      | http://www.iana.org/assignments/relation/first              | 1
-has member                 | http://pcdm.org/models#hasMember                            | 33267
-has parent                 | http://fedora.info/definitions/v4/repository#hasParent      | 124
-last                       | http://www.iana.org/assignments/relation/last               | 1
-member Of                  | http://pcdm.org/models#memberOf                             | 124
-see also                   | http://www.w3.org/2000/01/rdf-schema#seeAlso                | 124
+contains                   | http://www.w3.org/ns/ldp#contains                           | 249   | what is listSource? Only appears for hunt0004
+first                      | http://www.iana.org/assignments/relation/first              | 1     | Only appears for hunt0004. attaches to listSource.
+has member                 | http://pcdm.org/models#hasMember                            | 33267 | All other hunt resources. Need to remove Jenn Page 1 test resource.
+has parent                 | http://fedora.info/definitions/v4/repository#hasParent      | 124   | left as is. (rest/dev/)
+last                       | http://www.iana.org/assignments/relation/last               | 1     | Only appears for hunt0004. attaches to listSource.
+member Of                  | http://pcdm.org/models#memberOf                             | 124   | left as is. (huntington)
+see also                   | http://www.w3.org/2000/01/rdf-schema#seeAlso                | 124   | removed empty values.
 **descriptive** ||
-alternative title          | http://purl.org/dc/terms/alternative                        | 124
-compiler (incorrect URI)   | http://rdaregistry.info/Elements/u/P50189                   | 124
-creator                    | http://purl.org/dc/elements/1.1/creator                     | 124
-current location of analog | http://www.europeana.eu/schemas/edm/currentLocation         | 124
-date created               | http://purl.org/dc/terms/created                            | 124
-DCMI type                  | http://purl.org/dc/elements/1.1/type                        | 124
-DCMI type URI              | http://purl.org/dc/terms/type                               | 124
-extent                     | http://purl.org/dc/terms/extent                             | 124
-editor                     | http://rdaregistry.info/Elements/u/P60393                   | 124
-format                     | http://purl.org/dc/terms/format                             | 124
-format                     | http://purl.org/dc/elements/1.1/format                      | 124
-identifier                 | http://purl.org/dc/terms/identifier                         | 124
-language                   | http://purl.org/dc/elements/1.1/language                    | 123
-note                       | http://purl.org/dc/terms/description                        | 124
-place of origin            | http://vivoweb.org/ontology/core#placeOfPublication         | 124
-publisher                  | http://purl.org/dc/elements/1.1/publisher                   | 124
-RDF type                   | http://www.w3.org/1999/02/22-rdf-syntax-ns#type             | 744
-subject                    | http://purl.org/dc/elements/1.1/subject                     | 201
-title                      | http://purl.org/dc/terms/title                              | 124
-translator                 | http://rdaregistry.info/Elements/u/P60613                   | 124
+alternative title          | http://purl.org/dc/terms/alternative                        | 124   | leaving for now. return to for more work.
+compiler (incorrect URI)   | http://rdaregistry.info/Elements/u/P50189                   | 124   | Empty. remove.
+creator                    | http://purl.org/dc/elements/1.1/creator                     | 124   | leave as is for now. return to for more work.
+current location of analog | http://www.europeana.eu/schemas/edm/currentLocation         | 124   | Replace empty value with "Cornell University. Library. Division of Rare and Manuscript Collections"
+date created               | http://purl.org/dc/terms/created                            | 124   | Removed '0000'. Find way to add typing with date as variable passed (to be done).
+DCMI type                  | http://purl.org/dc/elements/1.1/type                        | 124   | 1 "Text", rest empty. Applied "Text" to all, removed empties.
+DCMI type URI              | http://purl.org/dc/terms/type                               | 124   | Added <http://purl.org/dc/dcmitype/Text>.
+extent                     | http://purl.org/dc/terms/extent                             | 124   | replace "p." with "pages" Same update issue as with created date.
+editor                     | http://rdaregistry.info/Elements/u/P60393                   | 124   | remove (all empty). to be re-added after creator parse.
+format                     | http://purl.org/dc/terms/format                             | 124   | Good - left as is.
+format                     | http://purl.org/dc/elements/1.1/format                      | 124   | Good - left as is.
+identifier                 | http://purl.org/dc/terms/identifier                         | 124   | Add bib identifiers. requires entity resolution.
+language                   | http://purl.org/dc/elements/1.1/language                    | 123   | Removed empty assertions. To be re-added when better metadata is present.
+note                       | http://purl.org/dc/terms/description                        | 124   | Removed empty assertions.
+place of origin            | http://vivoweb.org/ontology/core#placeOfPublication         | 124   | Removed empty assertions.
+publisher                  | http://purl.org/dc/elements/1.1/publisher                   | 124   | Needs further normalization (same issue as creation dates, above). To be done.
+RDF type                   | http://www.w3.org/1999/02/22-rdf-syntax-ns#type             | 744   | Left as is.
+subject                    | http://purl.org/dc/elements/1.1/subject                     | 201   | Needs further normalization (same issue as creation dates, above). To be done.
+title                      | http://purl.org/dc/terms/title                              | 124   | to be cleaned up.
+translator                 | http://rdaregistry.info/Elements/u/P60613                   | 124   | removed (all empty). to be re-added after creator parse.
 
 #### Descriptive Profile
 
