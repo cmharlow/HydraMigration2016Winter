@@ -82,11 +82,11 @@ This is the collection resource representing Huntington Digital Collection.
 
 predicate | value | notes
 --- | --- | ---
-**dcterms:title** | "Huntington Free Library Native American Collection"^^xs:string | Need language typing
+**dcterms:title** | "Huntington Free Library Native American Collection"^^xsd:string | Need language typing
 **dcterms:abstract** | "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the various genres in the collection."^^xs:string | Need language typing
 **dcterms:date** | "2010"^^<http://id.loc.gov/datatypes/edtf> | Need date (data type) typing. Make sure is not dcterms:created
 **dcterms:identifier** | "6790930" | identifier typing to be added in phase 2 of migration.
-**dc:publisher** | "Cornell University. Library"^^xs:string | To be removed upon being able to leverage context class URIs (below)
+**dc:publisher** | "Cornell University. Library"@en-us | To be removed upon being able to leverage context class URIs (below)
 **dcterms:publisher** | <http://id.loc.gov/authorities/names/n85179829> | leveraging this to be added in phase 2 of migration.
 **dcterms:relation** | <https://rare.library.cornell.edu/collections/amerhist/amerindianhist> | n/a
 
@@ -98,26 +98,93 @@ predicate | value | notes
 
 #### SPARQL Update for Huntington Collection Descriptive Metadata Repair
 
+On <http://hydraedit-dev.library.cornell.edu:8080/fedora/rest/dev/hu/nt/in/gt/huntington>
+
 ```
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX xs: <http://www.w3.org/2001/XMLSchema>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
 DELETE
   { <> dcterms:title "Huntington Collection must edit" . } WHERE {};
 INSERT
-  { <> dcterms:title "Huntington Free Library Native American Collection"^^xs:string ;
-       dcterms:abstract "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the  various genres in the collection."^^xs:string ;
+  { <> dcterms:title "Huntington Free Library Native American Collection"^^xsd:string ;
+       dcterms:abstract "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the  various genres in the collection."@en-us ;
        dcterms:date "2010"^^<http://id.loc.gov/datatypes/edtf> ;
-       dcterms:identifier "6790930"^^xs:string ;
-       dc:publisher "Cornell University. Library"^^xs:string ;
-       dcterms:publisher <http://id.loc.gov/authorities/names/n85179829> ;
-       dcterms:relation <http://id.loc.gov/authorities/names/n85179829> ;
+       dcterms:identifier "6790930"^^xsd:string ;
+       dc:publisher "Cornell University. Library"@en-us ;
+       dcterms:publisher <http://id.loc.gov/rwo/agents/n85179829> ;
+       dcterms:relation <https://rare.library.cornell.edu/collections/amerhist/amerindianhist> ;
    } WHERE {};
 ```
 
 ### PCDM:Object > HydraWorks:Work | AF:Book : Repository Work
 Huntington only contains Books, so the Book repository intellectual object is described here.
+
+#### Post John Migration Analysis:
+
+```
+PREFIX ns012: <http://www.iana.org/assignments/relation/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fedora: <http://fedora.info/definitions/v4/repository#>
+PREFIX ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>
+PREFIX ldp: <http://www.w3.org/ns/ldp#>
+PREFIX xs: <http://www.w3.org/2001/XMLSchema>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?predicate (COUNT(?predicate) as ?count)
+WHERE {
+  ?subject fedorasys:hasModel "Book" ;
+           ?predicate ?object .
+}
+GROUP BY ?predicate
+```
+
+field | predicate | count (appearance on 124 Book resources, some fields can appear more than once)
+--- | --- | ---
+**metadata/administrative** ||
+created | http://fedora.info/definitions/v4/repository#created | 124
+modified | http://fedora.info/definitions/v4/repository#lastModified | 124
+writable | http://fedora.info/definitions/v4/repository#writable | 124
+modified by | http://fedora.info/definitions/v4/repository#lastModifiedBy | 124
+created by | http://fedora.info/definitions/v4/repository#createdBy | 124
+date submitted | http://purl.org/dc/terms/dateSubmitted | 124
+activefedora model | info:fedora/fedora-system:def/model#hasModel | 124
+depositor | http://id.loc.gov/vocabulary/relators/dpt | 124
+modified | http://purl.org/dc/terms/modified | 124
+**access** ||
+access control | http://www.w3.org/ns/auth/acl#accessControl | 124
+**structural** ||
+has parent | http://fedora.info/definitions/v4/repository#hasParent | 124
+member Of | http://pcdm.org/models#memberOf | 124
+has member | http://pcdm.org/models#hasMember | 33267
+first | http://www.iana.org/assignments/relation/first | 1
+last | http://www.iana.org/assignments/relation/last | 1
+contains | http://www.w3.org/ns/ldp#contains | 249
+see also | http://www.w3.org/2000/01/rdf-schema#seeAlso | 124
+**descriptive** ||
+alternative title | http://purl.org/dc/terms/alternative | 124
+compiler (incorrect URI) | http://rdaregistry.info/Elements/u/P50189 | 124
+creator | http://purl.org/dc/elements/1.1/creator | 124
+current location of analog | http://www.europeana.eu/schemas/edm/currentLocation | 124
+date created | http://purl.org/dc/terms/created | 124
+DCMI type | http://purl.org/dc/elements/1.1/type | 124
+DCMI type URI | http://purl.org/dc/terms/type | 124
+extent | http://purl.org/dc/terms/extent | 124
+editor | http://rdaregistry.info/Elements/u/P60393 | 124
+format | http://purl.org/dc/terms/format | 124
+format | http://purl.org/dc/elements/1.1/format | 124
+identifier | http://purl.org/dc/terms/identifier | 124
+language | http://purl.org/dc/elements/1.1/language | 123
+note | http://purl.org/dc/terms/description | 124
+place of origin | http://vivoweb.org/ontology/core#placeOfPublication | 124
+publisher | http://purl.org/dc/elements/1.1/publisher | 124
+RDF type | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | 744
+subject | http://purl.org/dc/elements/1.1/subject | 201
+title | http://purl.org/dc/terms/title | 124
+translator | http://rdaregistry.info/Elements/u/P60613 | 124
+
+
 
 #### Descriptive Profile
 

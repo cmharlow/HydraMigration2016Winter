@@ -1,49 +1,69 @@
+"""Grab Collections Graphs from Fedora, Iterate, and load into local Fuseki."""
 import rdflib
 from rdflib.namespace import *
+from argparse import ArgumentParser
+import sys
+from rdflib.plugins.stores import sparqlstore
 
-fedora_baseURL = 'http://hydraedit-dev.library.cornell.edu/fedora/rest/dev/'
-dct = rdflib.Namespace('http://purl.org/dc/terms/')
-edm = rdflib.Namespace('http://www.europeana.eu/schemas/edm/')
-pcdm = rdflib.Namespace('http://pcdm.org/models#')
-fedora = rdflib.Namespace('http://fedora.info/definitions/v4/repository#')
-hydra = rdflib.Namespace('http://opaquenamespace.org/hydra/')
-vivo = rdflib.Namespace('http://vivoweb.org/ontology/core#')
-hydraworks = rdflib.Namespace('http://projecthydra.org/works/models#')
-lcrel = rdflib.Namespace('http://id.loc.gov/vocabulary/relators/')
-fedoraconfig = rdflib.Namespace('http://fedora.info/definitions/v4/config#')
-ldp = rdflib.Namespace('http://www.w3.org/ns/ldp#')
+fcrepo_base = 'http://hydraedit-dev.library.cornell.edu:8080/fedora/rest/dev/'
+EDM = rdflib.Namespace('http://www.europeana.eu/schemas/edm/')
+PCDM = rdflib.Namespace('http://pcdm.org/models#')
+FEDORA = rdflib.Namespace('http://fedora.info/definitions/v4/repository#')
+ONS = rdflib.Namespace('http://opaquenamespace.org/hydra/')
+VIVO = rdflib.Namespace('http://vivoweb.org/ontology/core#')
+HW = rdflib.Namespace('http://projecthydra.org/works/models#')
+MARCREL = rdflib.Namespace('http://id.loc.gov/vocabulary/relators/')
+FCONFIG = rdflib.Namespace('http://fedora.info/definitions/v4/config#')
+LDP = rdflib.Namespace('http://www.w3.org/ns/ldp#')
+endpoint = 'http://localhost:3030/fcrepo/query'
+store = sparqlstore.SPARQLUpdateStore()
+store.open((endpoint, endpoint))
+fuseki = rdflib.Graph(store)
 
-colls = ['huntingtonDev']
+# 3. loads into fuseki for both visual assessment and running queries to get AF models then all ids for each model in play
+# 4. then I iterate over the ids for each model to perform batch updates where possible by sending patch requests to Fedora API
 
-for coll in colls:
-    coll_g = rdflib.Graph()
-    coll_uri = rdflib.URIRef(fedora_baseURL + coll)
-    coll_g.parse(coll_uri)
-    coll_props = set(p for s, p, o in coll_g.triples((coll_uri, None, None)))
-    for coll_prop in coll_props:
-        print(coll_prop)
-        coll_prop_objs = set(o for s, p, o in coll_g.triples((coll_uri,
-                                                              coll_prop,
-                                                              None)))
-        for coll_prop_obj in coll_prop_objs:
-            print(coll_prop_obj)
-        print('-------------------------------')
-    pcdm_objs = set(o for s, p, o in coll_g.triples((coll_uri, pcdm.hasMember,
-                                                     None)))
-    pcdm_objs_props = set()
-    for pcdm_obj in pcdm_objs:
-        coll_g.parse(pcdm_obj)
-        for s, p, o in coll_g.triples((pcdm_obj, None, None)):
-            pcdm_objs_props.add(p)
-    print('-------------------------------')
-    for pcdm_obj_prop in pcdm_objs_props:
-        print(pcdm_obj_prop)
-    print('-------------------------------')
-    for pcdm_obj in pcdm_objs:
-        for pcdm_obj_prop in pcdm_objs_props:
-            print(pcdm_obj_prop)
-            pcdm_obj_prop_objs = set(o for s, p, o in coll_g.triples((pcdm_obj, pcdm_obj_prop, None)))
-            for o in pcdm_obj_prop_objs:
-                print(o)
-            print('-------------------------------')
-        print('-------------------------------')
+
+def grabCollContainers(cont, fcrepo):
+    """Query fedora for all resources of the selected collection."""
+    print("Generating graph.")
+    cont_g = fcrepo.parse(cont)
+    s = 0
+    print("Parsing graph objects.")
+    for obj in cont_g.objects(cont, LDP.contains):
+        # Parse recursively on that graph.
+        cont_g.parse(obj)
+        if (s % 10) == 0 and s != 0:
+            print("%d URIs processed" % s)
+        s += 1
+    return(cont_g)
+
+
+def main():
+    """Create or expand existing graph with Fedora collection data."""
+    parser = ArgumentParser(description="Pass Collections URIs.")
+    parser.add_argument("-c", "--container", dest="cont")
+    parser.add_argument("-l", "--containerList", dest="contList")
+
+    args = parser.parse_args()
+
+    if not len(sys.argv) > 1:
+        parser.print_help()
+        parser.exit()
+
+    fcrepo = rdflib.Graph()
+    if args.cont:
+        cont = rdflib.term.URIRef(args.cont)
+        fcrepo = grabCollContainers(cont, fcrepo)
+    elif args.contList:
+        for n in contList:
+            cont = rdflib.term.URIRef(n)
+            fcrepo = grabCollContainers(args.cont, fcrepo)
+
+    print("Writing Graph to file.")
+    fcrepo.serialize("fcrepo.ttl", format="turtle")
+    fuseki.update('INSERT DATA { %s }' % fcrepo.serialize(format='nt'))
+
+
+if __name__ == '__main__':
+    main()

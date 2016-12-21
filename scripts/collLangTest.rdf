@@ -1,0 +1,5 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT { <> dcterms:abstract "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the  various genres in the collection."@en-US .} WHERE { };
+DELETE { <> dcterms:abstract "One of the largest collections of books and manuscripts of its kind, the Huntington collection contains extensive materials documenting the history, culture, languages, and arts of the native tribes of both North and South America. Contemporary politics and human rights issues are also important components of the collection. Full text of a selection of 91 books from the Huntington Free Library Native American Collection representing the  various genres in the collection."@en-us .} 
+WHERE { }
