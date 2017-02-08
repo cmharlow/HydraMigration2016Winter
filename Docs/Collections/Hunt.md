@@ -165,15 +165,15 @@ writable                   | http://fedora.info/definitions/v4/repository#writab
 access control             | http://www.w3.org/ns/auth/acl#accessControl                 | 124   | left as is
 **structural** ||
 contains                   | http://www.w3.org/ns/ldp#contains                           | 249   | what is listSource? Only appears for hunt0004
-first                      | http://www.iana.org/assignments/relation/first              | 1     | Only appears for hunt0004. attaches to listSource.
+first                      | http://www.iana.org/assignments/relation/first              | 1     | Only appears for hunt0004. attached to listSource.
 has member                 | http://pcdm.org/models#hasMember                            | 33267 | All other hunt resources. Need to remove Jenn Page 1 test resource.
 has parent                 | http://fedora.info/definitions/v4/repository#hasParent      | 124   | left as is. (rest/dev/)
-last                       | http://www.iana.org/assignments/relation/last               | 1     | Only appears for hunt0004. attaches to listSource.
+last                       | http://www.iana.org/assignments/relation/last               | 1     | Only appears for hunt0004. attached to listSource.
 member Of                  | http://pcdm.org/models#memberOf                             | 124   | left as is. (huntington)
 see also                   | http://www.w3.org/2000/01/rdf-schema#seeAlso                | 124   | removed empty values.
 **descriptive** ||
 alternative title          | http://purl.org/dc/terms/alternative                        | 124   | leaving for now. return to for more work.
-compiler (incorrect URI)   | http://rdaregistry.info/Elements/u/P50189                   | 124   | Empty. remove.
+compiler (incorrect URI)   | http://rdaregistry.info/Elements/u/P50189                   | 124   | Empty. Removed.
 creator                    | http://purl.org/dc/elements/1.1/creator                     | 124   | leave as is for now. return to for more work.
 current location of analog | http://www.europeana.eu/schemas/edm/currentLocation         | 124   | Replace empty value with "Cornell University. Library. Division of Rare and Manuscript Collections"
 date created               | http://purl.org/dc/terms/created                            | 124   | Removed '0000'. Find way to add typing with date as variable passed (to be done).

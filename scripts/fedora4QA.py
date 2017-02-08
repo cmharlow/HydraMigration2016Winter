@@ -3,7 +3,6 @@ import rdflib
 from rdflib.namespace import *
 from argparse import ArgumentParser
 import sys
-from rdflib.plugins.stores import sparqlstore
 
 fcrepo_base = 'http://hydraedit-dev.library.cornell.edu:8080/fedora/rest/dev/'
 EDM = rdflib.Namespace('http://www.europeana.eu/schemas/edm/')
@@ -15,10 +14,6 @@ HW = rdflib.Namespace('http://projecthydra.org/works/models#')
 MARCREL = rdflib.Namespace('http://id.loc.gov/vocabulary/relators/')
 FCONFIG = rdflib.Namespace('http://fedora.info/definitions/v4/config#')
 LDP = rdflib.Namespace('http://www.w3.org/ns/ldp#')
-endpoint = 'http://localhost:3030/fcrepo/query'
-store = sparqlstore.SPARQLUpdateStore()
-store.open((endpoint, endpoint))
-fuseki = rdflib.Graph(store)
 
 
 def grabCollContainers(cont, fcrepo):
@@ -28,9 +23,9 @@ def grabCollContainers(cont, fcrepo):
     s = 0
     print("Parsing graph objects.")
     for obj in cont_g.objects(cont, LDP.contains):
-        # Parse recursively on that graph.
-        cont_g.parse(obj)
-        if (s % 10) == 0 and s != 0:
+        # Parse recursively on that graph through Works, Parts, Filesets.
+        cont_g.parse(rdflib.term.URIRef(obj))
+        if (s % 100) == 0 and s != 0:
             print("%d URIs processed" % s)
         s += 1
     return(cont_g)
@@ -59,7 +54,6 @@ def main():
 
     print("Writing Graph to file.")
     fcrepo.serialize("fcrepo.ttl", format="turtle")
-    fuseki.update('INSERT DATA { %s }' % fcrepo.serialize(format='nt'))
 
 
 if __name__ == '__main__':
