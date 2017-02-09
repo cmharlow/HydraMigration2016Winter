@@ -24,3 +24,4 @@ node_modules
 #too big datafiles for github
 DLXSexports
 scripts/fcrepo.ttl
+DLXSdata/

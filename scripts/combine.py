@@ -9,12 +9,13 @@ def main():
 
     ofile.write('<?xml version="1.0" encoding="UTF-8"?><COLL>')
 
-    xmldir = "DLXSexports/Server/chla_xml/serials/"
+    xmldir = "DLXSdata/chla/xml_files/"
 
     recordCount = 0
 
     for subdir, dirs, files in os.walk(xmldir):
         for xmlfile in files:
+            print(xmlfile)
             events = xml.dom.pulldom.parse(xmldir + xmlfile)
             for (event, node) in events:
                 if event == "START_ELEMENT" and node.tagName == 'DLPSTEXTCLASS':
