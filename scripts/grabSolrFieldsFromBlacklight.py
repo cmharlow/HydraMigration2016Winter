@@ -1,7 +1,7 @@
 import requests
 import json
 
-sets = ['bol', 'hunt']
+sets = ['bol']
 baseURL = 'https://digital-stg.library.cornell.edu/catalog/'
 output = {"output": []}
 
